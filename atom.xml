@@ -3,11 +3,11 @@
   <title>jwangcloud</title>
   
   
-  <link href="/learn666-git/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://gitee.com/learn666-git/learn666-git.git/"/>
+  <link href="https://github.com/learn666-gif/"/>
   <updated>2020-03-06T07:10:27.349Z</updated>
-  <id>https://gitee.com/learn666-git/learn666-git.git/</id>
+  <id>https://github.com/learn666-gif/</id>
   
   <author>
     <name>Jwang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>JAVA编程基础</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2020/03/06/JAVA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2020/03/06/JAVA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</id>
+    <link href="https://github.com/learn666-gif/2020/03/06/JAVA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
+    <id>https://github.com/learn666-gif/2020/03/06/JAVA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</id>
     <published>2020-03-06T05:14:13.000Z</published>
     <updated>2020-03-06T07:10:27.349Z</updated>
     
@@ -34,17 +34,17 @@
     </summary>
     
     
-      <category term="JAVA编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/JAVA%E7%BC%96%E7%A8%8B/"/>
+      <category term="JAVA编程" scheme="https://github.com/learn666-gif/categories/JAVA%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="JAVA" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/JAVA/"/>
+      <category term="JAVA" scheme="https://github.com/learn666-gif/tags/JAVA/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2020/03/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2020/03/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <link href="https://github.com/learn666-gif/2020/03/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://github.com/learn666-gif/2020/03/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
     <published>2020-03-03T02:21:44.000Z</published>
     <updated>2020-03-04T09:27:20.851Z</updated>
     
@@ -57,19 +57,19 @@
     </summary>
     
     
-      <category term="算法" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://github.com/learn666-gif/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="正则表达式" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="https://github.com/learn666-gif/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
-      <category term="re函数" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/re%E5%87%BD%E6%95%B0/"/>
+      <category term="re函数" scheme="https://github.com/learn666-gif/tags/re%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>python面试</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2020/02/14/python%E9%9D%A2%E8%AF%95/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2020/02/14/python%E9%9D%A2%E8%AF%95/</id>
+    <link href="https://github.com/learn666-gif/2020/02/14/python%E9%9D%A2%E8%AF%95/"/>
+    <id>https://github.com/learn666-gif/2020/02/14/python%E9%9D%A2%E8%AF%95/</id>
     <published>2020-02-14T03:52:31.000Z</published>
     <updated>2020-03-09T11:32:29.683Z</updated>
     
@@ -82,17 +82,17 @@
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="python" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/python/"/>
+      <category term="python" scheme="https://github.com/learn666-gif/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>设计模式简谈</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/09/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%B0%88/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/09/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%B0%88/</id>
+    <link href="https://github.com/learn666-gif/2019/09/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%B0%88/"/>
+    <id>https://github.com/learn666-gif/2019/09/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%B0%88/</id>
     <published>2019-09-03T08:38:52.000Z</published>
     <updated>2020-03-05T09:39:34.753Z</updated>
     
@@ -106,19 +106,19 @@
     </summary>
     
     
-      <category term="设计模式" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://github.com/learn666-gif/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/tags/python%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="设计模式" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://github.com/learn666-gif/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>get,put,post,delete含义与区别</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/06/26/get-put-post-delete%E5%90%AB%E4%B9%89%E4%B8%8E%E5%8C%BA%E5%88%AB/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/06/26/get-put-post-delete%E5%90%AB%E4%B9%89%E4%B8%8E%E5%8C%BA%E5%88%AB/</id>
+    <link href="https://github.com/learn666-gif/2019/06/26/get-put-post-delete%E5%90%AB%E4%B9%89%E4%B8%8E%E5%8C%BA%E5%88%AB/"/>
+    <id>https://github.com/learn666-gif/2019/06/26/get-put-post-delete%E5%90%AB%E4%B9%89%E4%B8%8E%E5%8C%BA%E5%88%AB/</id>
     <published>2019-06-26T11:10:38.000Z</published>
     <updated>2020-03-04T09:26:22.013Z</updated>
     
@@ -131,19 +131,19 @@
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Django" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Django/"/>
+      <category term="Django" scheme="https://github.com/learn666-gif/tags/Django/"/>
     
-      <category term="Rest_Framework" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Rest-Framework/"/>
+      <category term="Rest_Framework" scheme="https://github.com/learn666-gif/tags/Rest-Framework/"/>
     
   </entry>
   
   <entry>
     <title>hadoop运用</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/06/18/hadoop%E8%BF%90%E7%94%A8/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/06/18/hadoop%E8%BF%90%E7%94%A8/</id>
+    <link href="https://github.com/learn666-gif/2019/06/18/hadoop%E8%BF%90%E7%94%A8/"/>
+    <id>https://github.com/learn666-gif/2019/06/18/hadoop%E8%BF%90%E7%94%A8/</id>
     <published>2019-06-18T04:57:02.000Z</published>
     <updated>2020-03-04T05:09:22.281Z</updated>
     
@@ -156,17 +156,17 @@
     </summary>
     
     
-      <category term="数据分析" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://github.com/learn666-gif/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="Hadoop" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Hadoop/"/>
+      <category term="Hadoop" scheme="https://github.com/learn666-gif/tags/Hadoop/"/>
     
   </entry>
   
   <entry>
     <title>IO编程</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/06/03/IO%E7%BC%96%E7%A8%8B/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/06/03/IO%E7%BC%96%E7%A8%8B/</id>
+    <link href="https://github.com/learn666-gif/2019/06/03/IO%E7%BC%96%E7%A8%8B/"/>
+    <id>https://github.com/learn666-gif/2019/06/03/IO%E7%BC%96%E7%A8%8B/</id>
     <published>2019-06-03T07:15:21.000Z</published>
     <updated>2020-03-04T09:27:54.968Z</updated>
     
@@ -180,19 +180,19 @@
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="IO" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/IO/"/>
+      <category term="IO" scheme="https://github.com/learn666-gif/tags/IO/"/>
     
-      <category term="并发" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://github.com/learn666-gif/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Django序列化实例</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/05/23/Django%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E4%BE%8B/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/05/23/Django%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E4%BE%8B/</id>
+    <link href="https://github.com/learn666-gif/2019/05/23/Django%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E4%BE%8B/"/>
+    <id>https://github.com/learn666-gif/2019/05/23/Django%E5%BA%8F%E5%88%97%E5%8C%96%E5%AE%9E%E4%BE%8B/</id>
     <published>2019-05-23T11:20:21.000Z</published>
     <updated>2020-03-04T09:25:38.399Z</updated>
     
@@ -207,21 +207,21 @@
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Django" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Django/"/>
+      <category term="Django" scheme="https://github.com/learn666-gif/tags/Django/"/>
     
-      <category term="Rest_Framework" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Rest-Framework/"/>
+      <category term="Rest_Framework" scheme="https://github.com/learn666-gif/tags/Rest-Framework/"/>
     
-      <category term="序列化" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+      <category term="序列化" scheme="https://github.com/learn666-gif/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>HTML综述</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/05/04/HTML%E7%BB%BC%E8%BF%B0/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/05/04/HTML%E7%BB%BC%E8%BF%B0/</id>
+    <link href="https://github.com/learn666-gif/2019/05/04/HTML%E7%BB%BC%E8%BF%B0/"/>
+    <id>https://github.com/learn666-gif/2019/05/04/HTML%E7%BB%BC%E8%BF%B0/</id>
     <published>2019-05-04T07:00:53.000Z</published>
     <updated>2020-03-04T08:17:08.773Z</updated>
     
@@ -253,17 +253,17 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="前端开发" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="前端开发" scheme="https://github.com/learn666-gif/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="HTML" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/HTML/"/>
+      <category term="HTML" scheme="https://github.com/learn666-gif/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>Django综述</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/05/03/Django%E7%BB%BC%E8%BF%B0/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/05/03/Django%E7%BB%BC%E8%BF%B0/</id>
+    <link href="https://github.com/learn666-gif/2019/05/03/Django%E7%BB%BC%E8%BF%B0/"/>
+    <id>https://github.com/learn666-gif/2019/05/03/Django%E7%BB%BC%E8%BF%B0/</id>
     <published>2019-05-03T10:01:17.000Z</published>
     <updated>2020-03-05T09:50:23.955Z</updated>
     
@@ -277,17 +277,17 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Django" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Django/"/>
+      <category term="Django" scheme="https://github.com/learn666-gif/tags/Django/"/>
     
   </entry>
   
   <entry>
     <title>mysql由浅入深</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/05/03/mysql%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/05/03/mysql%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/</id>
+    <link href="https://github.com/learn666-gif/2019/05/03/mysql%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/"/>
+    <id>https://github.com/learn666-gif/2019/05/03/mysql%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/</id>
     <published>2019-05-03T09:11:17.000Z</published>
     <updated>2020-03-03T10:03:53.281Z</updated>
     
@@ -301,23 +301,23 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="mysql运用" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/mysql%E8%BF%90%E7%94%A8/"/>
+      <category term="mysql运用" scheme="https://github.com/learn666-gif/categories/mysql%E8%BF%90%E7%94%A8/"/>
     
     
-      <category term="mysql" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/mysql/"/>
+      <category term="mysql" scheme="https://github.com/learn666-gif/tags/mysql/"/>
     
-      <category term="锁" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E9%94%81/"/>
+      <category term="锁" scheme="https://github.com/learn666-gif/tags/%E9%94%81/"/>
     
-      <category term="事物" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E4%BA%8B%E7%89%A9/"/>
+      <category term="事物" scheme="https://github.com/learn666-gif/tags/%E4%BA%8B%E7%89%A9/"/>
     
-      <category term="索引" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E7%B4%A2%E5%BC%95/"/>
+      <category term="索引" scheme="https://github.com/learn666-gif/tags/%E7%B4%A2%E5%BC%95/"/>
     
   </entry>
   
   <entry>
     <title>自定义实现列表类</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/</id>
+    <link href="https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/"/>
+    <id>https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/</id>
     <published>2019-04-13T01:36:28.000Z</published>
     <updated>2020-03-03T11:25:29.770Z</updated>
     
@@ -331,21 +331,21 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="算法" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://github.com/learn666-gif/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://github.com/learn666-gif/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/tags/python%E7%BC%96%E7%A8%8B/"/>
     
-      <category term="列表" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E5%88%97%E8%A1%A8/"/>
+      <category term="列表" scheme="https://github.com/learn666-gif/tags/%E5%88%97%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>十大排序算法</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/04/03/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/04/03/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</id>
+    <link href="https://github.com/learn666-gif/2019/04/03/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>https://github.com/learn666-gif/2019/04/03/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</id>
     <published>2019-04-03T01:02:00.000Z</published>
     <updated>2020-03-03T01:37:00.236Z</updated>
     
@@ -358,21 +358,21 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="算法" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://github.com/learn666-gif/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="排序" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://github.com/learn666-gif/tags/%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="算法" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://github.com/learn666-gif/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/tags/python%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>spark运用</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/03/06/spark%E8%BF%90%E7%94%A8/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/03/06/spark%E8%BF%90%E7%94%A8/</id>
+    <link href="https://github.com/learn666-gif/2019/03/06/spark%E8%BF%90%E7%94%A8/"/>
+    <id>https://github.com/learn666-gif/2019/03/06/spark%E8%BF%90%E7%94%A8/</id>
     <published>2019-03-06T05:09:52.000Z</published>
     <updated>2020-03-04T06:56:32.143Z</updated>
     
@@ -393,17 +393,17 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="数据分析" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://github.com/learn666-gif/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="spark" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/spark/"/>
+      <category term="spark" scheme="https://github.com/learn666-gif/tags/spark/"/>
     
   </entry>
   
   <entry>
     <title>Django部署</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/03/04/Django%E9%83%A8%E7%BD%B2/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/03/04/Django%E9%83%A8%E7%BD%B2/</id>
+    <link href="https://github.com/learn666-gif/2019/03/04/Django%E9%83%A8%E7%BD%B2/"/>
+    <id>https://github.com/learn666-gif/2019/03/04/Django%E9%83%A8%E7%BD%B2/</id>
     <published>2019-03-04T05:21:52.000Z</published>
     <updated>2020-03-04T09:26:01.614Z</updated>
     
@@ -430,17 +430,17 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="网站部署" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/"/>
+      <category term="网站部署" scheme="https://github.com/learn666-gif/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/"/>
     
   </entry>
   
   <entry>
     <title>python入门知识</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/02/02/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/02/02/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/</id>
+    <link href="https://github.com/learn666-gif/2019/02/02/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/"/>
+    <id>https://github.com/learn666-gif/2019/02/02/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/</id>
     <published>2019-02-02T08:52:03.000Z</published>
     <updated>2020-03-02T11:28:13.020Z</updated>
     
@@ -453,17 +453,17 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="python编程" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/python%E7%BC%96%E7%A8%8B/"/>
+      <category term="python编程" scheme="https://github.com/learn666-gif/categories/python%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="python入门知识汇总" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
+      <category term="python入门知识汇总" scheme="https://github.com/learn666-gif/tags/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/"/>
     
   </entry>
   
   <entry>
     <title>Linux</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/01/03/Linux/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/01/03/Linux/</id>
+    <link href="https://github.com/learn666-gif/2019/01/03/Linux/"/>
+    <id>https://github.com/learn666-gif/2019/01/03/Linux/</id>
     <published>2019-01-03T08:19:00.000Z</published>
     <updated>2020-03-03T08:36:10.199Z</updated>
     
@@ -477,21 +477,21 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="Linux" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/Linux/"/>
+      <category term="Linux" scheme="https://github.com/learn666-gif/categories/Linux/"/>
     
     
-      <category term="Linux入门" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Linux%E5%85%A5%E9%97%A8/"/>
+      <category term="Linux入门" scheme="https://github.com/learn666-gif/tags/Linux%E5%85%A5%E9%97%A8/"/>
     
-      <category term="ssh" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/ssh/"/>
+      <category term="ssh" scheme="https://github.com/learn666-gif/tags/ssh/"/>
     
-      <category term="vim" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/vim/"/>
+      <category term="vim" scheme="https://github.com/learn666-gif/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>Git运用</title>
-    <link href="https://gitee.com/learn666-git/learn666-git.git/2019/01/03/Git%E8%BF%90%E7%94%A8/"/>
-    <id>https://gitee.com/learn666-git/learn666-git.git/2019/01/03/Git%E8%BF%90%E7%94%A8/</id>
+    <link href="https://github.com/learn666-gif/2019/01/03/Git%E8%BF%90%E7%94%A8/"/>
+    <id>https://github.com/learn666-gif/2019/01/03/Git%E8%BF%90%E7%94%A8/</id>
     <published>2019-01-03T03:23:46.000Z</published>
     <updated>2020-03-03T03:38:32.751Z</updated>
     
@@ -505,12 +505,12 @@ javascript：负责讲解网页内容对事件该做出什么样的反应&lt;/co
     </summary>
     
     
-      <category term="Git运用" scheme="https://gitee.com/learn666-git/learn666-git.git/categories/Git%E8%BF%90%E7%94%A8/"/>
+      <category term="Git运用" scheme="https://github.com/learn666-gif/categories/Git%E8%BF%90%E7%94%A8/"/>
     
     
-      <category term="Git" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/Git/"/>
+      <category term="Git" scheme="https://github.com/learn666-gif/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://gitee.com/learn666-git/learn666-git.git/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://github.com/learn666-gif/tags/GitHub/"/>
     
   </entry>
   
