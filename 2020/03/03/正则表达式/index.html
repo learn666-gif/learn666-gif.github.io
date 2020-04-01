@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3k
+                  2.9k
                 </span>
               
 
@@ -447,7 +447,7 @@
 <a id="more"></a>
 
 <h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="noopener">正则表达式运用</a></p>
-<h2 id="基础函数运用"><a href="#基础函数运用" class="headerlink" title="基础函数运用"></a>基础函数运用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#pattern类工厂方法</span><br><span class="line"></span><br><span class="line">import re</span><br><span class="line">pattern &#x3D; re.compile(r&#39;\d+&#39;) #将正则表达编译成pattern对象</span><br><span class="line">print(pattern.split(&#39;one1two2three&#39;)) </span><br><span class="line">#以此分隔并返回分开后的形式</span><br><span class="line">print(pattern.match(&#39;0one1two2three&#39;))  </span><br><span class="line">#返回一个对象</span><br><span class="line">print(pattern.findall(&#39;one111two211three&#39;)) </span><br><span class="line">#返回所有能匹配的对象</span><br><span class="line">print(pattern.finditer(&#39;one1two2three&#39;))   </span><br><span class="line">#返回为迭代器</span><br><span class="line">pattern1 &#x3D; re.compile(r&#39;(\d\w+) (\d\w+)&#39;)  </span><br><span class="line">#相互交换位置</span><br><span class="line">print(pattern1.sub(r&#39;\2 \1&#39;,&#39;1one 2two&#39;))</span><br></pre></td></tr></table></figure>
+<h2 id="基础函数运用"><a href="#基础函数运用" class="headerlink" title="基础函数运用"></a>基础函数运用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pattern类工厂方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">pattern = re.compile(<span class="string">r'\d+'</span>) <span class="comment">#将正则表达编译成pattern对象</span></span><br><span class="line">print(pattern.split(<span class="string">'one1two2three'</span>)) </span><br><span class="line"><span class="comment">#以此分隔并返回分开后的形式</span></span><br><span class="line">print(pattern.match(<span class="string">'0one1two2three'</span>))  </span><br><span class="line"><span class="comment">#返回一个对象</span></span><br><span class="line">print(pattern.findall(<span class="string">'one111two211three'</span>)) </span><br><span class="line"><span class="comment">#返回所有能匹配的对象</span></span><br><span class="line">print(pattern.finditer(<span class="string">'one1two2three'</span>))   </span><br><span class="line"><span class="comment">#返回为迭代器</span></span><br><span class="line">pattern1 = re.compile(<span class="string">r'(\d\w+) (\d\w+)'</span>)  </span><br><span class="line"><span class="comment">#相互交换位置</span></span><br><span class="line">print(pattern1.sub(<span class="string">r'\2 \1'</span>,<span class="string">'1one 2two'</span>))</span><br></pre></td></tr></table></figure>
 
 <h2 id="re-compile-strPattern-flag"><a href="#re-compile-strPattern-flag" class="headerlink" title="re.compile(strPattern[, flag])"></a>re.compile(strPattern[, flag])</h2><ul>
 <li><p>这个方法是Pattern类的工厂方法，用于将字符串形式的正则表达式编译为Pattern对象。 </p>
@@ -1098,7 +1098,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共100.7k字</span>
+  <span class="post-count">博客全站共98.6k字</span>
 </div>
 
         

@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  8.5k
+                  8.4k
                 </span>
               
 
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  34
+                  33
                 </span>
               
             </div>
@@ -456,7 +456,7 @@
 
 <h2 id="虚拟环境安装"><a href="#虚拟环境安装" class="headerlink" title="虚拟环境安装"></a>虚拟环境安装</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
 <li><p>安装python虚拟环境</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br><span class="line">$ pip install virtualenvwrapper</span><br><span class="line">	</span><br><span class="line">$ pip install virtualenvwrapper-win (windows系列)</span><br><span class="line">	</span><br><span class="line">$ export WORKON_HOME&#x3D;~&#x2F;Envs</span><br><span class="line">$ mkdir -p $WORKON_HOME</span><br><span class="line">$ source &#x2F;usr&#x2F;local&#x2F;bin&#x2F;virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install virtualenv</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install virtualenvwrapper</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install virtualenvwrapper-win (windows系列)</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> WORKON_HOME=~/Envs</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir -p <span class="variable">$WORKON_HOME</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>虚拟环境位置文档位置</p>
@@ -470,7 +470,7 @@
 </ul>
 </li>
 <li><p>新建一个虚拟环境 激活虚拟环境 并且安装django 查看安装的django版本</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">virtualenv ruimi_django -p python3.6</span><br><span class="line">source ruimi_django&#x2F;bin&#x2F;activate</span><br><span class="line">pip install django&#x3D;&#x3D;1.11</span><br><span class="line">python -m django --version</span><br></pre></td></tr></table></figure>
+  <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">virtualenv</span> <span class="string">ruimi_django -p python3.6</span></span><br><span class="line"><span class="attr">source</span> <span class="string">ruimi_django/bin/activate</span></span><br><span class="line"><span class="attr">pip</span> <span class="string">install django==1.11</span></span><br><span class="line"><span class="attr">python</span> <span class="string">-m django --version</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>pycharm安装django环境</p>
 <ol>
@@ -488,7 +488,7 @@
 <li><p>使用命令行创建django 效果等同于pycharm 其实pycharm的原理就是去帮你执行这些命令而已</p>
 </li>
 <li><p>我们需要先切换到有django的虚拟环境才行</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin startproject test</span><br></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> django-admin startproject <span class="built_in">test</span></span></span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -497,7 +497,7 @@
 </ul>
 <h3 id="通过django创建第一个app"><a href="#通过django创建第一个app" class="headerlink" title="通过django创建第一个app"></a>通过django创建第一个app</h3><ul>
 <li><p>通过django 创建第一个app</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startapp movies</span><br></pre></td></tr></table></figure>
+  <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">django-admin startapp movies</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>有两个djano_mvc_ppt 第一个是总目录 第二个djano_mvc_ppt是项目的配置目录 settings urls 路由就在里面。他是定义整个项目的配置路由等。</p>
@@ -515,7 +515,7 @@
 <li><p>manage.py是我们django项目目录下面的manage.py</p>
 </li>
 <li><p>runserver是启动django 后台服务的命令 后面跟上ip和端口即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8000</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">manage</span><span class="selector-class">.py</span> <span class="selector-tag">runserver</span> 0<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-pseudo">:8000</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -676,7 +676,7 @@ HttpResponseForbidden
 <blockquote>
 <p>movies/views.py</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">def test2(request):</span><br><span class="line">	 return render(request,&#39;movies&#x2F;index.html&#39;)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">(request)</span></span><span class="symbol">:</span></span><br><span class="line">	 <span class="keyword">return</span> render(request,<span class="string">'movies/index.html'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看一下render的源码,我们发现 其实就是我们刚才的原始函数,不过他帮我们做了一层封装</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">render</span><span class="params">(request, template_name, context=None, </span></span></span><br><span class="line"><span class="function"><span class="params">	content_type=None, status=None, using=None)</span>:</span></span><br><span class="line">	<span class="string">"""</span></span><br><span class="line"><span class="string">	Returns a HttpResponse whose content is filled with the </span></span><br><span class="line"><span class="string">		result of calling</span></span><br><span class="line"><span class="string">	django.template.loader.render_to_string() with the passed </span></span><br><span class="line"><span class="string">		arguments.</span></span><br><span class="line"><span class="string">	"""</span></span><br><span class="line">	content = loader.render_to_string(template_name, context, </span><br><span class="line">		request, using=using)</span><br><span class="line">	<span class="keyword">return</span> HttpResponse(content, content_type, status)</span><br></pre></td></tr></table></figure>
@@ -888,7 +888,7 @@ HttpResponseForbidden
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">  		<span class="string">'default'</span>: &#123;</span><br><span class="line">   		   <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">    		  <span class="string">'OPTIONS'</span>: &#123;</span><br><span class="line">    		      <span class="string">'read_default_file'</span>: os.path.join(base_dir,‘django_s’,’my.cnf’),</span><br><span class="line">    		  &#125;,</span><br><span class="line"> 		 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装pymysql : </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install pymsql </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; pycharm&#x2F;preferences&#x2F;project.django_s&#x2F;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install pymsql </span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> pycharm<span class="regexp">/preferences/</span>project.django_s<span class="regexp">/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Django使用mysql：settings同级的<strong>init</strong>中增加代码：</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>).__init__中代码：</span><br><span class="line">	<span class="keyword">import</span> pymysql			</span><br><span class="line">	pymysql.version_info(<span class="number">2</span>,<span class="number">0</span>,<span class="number">0</span>)        </span><br><span class="line">	&lt;—版本报错问题解决 无可不修改</span><br><span class="line">	pymysql.install_as_MySQLdb()</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>).在external library//site-packages/django/db/backends/</span><br><span class="line">mysql/operations</span><br><span class="line"></span><br><span class="line">中将与下面<span class="number">5</span> <span class="number">1</span>对应修改<span class="number">146</span>行  </span><br><span class="line">可以先运行会自定跳到该错误这里修改即可</span><br><span class="line"></span><br><span class="line">last_executed_query中query.decode改成encode</span><br></pre></td></tr></table></figure>
@@ -947,7 +947,7 @@ HttpResponseForbidden
 <li><p>添加数据库到admin</p>
 <ul>
 <li><p>admin文件中添加代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> 导入models中创建的数据库类名：</span><br><span class="line"> from app1.models import Article</span><br><span class="line">添加到admin中：</span><br><span class="line">@admin.register(Article)</span><br><span class="line">class ArticleAdmin(admin.ModelAdmin):</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> 导入models中创建的数据库类名：</span><br><span class="line"> <span class="keyword">from</span> app1.models <span class="keyword">import</span> Article</span><br><span class="line">添加到admin中：</span><br><span class="line"><span class="meta">@admin.register(Article)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticleAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>浏览器中进入admin即有自己创建的数据库，可以进行相关插入等操作</p>
 </li>
@@ -1037,7 +1037,7 @@ HttpResponseForbidden
 <blockquote>
 <p>(4)html:</p>
 </blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">装载：&#123;% load movie_extras %&#125; </span><br><span class="line"></span><br><span class="line">替换所有img:&#123;% static  movie.img.url %&#125;    </span><br><span class="line">		\&#123; % static  &#39;(images&#x2F;.*\.jpg)&#39; %\&#125;</span><br><span class="line">		</span><br><span class="line">替换成： &#123;&#123; MEDIA_URL &#125;&#125;images&#x2F;m15.jpg     </span><br><span class="line">		\&#123; MEDIA_URL &#125;&#125;$1以及：&#123;&#123; movie.img.url &#125;&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">装载：</span><span class="template-tag">&#123;% <span class="name"><span class="name">load</span></span> movie_extras %&#125;</span><span class="xml"> </span></span><br><span class="line"></span><br><span class="line"><span class="xml">替换所有img:</span><span class="template-tag">&#123;% <span class="name"><span class="name">static</span></span>  movie.img.url %&#125;</span><span class="xml">    </span></span><br><span class="line"><span class="xml">		\&#123; % static  '(images/.*\.jpg)' %\&#125;</span></span><br><span class="line"><span class="xml">		</span></span><br><span class="line"><span class="xml">替换成： </span><span class="template-variable">&#123;&#123; MEDIA_URL &#125;&#125;</span><span class="xml">images/m15.jpg     </span></span><br><span class="line"><span class="xml">		\&#123; MEDIA_URL &#125;&#125;$1以及：</span><span class="template-variable">&#123;&#123; movie.img.url &#125;&#125;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>(5)models：</p>
@@ -1092,7 +1092,7 @@ HttpResponseForbidden
 <li><p>部署：将本地代码放到云服务器以便所有人都可以访问</p>
 </li>
 </ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.服务器</span><br><span class="line">2.登陆部署电脑：ssh rimi@10.2.0.26</span><br><span class="line">3.本地上传代码到 git 再在部署电脑上拷贝下来</span><br><span class="line">4. 部署机：安装django, 注意版本号</span><br><span class="line">5.输出本地关于oython3的所有包版本号:pip3 freeze &gt; requirements.txt</span><br><span class="line">6.服务器:pip3 install -r requirements.txt</span><br><span class="line">7. 启动 0.0.0.0:8000 所有人都可以访问（测试用）gunicorn(上线)</span><br><span class="line">8.gunicorn:    安装   线程数量：cpu*2 +1   进程 &#x3D; 线程&#x2F;2   </span><br><span class="line">9.启动：wigs: scoket 接收http协议    需要将python的socket替换成wigs</span><br><span class="line">10.访问日志&#x2F;报错</span><br><span class="line">11.图片美化  分类搜索  活动  后台分类（分级）</span><br></pre></td></tr></table></figure></code></pre>
+<pre><code><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>服务器</span><br><span class="line"><span class="number">2.</span>登陆部署电脑：ssh <span class="symbol">rimi@</span><span class="number">10.2</span><span class="number">.0</span><span class="number">.26</span></span><br><span class="line"><span class="number">3.</span>本地上传代码到 git 再在部署电脑上拷贝下来</span><br><span class="line"><span class="number">4.</span> 部署机：安装django, 注意版本号</span><br><span class="line"><span class="number">5.</span>输出本地关于oython3的所有包版本号:pip3 freeze &gt; requirements.txt</span><br><span class="line"><span class="number">6.</span>服务器:pip3 install -r requirements.txt</span><br><span class="line"><span class="number">7.</span> 启动 <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8000</span> 所有人都可以访问（测试用）gunicorn(上线)</span><br><span class="line"><span class="number">8.</span>gunicorn:    安装   线程数量：cpu*<span class="number">2</span> +<span class="number">1</span>   进程 = 线程/<span class="number">2</span>   </span><br><span class="line"><span class="number">9.</span>启动：wigs: scoket 接收http协议    需要将python的socket替换成wigs</span><br><span class="line"><span class="number">10.</span>访问日志/报错</span><br><span class="line"><span class="number">11.</span>图片美化  分类搜索  活动  后台分类（分级）</span><br></pre></td></tr></table></figure></code></pre>
       
     </div>
     
@@ -1460,7 +1460,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共100.7k字</span>
+  <span class="post-count">博客全站共98.6k字</span>
 </div>
 
         
