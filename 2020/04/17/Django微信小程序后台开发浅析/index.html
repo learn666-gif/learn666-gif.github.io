@@ -120,8 +120,9 @@
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat04.jpg">
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat05.jpg">
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat06.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat08.jpg">
 <meta property="article:published_time" content="2020-04-17T03:55:25.000Z">
-<meta property="article:modified_time" content="2020-04-17T13:15:55.701Z">
+<meta property="article:modified_time" content="2020-04-17T14:33:49.678Z">
 <meta property="article:author" content="Jwang">
 <meta property="article:tag" content="Django">
 <meta property="article:tag" content="微信小程序">
@@ -377,8 +378,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B5%85%E6%9E%90/" itemprop="url" rel="index">
-                    <span itemprop="name">技术浅析</span>
+                  <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B5%85%E6%9E%90/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序浅析</span>
                   </a>
                 </span>
 
@@ -429,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -581,12 +582,24 @@
 <li>重启nginx服务器，访问服务器443端口即可访问其接口</li>
 </ul>
 <h3 id="配置微信小程序的服务器信息"><a href="#配置微信小程序的服务器信息" class="headerlink" title="配置微信小程序的服务器信息"></a>配置微信小程序的服务器信息</h3><ul>
-<li>需要有域名以及云服务器，进入开发–服务器配置</li>
+<li>小程序只可以跟指定的域名进行网络通信（需要填写到开发后台管理里面）</li>
+<li>小程序必须使用HTTPS发起网络请求</li>
 </ul>
 <p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat06.jpg" alt="服务器配置"></p>
 <ul>
-<li>若没有，可以在微信开发者工具中选择设置-项目设置-勾选-不校验合法域名，建立本地模拟服务器进行模拟操作</li>
+<li>若没有，可以在微信开发者工具中选择设置-项目设置-勾选-不校验合法域名，建立本地开发对接Django后台进行操作</li>
 </ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat08.jpg" alt=""></p>
+<h3 id="远端部署测试"><a href="#远端部署测试" class="headerlink" title="远端部署测试"></a>远端部署测试</h3><ul>
+<li><p>使用git远端同步代码</p>
+</li>
+<li><p>管理依赖环境</p>
+</li>
+</ul>
+<blockquote>
+<p>requirements.txt</p>
+<p>pip install -r requirements.txt</p>
+</blockquote>
 
       
     </div>
@@ -617,7 +630,7 @@
   <p><span>本文标题:</span><a href="/2020/04/17/Django%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%E6%B5%85%E6%9E%90/">浅谈Django微信小程序后台开发</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
   <p><span>发布时间:</span>2020年04月17日 - 11:04</p>
-  <p><span>最后更新:</span>2020年04月17日 - 21:04</p>
+  <p><span>最后更新:</span>2020年04月17日 - 22:04</p>
   <p><span>原始链接:</span><a href="/2020/04/17/Django%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%E6%B5%85%E6%9E%90/" title="浅谈Django微信小程序后台开发">https://github.com/learn666-gif/2020/04/17/Django%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%E6%B5%85%E6%9E%90/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2020/04/17/Django%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91%E6%B5%85%E6%9E%90/"  aria-label="复制成功！"></i></span>
   </p>
@@ -666,8 +679,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/06/JAVA%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" rel="next" title="JAVA编程基础">
-                <i class="fa fa-chevron-left"></i> JAVA编程基础
+              <a href="/2020/03/17/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D/" rel="next" title="微信小程序开发--配置浅析">
+                <i class="fa fa-chevron-left"></i> 微信小程序开发--配置浅析
               </a>
             
           </div>
@@ -786,7 +799,7 @@ var jiathis_config={
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -900,7 +913,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django微信小程序后台开发浅析"><span class="nav-number">1.</span> <span class="nav-text">Django微信小程序后台开发浅析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请小程序，创建hello-world小程序"><span class="nav-number">2.</span> <span class="nav-text">申请小程序，创建hello world小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在微信开发平台http-mp-weixin-qq-com申请小程序并获取APP-id"><span class="nav-number">2.1.</span> <span class="nav-text">在微信开发平台http:&#x2F;&#x2F;mp.weixin.qq.com申请小程序并获取APP id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载微信开发者工具"><span class="nav-number">2.2.</span> <span class="nav-text">下载微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加交互框和按钮"><span class="nav-number">3.</span> <span class="nav-text">添加交互框和按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置（这里采用本地ip-后期部署再修改）"><span class="nav-number">4.</span> <span class="nav-text">服务器配置（这里采用本地ip,后期部署再修改）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现计算机接口"><span class="nav-number">4.1.</span> <span class="nav-text">实现计算机接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置服务器将后端与微信小程序连接"><span class="nav-number">5.</span> <span class="nav-text">配置服务器将后端与微信小程序连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#uwsgi配置"><span class="nav-number">5.1.</span> <span class="nav-text">uwsgi配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http协议（80端口）"><span class="nav-number">5.2.</span> <span class="nav-text">http协议（80端口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https协议（443端口）下nginx配置"><span class="nav-number">5.3.</span> <span class="nav-text">https协议（443端口）下nginx配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置微信小程序的服务器信息"><span class="nav-number">5.4.</span> <span class="nav-text">配置微信小程序的服务器信息</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django微信小程序后台开发浅析"><span class="nav-number">1.</span> <span class="nav-text">Django微信小程序后台开发浅析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请小程序，创建hello-world小程序"><span class="nav-number">2.</span> <span class="nav-text">申请小程序，创建hello world小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在微信开发平台http-mp-weixin-qq-com申请小程序并获取APP-id"><span class="nav-number">2.1.</span> <span class="nav-text">在微信开发平台http:&#x2F;&#x2F;mp.weixin.qq.com申请小程序并获取APP id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载微信开发者工具"><span class="nav-number">2.2.</span> <span class="nav-text">下载微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加交互框和按钮"><span class="nav-number">3.</span> <span class="nav-text">添加交互框和按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置（这里采用本地ip-后期部署再修改）"><span class="nav-number">4.</span> <span class="nav-text">服务器配置（这里采用本地ip,后期部署再修改）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现计算机接口"><span class="nav-number">4.1.</span> <span class="nav-text">实现计算机接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置服务器将后端与微信小程序连接"><span class="nav-number">5.</span> <span class="nav-text">配置服务器将后端与微信小程序连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#uwsgi配置"><span class="nav-number">5.1.</span> <span class="nav-text">uwsgi配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http协议（80端口）"><span class="nav-number">5.2.</span> <span class="nav-text">http协议（80端口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https协议（443端口）下nginx配置"><span class="nav-number">5.3.</span> <span class="nav-text">https协议（443端口）下nginx配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置微信小程序的服务器信息"><span class="nav-number">5.4.</span> <span class="nav-text">配置微信小程序的服务器信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远端部署测试"><span class="nav-number">5.5.</span> <span class="nav-text">远端部署测试</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -953,7 +966,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共99.8k字</span>
+  <span class="post-count">博客全站共102.1k字</span>
 </div>
 
         
