@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="jwangcloud">
 <meta property="og:description" content="pandas 数据结构Pandas处理以下三个数据结构 （数据结构构建在Numpy数组）  系列(Series) 数据帧(DataFrame) 面板(Panel)  维数和描述 DataFrame是Series的容器，Panel是DataFrame的容器。较高维数据结构是其较低维数据结构的容器     数据结构 维数 描述    系列 1 1D标记均匀数组，大小不变。   数据帧 2 一般2D标记">
 <meta property="article:published_time" content="2020-01-21T10:13:03.000Z">
-<meta property="article:modified_time" content="2020-04-21T11:29:49.125Z">
+<meta property="article:modified_time" content="2020-04-22T07:10:22.157Z">
 <meta property="article:author" content="Jwang">
 <meta property="article:tag" content="数据处理">
 <meta property="article:tag" content="pandas">
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  5.2k
                 </span>
               
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  22
                 </span>
               
             </div>
@@ -495,11 +495,12 @@
 <p>面板是具有异构数据的三维数据结构。在图形表示中很难表示面板。但是一个面板可以说明为DataFrame的容器</p>
 </blockquote>
 <h3 id="快速使用"><a href="#快速使用" class="headerlink" title="快速使用"></a>快速使用</h3><ul>
-<li><p>python导入相关包</p>
+<li>python导入相关包</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象创建</p>
-</li>
+
+<ul>
+<li>对象创建</li>
 </ul>
 <blockquote>
 <p>传递值列表创建系列，（默认创建一个整数索引）</p>
@@ -515,78 +516,62 @@
 <li>通过传递可以转换为类似系列的对象的字典来创建DataFrame</li>
 <li>使用IPython，则会自动启用列名(以及公共属性)的选项完成</li>
 </ul>
-<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="查看数据–"><a href="#查看数据–" class="headerlink" title="查看数据–[]"></a>查看数据–[]</h3><ul>
-<li>查看DataFrame的顶部和底部的数据行</li>
+<h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><h3 id="查看数据–"><a href="#查看数据–" class="headerlink" title="查看数据–[]"></a>查看数据–<code>[]</code></h3><ul>
+<li><p>查看DataFrame的顶部和底部的数据行</p>
+<pre><code>df.head()：查看顶部数据行, 默认为5
+df.tail(3)：查看底部的数据行</code></pre></li>
+<li><p>显示索引，列和底层numpy数据</p>
+<pre><code>df.index：索引
+df.columns：列名
+df.values：底层numpy数据</code></pre></li>
+<li><p>描述显示数据的快速统计摘要</p>
+<pre><code>df.describe()：快速统计摘要</code></pre></li>
+<li><p>翻转数据，行列交换</p>
+<pre><code>df.T</code></pre></li>
+<li><p>通过轴排序</p>
+<pre><code>df.sort_index(axis=1, ascending=False)</code></pre></li>
+<li><p>按值排序</p>
+<pre><code>df.sort_values(by=&apos;列名&apos;)</code></pre></li>
 </ul>
-<blockquote>
-<p>df.head()：查看顶部数据行, 默认为5</p>
-<p>df.tail(3)：查看底部的数据行</p>
-</blockquote>
-<ul>
-<li>显示索引，列和底层numpy数据</li>
-</ul>
-<blockquote>
-<p>df.index：索引</p>
-<p>df.columns：列名</p>
-<p>df.values：底层numpy数据</p>
-</blockquote>
-<ul>
-<li>描述显示数据的快速统计摘要</li>
-</ul>
-<blockquote>
-<p>df.describe()：快速统计摘要</p>
-</blockquote>
-<ul>
-<li>翻转数据，行列交换</li>
-</ul>
-<blockquote>
-<p>df.T</p>
-</blockquote>
-<ul>
-<li>通过轴排序</li>
-</ul>
-<blockquote>
-<p>df.sort_index(axis=1, ascending=False)</p>
-</blockquote>
-<ul>
-<li>按值排序</li>
-</ul>
-<blockquote>
-<p>df.sort_values(by=’列名’)</p>
-</blockquote>
 <h3 id="选择区块–loc"><a href="#选择区块–loc" class="headerlink" title="选择区块–loc"></a>选择区块–loc</h3><ul>
-<li><p>选择区块应少用，可以用优化的Pandas数据访问方法.at，.iat，.loc，.iloc和.ix。</p>
+<li><p>选择区块应少用，可以用优化的Pandas数据访问方法<code>.at</code>，<code>.iat</code>，<code>.loc</code>，<code>.iloc</code>和<code>.ix</code>。</p>
 </li>
 <li><p>获取</p>
-</li>
-</ul>
-<blockquote>
-<p>选择一列，产生一个系列，相当于<code>df.A</code>—&gt;<code>df[&#39;A&#39;]</code></p>
-<p>选择通过[]操作符，选择切片行 —&gt;<code>df[0:3]</code> 或者<code>df[&#39;20170102&#39;:&#39;20170103&#39;]</code></p>
-</blockquote>
-<ul>
-<li>按标签选择</li>
-</ul>
-<blockquote>
-<p>使用标签获取横截面 <code>df.loc[&#39;行名&#39;]</code></p>
-</blockquote>
-<blockquote>
-<p>通过标签选择多轴 <code>df.loc[:, [&#39;列名1&#39;, &#39;列名2&#39;]]</code></p>
-<p>显示标签切片，包括两个端点 <code>df.loc[&#39;行1&#39;:&#39;行2&#39;,[&#39;列1&#39;,&#39;列2&#39;]]</code></p>
-<p>减少返回对象的尺寸(大小) <code>df.loc[&#39;行1&#39;,[&#39;列1&#39;,&#39;列2&#39;]]</code></p>
-</blockquote>
-<h3 id="通过位置选择–iloc"><a href="#通过位置选择–iloc" class="headerlink" title="通过位置选择–iloc"></a>通过位置选择–iloc</h3><ul>
-<li>通过传递的整数的位置选择 <code>df.iloc[确切行数]</code></li>
-<li>通过整数切片，类似于numpy/python <code>df.iloc[1:3, 3:4]</code></li>
-<li>通过整数位置的列表 <code>df.iloc[[1,2,4],[0,2]]</code></li>
-<li>明确切片行/列. <code>df.iloc[1:3, :]</code></li>
-<li>明确获取值 <code>df.iloc[1,1]</code></li>
-<li>快速访问标量(等同于先前的方法) <code>df.iat[1,1]</code></li>
-</ul>
-<h3 id="布尔索引"><a href="#布尔索引" class="headerlink" title="布尔索引"></a>布尔索引</h3><ul>
-<li>使用单列的值来选择数据 <code>df[df.列名 &gt; 0]</code></li>
-<li>满足布尔条件的DataFrame中选择值 <code>df[df &gt; 0]</code></li>
-<li>使用isin()方法进行过滤 <code>df2[df2[&#39;E&#39;].isin([&#39;two&#39;,&#39;four&#39;])]</code></li>
+<pre><code>选择一列，产生一个系列，相当于
+df.A: df[&apos;A&apos;]
+选择通过[]操作符，选择切片行
+df[0:3]
+或者
+df[&apos;20170102&apos;:&apos;20170103&apos;]</code></pre></li>
+<li><p>按标签选择</p>
+<pre><code>使用标签获取横截面 
+df.loc[&apos;行名&apos;]
+通过标签选择多轴 
+df.loc[:, [&apos;列名1&apos;, &apos;列名2&apos;]]
+显示标签切片，包括两个端点 
+df.loc[&apos;行1&apos;:&apos;行2&apos;,[&apos;列1&apos;,&apos;列2&apos;]]
+减少返回对象的尺寸(大小) 
+df.loc[&apos;行1&apos;,[&apos;列1&apos;,&apos;列2&apos;]]</code></pre></li>
+<li><p>通过位置选择–iloc</p>
+<pre><code>通过传递的整数的位置选择 
+df.iloc[确切行数]
+通过整数切片，类似于numpy/python 
+df.iloc[1:3, 3:4]
+通过整数位置的列表 
+df.iloc[[1,2,4],[0,2]]
+明确切片行/列. 
+df.iloc[1:3, :]
+明确获取值 
+df.iloc[1,1]
+快速访问标量(等同于先前的方法) 
+df.iat[1,1]</code></pre></li>
+<li><p>布尔索引</p>
+<pre><code>使用单列的值来选择数据 
+df[df.列名 &gt; 0]
+满足布尔条件的DataFrame中选择值 
+df[df &gt; 0]
+使用isin()方法进行过滤 
+df2[df2[&apos;E&apos;].isin([&apos;two&apos;,&apos;four&apos;])]</code></pre></li>
 </ul>
 <h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><ul>
 <li>系列(Series)是能够保存任何类型的数据(整数，字符串，浮点数，Python对象等)的一维标记数组。轴标签统称为索引。</li>
@@ -644,9 +629,8 @@
 <ul>
 <li>如果数据是标量值，则必须提供索引。将重复该值以匹配索引的长度</li>
 </ul>
-<blockquote>
-<p>s = pd.Series(5, index=[0, 1, 2, 3])</p>
-</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(<span class="number">5</span>, index=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
 <h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><ul>
 <li><p>从具有位置的系列中访问数据</p>
 <blockquote>
@@ -654,10 +638,485 @@
 </blockquote>
 </li>
 <li><p>使用标签检索数据(索引) –字典访问方式 <code>s[&#39;a&#39;, &#39;b&#39;]</code></p>
+<pre><code>注意：若不包含该标签，会出现异常</code></pre></li>
+</ul>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
+<li><p>数据帧(DataFrame)是二维数据结构，即数据以行和列的表格方式排列。<br>数据帧(DataFrame)的功能特点：</p>
+<blockquote>
+<p>潜在的列是不同的类型</p>
+<p>大小可变</p>
+<p>标记轴(行和列)</p>
+<p>可以对行和列执行算术运算</p>
+</blockquote>
 </li>
 </ul>
-<p>注意：若不包含该标签，会出现异常</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
+<li>创建：<code>pandas.DataFrame( data, index, columns, dtype, copy)</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="center">参数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">data</td>
+<td align="center">数据采取各种形式，如:ndarray，series，map，lists，dict，constant和另一个DataFrame。</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">index</td>
+<td align="center">对于行标签，要用于结果帧的索引是可选缺省值np.arrange(n)，如果没有传递索引值。</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">columns</td>
+<td align="center">对于列标签，可选的默认语法是 - np.arange(n)。 这只有在没有索引传递的情况下才是这样。</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">dtype</td>
+<td align="center">每列的数据类型。</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">copy</td>
+<td align="center">如果默认值为False，则此命令(或任何它)用于复制数据。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>输入数据格式: 列表 、字典、 系列、Numpy ndarrays、另一个数据帧(DataFrame)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">#1.创建一个空的DataFrame</span><br><span class="line"></span><br><span class="line">#import the pandas library and aliasing as pd</span><br><span class="line">import pandas as pd</span><br><span class="line">df &#x3D; pd.DataFrame()</span><br><span class="line">print df</span><br><span class="line"></span><br><span class="line">#2.从列表创建DataFrame</span><br><span class="line"></span><br><span class="line">使用单个列表或列表列表创建数据帧(DataFrame)</span><br><span class="line">data &#x3D; [1,2,3,4,5]</span><br><span class="line">df &#x3D; pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line">data &#x3D; [[&#39;Alex&#39;,10],[&#39;Bob&#39;,12],[&#39;Clarke&#39;,13]]</span><br><span class="line">df &#x3D; pd.DataFrame(data,columns&#x3D;[&#39;Name&#39;,&#39;Age&#39;])</span><br><span class="line"></span><br><span class="line">data &#x3D; [[&#39;Alex&#39;,10],[&#39;Bob&#39;,12],[&#39;Clarke&#39;,13]]</span><br><span class="line">df &#x3D; pd.DataFrame(data,columns&#x3D;[&#39;Name&#39;,&#39;Age&#39;],dtype&#x3D;float) </span><br><span class="line"># dtype参数将Age列的类型更改为浮点。 </span><br><span class="line"></span><br><span class="line">#3.ndarrays&#x2F;Lists的字典来创建DataFrame</span><br><span class="line">#所有的ndarrays必须具有相同的长度。如果传递了索引(index)，</span><br><span class="line">则索引的长度应等于数组的长度。</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;&#39;Name&#39;:[&#39;Tom&#39;, &#39;Jack&#39;, &#39;Steve&#39;, &#39;Ricky&#39;],&#39;Age&#39;:[28,34,29,42]&#125;</span><br><span class="line">df &#x3D; pd.DataFrame(data)</span><br><span class="line">#会默认添加一列索引</span><br><span class="line"></span><br><span class="line">#数组创建一个索引的数据帧(DataFrame)</span><br><span class="line">data &#x3D; &#123;&#39;Name&#39;:[&#39;Tom&#39;, &#39;Jack&#39;, &#39;Steve&#39;, &#39;Ricky&#39;],&#39;Age&#39;:[28,34,29,42]&#125;</span><br><span class="line">df &#x3D; pd.DataFrame(data, index&#x3D;[&#39;rank1&#39;,&#39;rank2&#39;,&#39;rank3&#39;,&#39;rank4&#39;])</span><br><span class="line"></span><br><span class="line">#4.列表创建数据帧DataFrame</span><br><span class="line"></span><br><span class="line">#字典列表可作为输入数据传递以用来创建数据帧(DataFrame)，字典键默认为列名</span><br><span class="line">data &#x3D; [&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;,&#123;&#39;a&#39;: 5, &#39;b&#39;: 10, &#39;c&#39;: 20&#125;]</span><br><span class="line">df &#x3D; pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line">#传递字典列表和行索引来创建数据帧(DataFrame)</span><br><span class="line">data &#x3D; [&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;,&#123;&#39;a&#39;: 5, &#39;b&#39;: 10, &#39;c&#39;: 20&#125;]</span><br><span class="line">df &#x3D; pd.DataFrame(data, index&#x3D;[&#39;first&#39;, &#39;second&#39;])</span><br><span class="line"></span><br><span class="line">#使用字典，行索引和列索引列表创建数据帧(DataFrame)</span><br><span class="line">data &#x3D; [&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;,&#123;&#39;a&#39;: 5, &#39;b&#39;: 10, &#39;c&#39;: 20&#125;]</span><br><span class="line"></span><br><span class="line">#With two column indices, values same as dictionary keys</span><br><span class="line">df1 &#x3D; pd.DataFrame(data, index&#x3D;[&#39;first&#39;, &#39;second&#39;], columns&#x3D;[&#39;a&#39;, &#39;b&#39;])</span><br><span class="line"></span><br><span class="line">#With two column indices with one index with other name</span><br><span class="line">df2 &#x3D; pd.DataFrame(data, index&#x3D;[&#39;first&#39;, &#39;second&#39;], columns&#x3D;[&#39;a&#39;, &#39;b1&#39;])</span><br><span class="line"># 若不存在的列表名出现，会直接在数据中添加NaN</span><br><span class="line"></span><br><span class="line">#5.系列的字典来创建DataFrame</span><br><span class="line">d &#x3D; &#123;&#39;one&#39; : pd.Series([1, 2, 3], index&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]),</span><br><span class="line">      &#39;two&#39; : pd.Series([1, 2, 3, 4], index&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])&#125;</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(d)</span><br></pre></td></tr></table></figure>
+<h3 id="列操作"><a href="#列操作" class="headerlink" title="列操作"></a>列操作</h3><ul>
+<li><p>从数据帧(DataFrame)中选择一列</p>
+<pre><code>df [&apos;列名&apos;]</code></pre></li>
+<li><p>向现有数据添加一个新列</p>
+<pre><code>df[&apos;three&apos;]=pd.Series([10,20,30],index=[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;])
+# 添加列名为three，索引为a,b,c，值为10,20,30的一列数据
+df[&apos;four&apos;]=df[&apos;one&apos;]+df[&apos;three&apos;]
+#添加列名为four，其数据为one和three列的值相加</code></pre></li>
+<li><p>列可以删除或弹出</p>
+<pre><code>del df[&apos;one&apos;]
+# 删除表中one列
+df.pop(&apos;two&apos;)
+# 删除two列</code></pre></li>
+</ul>
+<h3 id="行操作"><a href="#行操作" class="headerlink" title="行操作"></a>行操作</h3><ul>
+<li>行选择</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#1.标签选择</span><br><span class="line">#将行标签传递给loc()函数来选择行</span><br><span class="line">df.loc[&#39;b&#39;]</span><br><span class="line">#结果是一系列标签作为DataFrame的列名称。 而且，系列的名称是检索的标签。</span><br><span class="line"></span><br><span class="line">#通过将整数位置传递给iloc()函数来选择行</span><br><span class="line">df.iloc[2]</span><br><span class="line">#选择第3行的所有数据，并以标签为列名称</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>行切片：<code>df[2:4]</code></li>
+<li>附加行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; pd.DataFrame([[1, 2], [3, 4]], columns &#x3D; [&#39;a&#39;,&#39;b&#39;])</span><br><span class="line">df2 &#x3D; pd.DataFrame([[5, 6], [7, 8]], columns &#x3D; [&#39;a&#39;,&#39;b&#39;])</span><br><span class="line"></span><br><span class="line">df &#x3D; df.append(df2)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#使用索引标签从DataFrame中删除或删除行。 如果标签重复，则会删除多行</span><br><span class="line">df &#x3D; pd.DataFrame([[1, 2], [3, 4]], columns &#x3D; [&#39;a&#39;,&#39;b&#39;])</span><br><span class="line">df2 &#x3D; pd.DataFrame([[5, 6], [7, 8]], columns &#x3D; [&#39;a&#39;,&#39;b&#39;])</span><br><span class="line"></span><br><span class="line">df &#x3D; df.append(df2)</span><br><span class="line">df &#x3D; df.drop(0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Panel"><a href="#Panel" class="headerlink" title="Panel"></a>Panel</h2><ul>
+<li>面板(Panel)是3D容器的数据</li>
+<li>3轴(axis)这个名称旨在给出描述涉及面板数据的操作的一些语义。</li>
+</ul>
+<blockquote>
+<p>items - axis 0，每个项目对应于内部包含的数据帧(DataFrame)。</p>
+<p>major_axis - axis 1，它是每个数据帧(DataFrame)的索引(行)。</p>
+<p>minor_axis - axis 2，它是每个数据帧(DataFrame)的列。</p>
+</blockquote>
+<h3 id="构造和创建"><a href="#构造和创建" class="headerlink" title="构造和创建"></a>构造和创建</h3><ul>
+<li>构造函数：pandas.Panel(data, items, major_axis, minor_axis, dtype, copy)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">data</td>
+<td align="center">数据采取各种形式，如：ndarray，series，map，lists，dict，constant和另一个数据帧(DataFrame)</td>
+</tr>
+<tr>
+<td align="center">items</td>
+<td align="center">axis=0</td>
+</tr>
+<tr>
+<td align="center">major_axis</td>
+<td align="center">axis=1</td>
+</tr>
+<tr>
+<td align="center">minor_axis</td>
+<td align="center">axis=2</td>
+</tr>
+<tr>
+<td align="center">dtype</td>
+<td align="center">每列的数据类型</td>
+</tr>
+<tr>
+<td align="center">copy</td>
+<td align="center">复制数据，默认 - false</td>
+</tr>
+</tbody></table>
+<ul>
+<li>创建</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 1.3D ndarray创建</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">data &#x3D; np.random.rand(2,4,5)</span><br><span class="line">p &#x3D; pd.Panel(data)</span><br><span class="line"></span><br><span class="line"># 2.DataFrame对象的dict创建面板</span><br><span class="line">data &#x3D; &#123;&#39;Item1&#39; : pd.DataFrame(np.random.randn(4, 3)), </span><br><span class="line">        &#39;Item2&#39; : pd.DataFrame(np.random.randn(4, 2))&#125;</span><br><span class="line">p &#x3D; pd.Panel(data)</span><br><span class="line"></span><br><span class="line"># 3.创建一个空面板</span><br><span class="line">p &#x3D; pd.Panel()</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择数据"><a href="#选择数据" class="headerlink" title="选择数据"></a>选择数据</h3><ul>
+<li>使用Items <code>p[&#39;Item1&#39;]</code></li>
+<li>使用major_axis <code>p.major_xs(1)</code></li>
+<li>minor_axis <code>p.minor_xs(1)</code></li>
+</ul>
+<h2 id="三种数据结构运用"><a href="#三种数据结构运用" class="headerlink" title="三种数据结构运用"></a>三种数据结构运用</h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
+<li>series</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="center">参数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">axes</td>
+<td align="center">返回行轴标签列表。</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">dtype</td>
+<td align="center">返回对象的数据类型(dtype)。</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">empty</td>
+<td align="center">如果系列为空，则返回True。</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">ndim</td>
+<td align="center">返回底层数据的维数，默认定义：1。即1维、2维、3维</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">size</td>
+<td align="center">返回基础数据中的元素数。即长度</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">values</td>
+<td align="center">将系列作为ndarray返回。即数组形式</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">head()</td>
+<td align="center">返回前n行。默认5</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">tail()</td>
+<td align="center">返回最后n行。默认5</td>
+</tr>
+</tbody></table>
+<ul>
+<li>DataFrame</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="center">参数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">T</td>
+<td align="center">转置行和列。</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">axes</td>
+<td align="center">返回一个列，行轴标签和列轴标签作为唯一的成员。</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">dtypes</td>
+<td align="center">返回此对象中的数据类型(dtypes)。</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">empty</td>
+<td align="center">如果NDFrame完全为空[无项目]，则返回为True; 如任何轴的长度为0。</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">ndim</td>
+<td align="center">轴/数组维度大小。</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">shape</td>
+<td align="center">返回表示DataFrame的维度的元组。</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"></td>
+<td align="center">size</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">values</td>
+<td align="center">NDFrame的Numpy表示。</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"></td>
+<td align="center">head()</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">tail()</td>
+<td align="center">返回最后n行。</td>
+</tr>
+</tbody></table>
+<h3 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h3><ul>
+<li><p>有很多方法用来集体计算DataFrame的描述性统计信息和其他相关操作。 其中大多数是sum()，mean()等聚合函数，但其中一些，如sumsum()，产生一个相同大小的对象。 </p>
+</li>
+<li><p>一般来说，这些方法采用轴参数，就像ndarray.{sum，std，…}，但轴可以通过名称或整数来指定：</p>
+<pre><code>数据帧(DataFrame) - “index”(axis=0，默认)，columns(axis=1)</code></pre></li>
+</ul>
+<h4 id="sum-方法"><a href="#sum-方法" class="headerlink" title="sum()方法"></a>sum()方法</h4><ul>
+<li>返回所请求轴的值的总和。 默认情况下，轴为索引(axis=0)。即每个单独的列单独添加(附加字符串，字符串直接拼接)。<blockquote>
+<p>如果axis=1：返回的为以每个单独行对数字数据求和</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="mean-方法"><a href="#mean-方法" class="headerlink" title="mean()方法"></a>mean()方法</h4><ul>
+<li>对有数值的数据列求平均</li>
+</ul>
+<h4 id="std-方法"><a href="#std-方法" class="headerlink" title="std()方法"></a>std()方法</h4><ul>
+<li>返回数字列的Bressel标准偏差</li>
+</ul>
+<h3 id="函数和说明"><a href="#函数和说明" class="headerlink" title="函数和说明"></a>函数和说明</h3><ul>
+<li>由于DataFrame是异构数据结构。通用操作不适用于所有函数。 </li>
+<li>类似于：sum()，cumsum()函数能与数字和字符(或)字符串数据元素一起工作，不会产生任何错误。字符聚合从来都比较少被使用，虽然这些函数不会引发任何异常。</li>
+<li>由于这样的操作无法执行，因此，当DataFrame包含字符或字符串数据时，像abs()，cumprod()这样的函数会抛出异常。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="center">参数</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">count()</td>
+<td align="center">非空观测数量</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">sum()</td>
+<td align="center">所有值之和</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">mean()</td>
+<td align="center">所有值的平均值</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">median()</td>
+<td align="center">所有值的中位数</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">mode()</td>
+<td align="center">值的模值</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">std()</td>
+<td align="center">值的标准偏差</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">min()</td>
+<td align="center">所有值中的最小值</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">max()</td>
+<td align="center">所有值中的最大值</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">abs()</td>
+<td align="center">绝对值</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">prod()</td>
+<td align="center">数组元素的乘积</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">cumsum()</td>
+<td align="center">累计总和</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">cumprod()</td>
+<td align="center">累计乘积</td>
+</tr>
+</tbody></table>
+<h3 id="汇总数据"><a href="#汇总数据" class="headerlink" title="汇总数据"></a>汇总数据</h3><ul>
+<li><p>describe()函数是用来计算有关DataFrame列的统计信息的摘要。</p>
+</li>
+<li><p>该函数给出了平均值，标准差和IQR值。 而且，函数排除字符列，并给出关于数字列的摘要。 include是用于传递关于什么列需要考虑用于总结的必要信息的参数。获取值列表; 默认情况下是”数字值”</p>
+<blockquote>
+<p>object - 汇总字符串列. <code>df.describe(include=[&#39;object&#39;])</code></p>
+</blockquote>
+</li>
+</ul>
+<pre><code>&gt;number - 汇总数字列
+
+&gt;all - 将所有列汇总在一起(不应将其作为列表值传递)</code></pre><h3 id="函数应用"><a href="#函数应用" class="headerlink" title="函数应用"></a>函数应用</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ul>
+<li>使用适当的方法取决于函数是否期望在整个DataFrame，行或列或元素上进行操作。</li>
+</ul>
+<blockquote>
+<p>表合理函数应用：pipe()</p>
+<p>行或列函数应用：apply()</p>
+<p>元素函数应用：applymap()</p>
+</blockquote>
+<h4 id="表格函数"><a href="#表格函数" class="headerlink" title="表格函数"></a>表格函数</h4><ul>
+<li>可以通过将函数和适当数量的参数作为管道参数来执行自定义操作。 因此，对整个DataFrame执行操作。</li>
+<li>例如，为DataFrame中的所有元素相加一个值2。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def adder(ele1,ele2):</span><br><span class="line">    return ele1+ele2</span><br><span class="line"> </span><br><span class="line">df &#x3D; pd.DataFrame(np.random.randn(5,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">df.pipe(adder,2)</span><br></pre></td></tr></table></figure>
+
+<h4 id="行或列合理函数"><a href="#行或列合理函数" class="headerlink" title="行或列合理函数"></a>行或列合理函数</h4><ul>
+<li>可以使用apply()方法沿DataFrame或Panel的轴应用任意函数，它与描述性统计方法一样，采用可选的axis参数。 默认情况下，操作按列执行，将每列列为数组。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(np.random.randn(5,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">df.apply(np.mean)</span><br><span class="line"></span><br><span class="line">#传递axis参数，可以在行上执行操作</span><br><span class="line">df.apply(np.mean,axis&#x3D;1)</span><br><span class="line">df.apply(lambda x: x.max() - x.min())</span><br></pre></td></tr></table></figure>
+
+<h4 id="元素合理函数"><a href="#元素合理函数" class="headerlink" title="元素合理函数"></a>元素合理函数</h4><ul>
+<li>并不是所有的函数都可以向量化(也不是返回另一个数组的NumPy数组，也不是任何值)，在DataFrame上的方法applymap()和类似于在Series上的map()接受任何Python函数，并且返回单个值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">df &#x3D; pd.DataFrame(np.random.randn(5,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line"></span><br><span class="line"># My custom function</span><br><span class="line">df[&#39;col1&#39;].map(lambda x:x*100)</span><br><span class="line">df.applymap(lambda x:x*100)</span><br></pre></td></tr></table></figure>
+
+<h3 id="重建索引"><a href="#重建索引" class="headerlink" title="重建索引"></a>重建索引</h3><ul>
+<li>可以通过索引来实现多个操作 -</li>
+</ul>
+<blockquote>
+<p>重新排序现有数据以匹配一组新的标签。</p>
+<p>在没有标签数据的标签位置插入缺失值(NA)标记</p>
+</blockquote>
+<blockquote>
+<p>df.reindex(index=[0,2,5], columns=[‘A’, ‘C’, ‘B’])</p>
+</blockquote>
+<ul>
+<li>重建索引与其他对象对齐</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df1 &#x3D; pd.DataFrame(np.random.randn(10,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">df2 &#x3D; pd.DataFrame(np.random.randn(7,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line"></span><br><span class="line">df1 &#x3D; df1.reindex_like(df2)</span><br><span class="line">#df1数据帧(DataFrame)被更改并重新编号，如df2。 列名称应该匹配，</span><br><span class="line">否则将为整个列标签添加NAN。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>填充时重新加注</li>
+</ul>
+<blockquote>
+<p>reindex()采用可选参数方法，它是一个填充方法，其值如下：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>pad/ffill - 向前填充值</p>
+<p>bfill/backfill - 向后填充值</p>
+<p>nearest  - 从最近的索引值填充</p>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df1 &#x3D; pd.DataFrame(np.random.randn(6,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">df2 &#x3D; pd.DataFrame(np.random.randn(2,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line"></span><br><span class="line"># Padding NAN&#39;s</span><br><span class="line">print df2.reindex_like(df1)</span><br><span class="line"></span><br><span class="line"># Now Fill the NAN&#39;s with preceding Values</span><br><span class="line">print (&quot;Data Frame with Forward Fill:&quot;)</span><br><span class="line">print df2.reindex_like(df1,method&#x3D;&#39;ffill&#39;)</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>重建索引时的填充限制</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df1 &#x3D; pd.DataFrame(np.random.randn(6,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">df2 &#x3D; pd.DataFrame(np.random.randn(2,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line"></span><br><span class="line"># Padding NAN&#39;s</span><br><span class="line">print df2.reindex_like(df1)</span><br><span class="line"></span><br><span class="line"># Now Fill the NAN&#39;s with preceding Values</span><br><span class="line">print (&quot;Data Frame with Forward Fill limiting to 1:&quot;)</span><br><span class="line">print df2.reindex_like(df1,method&#x3D;&#39;ffill&#39;,limit&#x3D;1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重命名</li>
+</ul>
+<blockquote>
+<p>rename()方法允许基于一些映射(字典或者系列)或任意函数来重新标记一个轴。看看下面的例子来理解这一概念。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df1 &#x3D; pd.DataFrame(np.random.randn(6,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">print df1</span><br><span class="line"></span><br><span class="line">print (&quot;After renaming the rows and columns:&quot;)</span><br><span class="line">print df1.rename(columns&#x3D;&#123;&#39;col1&#39; : &#39;c1&#39;, &#39;col2&#39; : &#39;c2&#39;&#125;,</span><br><span class="line">index &#x3D; &#123;0 : &#39;apple&#39;, 1 : &#39;banana&#39;, 2 : &#39;durian&#39;&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>rename()方法提供了一个inplace命名参数，默认为False并复制底层数据。 指定传递inplace = True则表示将数据重命名</p>
+</blockquote>
+<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><ul>
+<li>基本迭代(对于i在对象中)产生 -</li>
+</ul>
+<blockquote>
+<p>Series - 值</p>
+<p>DataFrame - 列标签</p>
+<p>Pannel - 项目标签</p>
+</blockquote>
+<ul>
+<li>迭代DataFrame提供列名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">N&#x3D;20</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(&#123;</span><br><span class="line">    &#39;A&#39;: pd.date_range(start&#x3D;&#39;2016-01-01&#39;,periods&#x3D;N,freq&#x3D;&#39;D&#39;),</span><br><span class="line">    &#39;x&#39;: np.linspace(0,stop&#x3D;N-1,num&#x3D;N),</span><br><span class="line">    &#39;y&#39;: np.random.rand(N),</span><br><span class="line">    &#39;C&#39;: np.random.choice([&#39;Low&#39;,&#39;Medium&#39;,&#39;High&#39;],N).tolist(),</span><br><span class="line">    &#39;D&#39;: np.random.normal(100, 10, size&#x3D;(N)).tolist()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">for col in df:</span><br><span class="line">   print (col)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>要遍历数据帧(DataFrame)中的行，可以使用以下函数 -</li>
+</ul>
+<blockquote>
+<p>iteritems() - 迭代(key，value)对i</p>
+<p>terrows() - 将行迭代为(索引，系列)对</p>
+<p>itertuples() - 以namedtuples的形式迭代行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># iteritems()将每个列作为键，将值与值作为键和列值迭代为Series对象</span><br><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">df &#x3D; pd.DataFrame(np.random.randn(4,3),columns&#x3D;[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])</span><br><span class="line">for key,value in df.iteritems():</span><br><span class="line">   print (key,value)</span><br><span class="line"> </span><br><span class="line"># iterrows()返回迭代器，产生每个索引值以及包含每行数据的序列。</span><br><span class="line"></span><br><span class="line">for row_index,row in df.iterrows():</span><br><span class="line">   print (row_index,row)</span><br><span class="line"></span><br><span class="line"># itertuples()方法将为DataFrame中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。</span><br><span class="line">for row in df.itertuples():</span><br><span class="line">    print (row)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不要尝试在迭代时修改任何对象。迭代是用于读取，迭代器返回原始对象(视图)的副本，因此更改将不会反映在原始对象上。</p>
+<p>由于iterrows()遍历行，因此不会跨该行保留数据类型。0,1,2是行索引，col1，col2，col3是列索引。</p>
+</blockquote>
+<h3 id="排序-按标签-实际值"><a href="#排序-按标签-实际值" class="headerlink" title="排序 (按标签 /实际值)"></a>排序 (按标签 /实际值)</h3><ul>
+<li>按标签排序：使用sort_index()方法，通过传递axis参数和排序顺序，可以对DataFrame进行排序。 默认情况下，按照升序对行标签进行排序</li>
+</ul>
+<blockquote>
+<p>（）内参数说明</p>
+<blockquote>
+<p>通过将布尔值传递给升序参数：df.sort_index(ascending=False)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>按列排列：通过传递axis参数值为0或1，可以对列标签进行排序。 默认情况下，axis = 0，逐行排列 df.sort_index(axis=1)</p>
+</li>
+<li><p>按值排序：像索引排序一样，sort_values()是按值排序的方法。它接受一个by参数，它将使用要与其排序值的DataFrame的列名称。df.sort_values(by=’col1’)</p>
+</li>
+</ul>
+<blockquote>
+<p>通过by参数指定需要列值: df.sort_values(by=[‘col1’,’col2’])</p>
+</blockquote>
+<ul>
+<li>排序算法sort_values()提供了从mergeesort，heapsort和quicksort中选择算法的一个配置。Mergesort是唯一稳定的算法</li>
+</ul>
+<blockquote>
+<p>df.sort_values(by=’col1’ ,kind=’mergesor</p>
+</blockquote>
+<h3 id="字符串和文本数据"><a href="#字符串和文本数据" class="headerlink" title="字符串和文本数据"></a>字符串和文本数据</h3><ul>
+<li>andas提供了一组字符串函数，可以方便地对字符串数据进行操作。 最重要的是，这些函数忽略(或排除)丢失/NaN值。几乎这些方法都使用Python字符串函数</li>
+</ul>
+<p><a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank" rel="noopener">请查阅或参考</a></p>
+<h2 id="选项和自定义"><a href="#选项和自定义" class="headerlink" title="选项和自定义"></a>选项和自定义</h2>
       
     </div>
     
@@ -687,7 +1146,7 @@
   <p><span>本文标题:</span><a href="/2020/01/21/%E8%BF%98%E5%9C%A8%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%91%E6%84%81%EF%BC%9F%E7%94%A8pandas%E8%AF%95%E8%AF%95%E5%90%A7-pandas%E6%B5%85%E6%9E%90/">还在为数据处理发愁？用pandas试试吧--pandas数据结构浅析</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
   <p><span>发布时间:</span>2020年01月21日 - 18:01</p>
-  <p><span>最后更新:</span>2020年04月21日 - 19:04</p>
+  <p><span>最后更新:</span>2020年04月22日 - 15:04</p>
   <p><span>原始链接:</span><a href="/2020/01/21/%E8%BF%98%E5%9C%A8%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%91%E6%84%81%EF%BC%9F%E7%94%A8pandas%E8%AF%95%E8%AF%95%E5%90%A7-pandas%E6%B5%85%E6%9E%90/" title="还在为数据处理发愁？用pandas试试吧--pandas数据结构浅析">https://github.com/learn666-gif/2020/01/21/%E8%BF%98%E5%9C%A8%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%91%E6%84%81%EF%BC%9F%E7%94%A8pandas%E8%AF%95%E8%AF%95%E5%90%A7-pandas%E6%B5%85%E6%9E%90/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2020/01/21/%E8%BF%98%E5%9C%A8%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%91%E6%84%81%EF%BC%9F%E7%94%A8pandas%E8%AF%95%E8%AF%95%E5%90%A7-pandas%E6%B5%85%E6%9E%90/"  aria-label="复制成功！"></i></span>
   </p>
@@ -736,8 +1195,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%B0%88/" rel="next" title="设计模式简谈">
-                <i class="fa fa-chevron-left"></i> 设计模式简谈
+              <a href="/2019/09/23/python%E4%B8%AD%E6%B2%A1%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86-%E5%8F%8D%E5%B0%84%E8%BF%90%E7%94%A8/" rel="next" title="python中没注意的小知识--反射机制">
+                <i class="fa fa-chevron-left"></i> python中没注意的小知识--反射机制
               </a>
             
           </div>
@@ -860,7 +1319,7 @@ var jiathis_config={
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -882,7 +1341,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -974,7 +1433,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-数据结构"><span class="nav-number">1.</span> <span class="nav-text">pandas 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#维数和描述"><span class="nav-number">1.1.</span> <span class="nav-text">维数和描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速使用"><span class="nav-number">1.2.</span> <span class="nav-text">快速使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用指南"><span class="nav-number">2.</span> <span class="nav-text">使用指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据–"><span class="nav-number">2.1.</span> <span class="nav-text">查看数据–[]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择区块–loc"><span class="nav-number">2.2.</span> <span class="nav-text">选择区块–loc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过位置选择–iloc"><span class="nav-number">2.3.</span> <span class="nav-text">通过位置选择–iloc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔索引"><span class="nav-number">2.4.</span> <span class="nav-text">布尔索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">3.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas-Series"><span class="nav-number">3.1.</span> <span class="nav-text">pandas.Series</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">3.2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问"><span class="nav-number">3.3.</span> <span class="nav-text">访问</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-数据结构"><span class="nav-number">1.</span> <span class="nav-text">pandas 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#维数和描述"><span class="nav-number">1.1.</span> <span class="nav-text">维数和描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速使用"><span class="nav-number">1.2.</span> <span class="nav-text">快速使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用指南"><span class="nav-number">2.</span> <span class="nav-text">使用指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据–"><span class="nav-number">2.1.</span> <span class="nav-text">查看数据–[]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择区块–loc"><span class="nav-number">2.2.</span> <span class="nav-text">选择区块–loc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">3.</span> <span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas-Series"><span class="nav-number">3.1.</span> <span class="nav-text">pandas.Series</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">3.2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问"><span class="nav-number">3.3.</span> <span class="nav-text">访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">4.</span> <span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">4.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列操作"><span class="nav-number">4.2.</span> <span class="nav-text">列操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行操作"><span class="nav-number">4.3.</span> <span class="nav-text">行操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Panel"><span class="nav-number">5.</span> <span class="nav-text">Panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造和创建"><span class="nav-number">5.1.</span> <span class="nav-text">构造和创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择数据"><span class="nav-number">5.2.</span> <span class="nav-text">选择数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种数据结构运用"><span class="nav-number">6.</span> <span class="nav-text">三种数据结构运用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本功能"><span class="nav-number">6.1.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述性统计"><span class="nav-number">6.2.</span> <span class="nav-text">描述性统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sum-方法"><span class="nav-number">6.2.1.</span> <span class="nav-text">sum()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mean-方法"><span class="nav-number">6.2.2.</span> <span class="nav-text">mean()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-方法"><span class="nav-number">6.2.3.</span> <span class="nav-text">std()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数和说明"><span class="nav-number">6.3.</span> <span class="nav-text">函数和说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇总数据"><span class="nav-number">6.4.</span> <span class="nav-text">汇总数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数应用"><span class="nav-number">6.5.</span> <span class="nav-text">函数应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">6.5.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格函数"><span class="nav-number">6.5.2.</span> <span class="nav-text">表格函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行或列合理函数"><span class="nav-number">6.5.3.</span> <span class="nav-text">行或列合理函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元素合理函数"><span class="nav-number">6.5.4.</span> <span class="nav-text">元素合理函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重建索引"><span class="nav-number">6.6.</span> <span class="nav-text">重建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代"><span class="nav-number">6.7.</span> <span class="nav-text">迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序-按标签-实际值"><span class="nav-number">6.8.</span> <span class="nav-text">排序 (按标签 &#x2F;实际值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串和文本数据"><span class="nav-number">6.9.</span> <span class="nav-text">字符串和文本数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项和自定义"><span class="nav-number">7.</span> <span class="nav-text">选项和自定义</span></a></li></ol></div>
             
 
           </div>
@@ -1027,7 +1486,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共103.4k字</span>
+  <span class="post-count">博客全站共112.5k字</span>
 </div>
 
         
