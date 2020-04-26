@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="Linux入门,ssh,vim," />
+  <meta name="keywords" content="pymysql,SQLAIchemy," />
 
 
 
@@ -108,19 +108,20 @@
 
 
 
-<meta name="description" content="简介主要内容：Linux基础操作、文件操作、权限设置、ssh命令、远程服务器搭建、vim编辑器、翻墙服务器搭建 更新    ：对一些失效的方法会舍弃并进行更新，如出现无法使用可以通过下方留言或者右下角微信图标联系我">
+<meta name="description" content="pymysql(等同于MySQLdb)说明：pymysql与MySQLdb模块的使用基本相同，学会pymysql，使用MySQLdb也就不是问题 安装API模块pip install pymysql 执行12345678910111213141516171819202122232425262728293031323334353637383940414243444546import pymysql#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux">
-<meta property="og:url" content="https://github.com/learn666-gif/2019/01/03/Linux/index.html">
+<meta property="og:title" content="小知识：python操作Mysql-pymysql or SQLAIchemy">
+<meta property="og:url" content="https://github.com/learn666-gif/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/index.html">
 <meta property="og:site_name" content="jwangcloud">
-<meta property="og:description" content="简介主要内容：Linux基础操作、文件操作、权限设置、ssh命令、远程服务器搭建、vim编辑器、翻墙服务器搭建 更新    ：对一些失效的方法会舍弃并进行更新，如出现无法使用可以通过下方留言或者右下角微信图标联系我">
-<meta property="article:published_time" content="2019-01-03T08:19:00.000Z">
-<meta property="article:modified_time" content="2020-03-03T08:36:10.199Z">
+<meta property="og:description" content="pymysql(等同于MySQLdb)说明：pymysql与MySQLdb模块的使用基本相同，学会pymysql，使用MySQLdb也就不是问题 安装API模块pip install pymysql 执行12345678910111213141516171819202122232425262728293031323334353637383940414243444546import pymysql#">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/python%E7%BC%96%E7%A8%8B/MYSQLIN.png">
+<meta property="article:published_time" content="2019-04-26T10:37:58.000Z">
+<meta property="article:modified_time" content="2020-04-26T11:03:49.797Z">
 <meta property="article:author" content="Jwang">
-<meta property="article:tag" content="Linux入门">
-<meta property="article:tag" content="ssh">
-<meta property="article:tag" content="vim">
+<meta property="article:tag" content="pymysql">
+<meta property="article:tag" content="SQLAIchemy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/python%E7%BC%96%E7%A8%8B/MYSQLIN.png">
 
 
 
@@ -150,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/learn666-gif/2019/01/03/Linux/"/>
+  <link rel="canonical" href="https://github.com/learn666-gif/2019/04/26/小知识：python操作Mysql-pymysql-or-SQLAIchemy/"/>
 
 
 
 
 
-  <title>Linux | jwangcloud</title>
+  <title>小知识：python操作Mysql-pymysql or SQLAIchemy | jwangcloud</title>
   
 
 
@@ -319,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/01/03/Linux/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jwang">
@@ -336,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux</h1>
+          <h1 class="post-title" itemprop="name headline">小知识：python操作Mysql-pymysql or SQLAIchemy</h1>
         
 
         <div class="post-meta">
@@ -348,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T16:19:00+08:00">
-                2019-01-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T18:37:58+08:00">
+                2019-04-26
               </time>
             
 
@@ -371,8 +372,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/python%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">python编程</span>
                   </a>
                 </span>
 
@@ -407,7 +408,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  2.2k
                 </span>
               
 
@@ -423,7 +424,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  10
                 </span>
               
             </div>
@@ -444,163 +445,116 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>主要内容：Linux基础操作、文件操作、权限设置、ssh命令、远程服务器搭建、vim编辑器、翻墙服务器搭建</p>
-<p>更新    ：对一些失效的方法会舍弃并进行更新，如出现无法使用可以通过下方留言或者右下角微信图标联系我</p>
-<a id="more"></a>
+        <h2 id="pymysql-等同于MySQLdb"><a href="#pymysql-等同于MySQLdb" class="headerlink" title="pymysql(等同于MySQLdb)"></a>pymysql(等同于MySQLdb)</h2><p>说明：pymysql与MySQLdb模块的使用基本相同，学会pymysql，使用MySQLdb也就不是问题</p>
+<h3 id="安装API模块"><a href="#安装API模块" class="headerlink" title="安装API模块"></a>安装API模块</h3><p><code>pip install pymysql</code></p>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"># 创建连接</span><br><span class="line">conn &#x3D; pymysql.connect(host&#x3D;&#39;172.25.50.13&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, </span><br><span class="line">									passwd&#x3D;&#39;123456&#39;, db&#x3D;&#39;test&#39;)</span><br><span class="line"># 开启自动提交SQL，如果这里不设置，以后的命令需要执行conn.commit()来提交执行，</span><br><span class="line">否则都在内存中</span><br><span class="line">conn.autocommit(True)</span><br><span class="line"> </span><br><span class="line"># 创建游标</span><br><span class="line">cur &#x3D; conn.cursor()</span><br><span class="line"> </span><br><span class="line"># 执行普通SQL，并返回受影响行数</span><br><span class="line">effect_row &#x3D; cur.execute(&quot;insert into t1 values (1, &#39;Boss&#39;)&quot;)</span><br><span class="line">print(effect_row) # out：1</span><br><span class="line">#</span><br><span class="line"># 执行带占位符的SQL，并返回受影响行数</span><br><span class="line">effect_row &#x3D; cur.execute(&quot;insert into t1 values (2,&#39;%s&#39;)&quot; % &quot;xiaodi&quot;)</span><br><span class="line">print(effect_row) # out：1</span><br><span class="line">#</span><br><span class="line"># 执行多行数据的SQL，并返回受影响行数</span><br><span class="line">effect_row &#x3D; cur.executemany(&quot;insert into t1(id,name) </span><br><span class="line">	values (%s, %s)&quot; , [(3,&#39;zhubajie&#39;),(4,&#39;sunwukong&#39;)])</span><br><span class="line">print(effect_row) # out: 2</span><br><span class="line"> </span><br><span class="line"># 获取最新自增ID，注意：如果该表的列是非自增类型的，则获取到的数值为0</span><br><span class="line">id &#x3D; cur.lastrowid</span><br><span class="line">print(id)  # out :4</span><br><span class="line">cur.execute(&#39;select * from t1&#39;)</span><br><span class="line"> </span><br><span class="line"># 获取第一行数据</span><br><span class="line">row_1 &#x3D; cur.fetchone()</span><br><span class="line">print(row_1) # out:  (1, &#39;Boss&#39;)</span><br><span class="line"># 获取前n行数据</span><br><span class="line">row_2 &#x3D; cur.fetchmany(3)</span><br><span class="line">print(row_2) # out: ((2, &#39;xiaodi&#39;), (3, &#39;zhubajie&#39;), (4, &#39;sunwukong&#39;))</span><br><span class="line"># 获取所有数据</span><br><span class="line">row_3 &#x3D; cur.fetchall()</span><br><span class="line">print(row_3) # out: ((1, &#39;Boss&#39;), (2, &#39;xiaodi&#39;), </span><br><span class="line">(3, &#39;zhubajie&#39;), (4, &#39;sunwukong&#39;))</span><br><span class="line"># 提交</span><br><span class="line">conn.commit()</span><br><span class="line"> </span><br><span class="line"># 关闭游标</span><br><span class="line">cur.close()</span><br><span class="line"># 关闭连接</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="Linux基本"><a href="#Linux基本" class="headerlink" title="Linux基本"></a>Linux基本</h2><h3 id="Linux版本之间的区别"><a href="#Linux版本之间的区别" class="headerlink" title="Linux版本之间的区别"></a>Linux版本之间的区别</h3><pre><code>        redhat  RHEL CentOs 
-                Fedora               --&gt; 稳定版本
-        Debian  Ubuntu
-Linux           Mint Linux   knopix  --&gt; 最新版本
-        SlackWare  SUSE   SLEs
-                          openSuse
-        其它发行家族 </code></pre><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
-<li>top : 查看电脑当前状态，比如CPU的使用率，物理内存（Physcmem）,可看作一个<br>  任务管理器（使用q键退出）</li>
-<li>date：日期。其中取的时区为CST 代表 中国上海</li>
-<li>cal ：日历</li>
-<li>echo : 将字符串输出到屏幕  &gt; ：输出重定向  &gt;&gt; : 输出追加重定向</li>
-<li>echo ‘hello’ &gt; tmp.txt : 将字符串输出重定向，若当前目录下没有该文件，<br>  则会新建该文件并将字符串输出到文件，若存在该文件，则会覆盖该文件中的内容</li>
-<li>echo ‘hello’ &gt;&gt; tmp.txt : 与上述一样，但存在该文件时会在该文件内容后<br>  追加字符串</li>
-<li>2&gt; : 标准错误截获，将错误提示输出到文件中</li>
-<li>unix时间戳（timestamp）: 以格林威治时间为准，计算机开始时间1970开始</li>
-<li>Tab键：命令自动补全，多个相同命令则按两下，会将全部相似的命令显示在屏幕上</li>
+<ul>
+<li>注：在fetch数据时按照顺序进行，可以使用cursor.scroll(num,mode)来移动游标位置，如：</li>
 </ul>
-<h3 id="文件夹操作"><a href="#文件夹操作" class="headerlink" title="文件夹操作"></a>文件夹操作</h3><ul>
-<li><code>cd</code>  进入目标文件夹中</li>
-<li><code>cd .</code>  当前目录</li>
-<li><code>cd ..</code>  返回上一个文件夹下</li>
-<li><code>ls</code>  查看当前所在文件夹下面所拥有的文件夹清单</li>
-<li><code>pwd</code> 查看当前所在文件夹路径，属于绝对路径</li>
-<li><code>mkdir</code> 创建文件夹</li>
-<li><code>rm -r -f</code> 删除文件夹（不可恢复）</li>
-<li><code>/</code> 文件路径分隔符 <code>\</code>转义字符</li>
-<li><code>～</code> 用户根目录 <code>./</code> 当前目录</li>
-<li><code>ls -la</code> 可显示隐藏文件  隐藏文件的创建为在名字前+“.”,例如：.match</li>
-<li><code>less 文件名</code>  查看文件内信息  more可查看部分文件内信息</li>
-<li><code>cp 文件夹1 文件夹2</code>  考本文件夹1到文件夹2（需要是文件夹全名）与文件操作一样</li>
+<blockquote>
+<p>cur.scroll(1,mode=’relative’) # 相对当前位置移动，数字1 也可以为负数，只是移动方向不同而已</p>
+<p>cur.scroll(2,mode=’absolute’) # 相对绝对位置移动</p>
+</blockquote>
+<ul>
+<li>扩展：通过pymysql获取Dict数据类型</li>
 </ul>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
-<li><code>cp -r</code>   : 文件复制</li>
-<li><code>cp -r {文件1，文件2} 目标文件夹</code>  ： 拷贝多个文件到一个文件夹中</li>
-<li><code>rm -rf</code>  : 删除任何相关的文件或文件夹 删除多个使用 空格隔开或者通配符</li>
-<li><code>touch</code>   : 新建文件（使用通配符可创建多个）</li>
-<li><code>mkdir -p</code> : 可以创建一个新文件夹下创建新文件</li>
-<li><code>&gt; text.txt</code> : 创建空文件</li>
-</ul>
-<h3 id="进制计算"><a href="#进制计算" class="headerlink" title="进制计算"></a>进制计算</h3><pre><code>二进制 ： 以111（2） 为例：1*2^0 + 1*2^1 + 1*2^2 =7 
-
-十六进制：以16为底：0～9 A～F
-
-三十六进制：以32为低：0-9 A-Z 除开 i o s z</code></pre><h3 id="Linux权限设置"><a href="#Linux权限设置" class="headerlink" title="Linux权限设置"></a>Linux权限设置</h3><ul>
-<li><p>例：使用ls -lh 文件属性字段显示信息如下</p>
-<pre><code>d  rwx  r_x  r_x  d(文件夹) r(可读) w(可写) x(可执行) 
-  111  101  101
-   7    5    5
-   u    g    o</code></pre><p> 整个信息段表示：文件属性字段 文件硬链接数/目录子文件数 文件拥有者 文件拥有者所在组 文件大小（以字节为单位） 文件创建时间 文件名（–&gt;符号为指向目标文件夹）</p>
-</li>
-<li><p>修改权限：chmod 权限的十进制 文件名 （chmod 755 1.txt）权限最高为777<br> 修改文件夹权限：chmod -R</p>
-</li>
-<li><p>修改某一个权限：chmod u-x 文件名 （u-x 为 user 用户去掉可执行，还可以为u+x、u-wx、g+rx）</p>
-</li>
-</ul>
-<h3 id="编码表"><a href="#编码表" class="headerlink" title="编码表"></a>编码表</h3><blockquote>
-<p>最早的字符编码表：Ascil码（不能存汉字）</p>
+<blockquote>
+<p>从上边的案例可以看出，pymysql获取的结果，是以元组的形式输出，对于不了解表结构的人来说，无疑不知道每个元素对应的列。</p>
 </blockquote>
 <blockquote>
-<p>中文编码：gbk（简体） big5(繁体)</p>
+<p>因此，如果想要或者字典类型的数据，需要创建游标的时候，设置返回的数据集类型，即：</p>
 </blockquote>
-<blockquote>
-<p>世界性文字编码：unicode32  通过加工–通用编码：utf-8(可变长)、utf-16(即固定又可变)、utf-32(固定)</p>
-</blockquote>
-<h2 id="vpn搭建"><a href="#vpn搭建" class="headerlink" title="vpn搭建"></a>vpn搭建</h2><ul>
-<li><p>海底光缆：CN1（日本）CN2（美国加州） GIA</p>
-</li>
-<li><p>端口 ：一台服务器（一个IP）可有多个程序或功能，每一个程序或功能都会被分配一个不可重复的端口，端口号1024已经被系统应用占据，我们可以使用1024-65535之间的端口号，配置多个端口需写一个配置文件.</p>
-</li>
-<li><p>墙：国家监管，若浏览不正当网站会直接关闭</p>
-</li>
-<li><p>解决“墙”的问题：</p>
-<pre><code>加密      解密</code></pre><p>  解决方案： 本地 —-&gt; 墙 —-&gt; 美国服务器</p>
-<pre><code>（加密软件）          （解密软件）</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 游标设置为字典类型</span><br><span class="line">cur &#x3D; conn.cursor(cursor&#x3D;pymysql.cursors.DictCursor)</span><br></pre></td></tr></table></figure>
+<h2 id="Python-MySQL-ORM框架–-gt-SQLAlchemy"><a href="#Python-MySQL-ORM框架–-gt-SQLAlchemy" class="headerlink" title="Python MySQL ORM框架–&gt; SQLAlchemy"></a>Python MySQL ORM框架–&gt; SQLAlchemy</h2><ul>
+<li>SQLAlchemy是Python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。</li>
 </ul>
-<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><ol>
-<li><p>ssh:加密登录方式（多用于银行，军队），我们常用的https就是一个加密协议，不会被监控</p>
-</li>
-<li><p>加密方式：RSA加密  （第一个加密方式：凯撒加密CASER，常见加密方式BASE 64）</p>
-</li>
-<li><p>RSA原理：双方交换公钥，但保留私钥，用私钥加密，公钥解密</p>
-</li>
-<li><p>查看密钥 ：其保存在～/.ssh/文件夹中 使用less命令拷贝密钥</p>
-</li>
-<li><p>创建密钥 ：ssh -keygen</p>
-</li>
-<li><p>交换密钥：ssh-copy-id root@对方ip -p 端口号</p>
-<pre><code>若失败，需要重新创建密钥
-若成功，运行：ssh root@对方ip -p 端口号 可免密码登录</code></pre></li>
-<li><p>使用ssh远程拷贝文件：scp -P 端口 文件名 root@远程服务器ip:绝对路径</p>
-</li>
-</ol>
-<h3 id="实现步骤（简易版单人）"><a href="#实现步骤（简易版单人）" class="headerlink" title="实现步骤（简易版单人）"></a>实现步骤（简易版单人）</h3><ul>
-<li><p>登陆远程服务器：ssh root@远程服务器ip地址 -p 端口 （需要输入远程服务器密码，在买服务器网站的个人信息中）</p>
-</li>
-<li><p>安装解密软件： pip install shadowsocks  (远程服务器上)</p>
-</li>
-<li><p>设置端口、密码：ssserver -p 端口 -k 密码 -m 加密方式  （远程服务器）</p>
-</li>
-<li><p>本地下载加密软件： 官网下载shadowsocks-NG </p>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/python%E7%BC%96%E7%A8%8B/MYSQLIN.png" alt=""></p>
+<ul>
+<li>说明：<blockquote>
+<p>SQLAchemy 本身无法操作数据库，其本质上是依赖pymysql.MySQLdb,mssql等第三方插件。</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="Linux文档编辑器（vim）"><a href="#Linux文档编辑器（vim）" class="headerlink" title="Linux文档编辑器（vim）"></a>Linux文档编辑器（vim）</h2><h3 id="vim-运用"><a href="#vim-运用" class="headerlink" title="vim 运用"></a>vim 运用</h3><ol>
-<li><p>安装vim：yum install vim </p>
-</li>
-<li><p>确认是否安装：vi   (Shift+q :退出)</p>
-</li>
-<li><p>vim text.txt ：新建txt文件并编辑</p>
-</li>
-<li><p>vim两种模式</p>
 <blockquote>
-<p>输入模式：可以在其中输入文本，与文档编辑器一样，esc键退出该模式，esc+i:进入该模式，esa+a:在光标之后进入该模式</p>
-<p>命令模式：只能进行命令操作，shift+: 进入长命令输入，下方</p>
+<p>Dialect用于和数据库API进行交流，根据配置文件的不同调用不同的数据库API，从而实现对数据库的操作</p>
 </blockquote>
-</li>
-</ol>
-<h3 id="vim常用命令"><a href="#vim常用命令" class="headerlink" title="vim常用命令"></a>vim常用命令</h3><ol>
-<li><code>x</code>: 消除光标之前字符</li>
-<li><code>hjkl</code>:上下左右移动</li>
-<li><code>yy</code>:复制光标所在行内容</li>
-<li><code>p</code>:粘贴复制内容</li>
-<li><code>dd</code>:删除光标所在行内容</li>
-<li><code>N（数字键）+ yy/dd</code>:批量复制/删除光标之下的N行</li>
-<li><code>u</code>:撤销上一步操作</li>
-<li><code>I</code>：将光标移到光标所在行行首，并进入编辑模式</li>
-<li><code>A</code>：光标移到行尾</li>
-<li><code>shift+:下输入wq</code>:保存并退出（进入直接：vim 文件名）</li>
-<li><code>数字(N) gg</code>：光标移到第N行；<code>gg</code>:跳到首行</li>
-<li><code>o</code>:在光标下新开一行并进入编辑模式</li>
-</ol>
-<h3 id="高级步骤（多人端口版）"><a href="#高级步骤（多人端口版）" class="headerlink" title="高级步骤（多人端口版）"></a>高级步骤（多人端口版）</h3><ol>
-<li><p>端口文件配置shadow.conf，</p>
-<pre><code>{
-&quot;server&quot;:&quot;93.179.99.149&quot;,
-&quot;local_address&quot;: &quot;127.0.0.1&quot;,
-&quot;local_port&quot;:1080,
-&quot;port_password&quot;: {
-        &quot;55501&quot;: &quot;add55555&quot;,
-        &quot;55502&quot;: &quot;add55555&quot;,
-        &quot;55503&quot;: &quot;add55555&quot;（此处无逗号） 
-},
-&quot;timeout&quot;:300,
-&quot;method&quot;:&quot;aes-256-cfb&quot;,
-&quot;fast_open&quot;: false     </code></pre></li>
-<li><p>登陆远程服务器并在其中编写该端口文件配置</p>
-</li>
-<li><p>读取该配置文件：ssserver -c shadow.conf (该命令可先运行，检测成功性) -d start （之后运行完整命令）</p>
-</li>
-<li><p>运行成功</p>
-</li>
-</ol>
-<pre><code>小提示：1.su 直接切换到超级用户
-        2.sudo 代替执行超级用户的权限</code></pre>
+<h3 id="配置SQLAlchemy，使用不同API"><a href="#配置SQLAlchemy，使用不同API" class="headerlink" title="配置SQLAlchemy，使用不同API"></a>配置SQLAlchemy，使用不同API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MySQL-Python</span><br><span class="line">    mysql+mysqldb:&#x2F;&#x2F;&lt;user&gt;:&lt;password&gt;@&lt;host&gt;[:&lt;port&gt;]&#x2F;&lt;dbname&gt;</span><br><span class="line">   </span><br><span class="line">pymysql</span><br><span class="line">    mysql+pymysql:&#x2F;&#x2F;&lt;username&gt;:&lt;password&gt;@&lt;host&gt;&#x2F;&lt;dbname&gt;[?&lt;options&gt;]</span><br><span class="line">   </span><br><span class="line">MySQL-Connector</span><br><span class="line">    mysql+mysqlconnector:&#x2F;&#x2F;&lt;user&gt;:&lt;password&gt;@&lt;host&gt;[:&lt;port&gt;]&#x2F;&lt;dbname&gt;</span><br><span class="line">   </span><br><span class="line">cx_Oracle</span><br><span class="line">    oracle+cx_oracle:&#x2F;&#x2F;user:pass@host:port&#x2F;dbname[?key&#x3D;value&amp;key&#x3D;value...]</span><br></pre></td></tr></table></figure>
+
+<h3 id="普通使用"><a href="#普通使用" class="headerlink" title="普通使用"></a>普通使用</h3><ul>
+<li>使用 Engine/ConnectionPooling/Dialect 进行数据库操作：Engine使用ConnectionPooling连接数据库，然后再通过Dialect执行SQL语句。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from sqlalchemy import create_engine</span><br><span class="line">  </span><br><span class="line"># 等效于创建游标</span><br><span class="line">engine &#x3D; create_engine(&quot;mysql+pymysql:&#x2F;&#x2F;root:123</span><br><span class="line">			@127.0.0.1:3306&#x2F;t1&quot;, max_overflow&#x3D;5)</span><br><span class="line"> </span><br><span class="line"># 执行SQL</span><br><span class="line">cur &#x3D; engine.execute(</span><br><span class="line">    &quot;INSERT INTO hosts (host, color_id) VALUES (&#39;1.1.1.22&#39;, 3)&quot;</span><br><span class="line">)</span><br><span class="line"> </span><br><span class="line"># 其余操作同游标操作一样，就不一一列举。</span><br></pre></td></tr></table></figure>
+
+<h3 id="ORM功能使用"><a href="#ORM功能使用" class="headerlink" title="ORM功能使用"></a>ORM功能使用</h3><ul>
+<li>使用 ORM/Schema Type/SQL Expression Language/Engine/ConnectionPooling/Dialect 所有组件对数据进行操作。根据类创建对象，对象转换成SQL，执行SQL。</li>
+</ul>
+<h3 id="创建表和删除表"><a href="#创建表和删除表" class="headerlink" title="创建表和删除表"></a>创建表和删除表</h3><ul>
+<li>sqlalchemy 创建表和删除表、</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from sqlalchemy.ext.declarative import declarative_base</span><br><span class="line">from sqlalchemy import Column, Integer, String, ForeignKey, </span><br><span class="line">				UniqueConstraint, Index</span><br><span class="line">from sqlalchemy.orm import sessionmaker, relationship</span><br><span class="line">from sqlalchemy import create_engine</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建连接</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">engine &#x3D; create_engine(&quot;mysql+pymysql:&#x2F;&#x2F;root:123456</span><br><span class="line">			@127.0.0.1:3306&#x2F;test&quot;, max_overflow&#x3D;5)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建基类。这个是固定写法，创建表必须这么写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Base &#x3D; declarative_base()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建单表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Users(Base):</span><br><span class="line">    # 创建表</span><br><span class="line">    __tablename__ &#x3D; &#39;users&#39;</span><br><span class="line">    id &#x3D; Column(Integer, primary_key&#x3D;True)</span><br><span class="line">    name &#x3D; Column(String(32))</span><br><span class="line">    extra &#x3D; Column(String(16))</span><br><span class="line">    # 创建联合索引</span><br><span class="line">    __table_args__ &#x3D; (</span><br><span class="line">    UniqueConstraint(&#39;id&#39;, &#39;name&#39;, name&#x3D;&#39;uix_id_name&#39;),</span><br><span class="line">        Index(&#39;ix_id_name&#39;, &#39;name&#39;, &#39;extra&#39;),</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一对多</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Favor(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;favor&#39;</span><br><span class="line">    nid &#x3D; Column(Integer, primary_key&#x3D;True)</span><br><span class="line">    caption &#x3D; Column(String(50), default&#x3D;&#39;red&#39;, unique&#x3D;True)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">class Person(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;person&#39;</span><br><span class="line">    nid &#x3D; Column(Integer, primary_key&#x3D;True)</span><br><span class="line">    name &#x3D; Column(String(32), index&#x3D;True, nullable&#x3D;True)</span><br><span class="line">    favor_id &#x3D; Column(Integer, ForeignKey(&quot;favor.nid&quot;))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多对多</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class ServerToGroup(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;servertogroup&#39;</span><br><span class="line">    nid &#x3D; Column(Integer, primary_key&#x3D;True, autoincrement&#x3D;True)</span><br><span class="line">    server_id &#x3D; Column(Integer, ForeignKey(&#39;server.id&#39;))</span><br><span class="line">    group_id &#x3D; Column(Integer, ForeignKey(&#39;group.id&#39;))</span><br><span class="line"> </span><br><span class="line">class Group(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;group&#39;</span><br><span class="line">    id &#x3D; Column(Integer, primary_key&#x3D;True)</span><br><span class="line">    name &#x3D; Column(String(64), unique&#x3D;True, nullable&#x3D;False)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">class Server(Base):</span><br><span class="line">    __tablename__ &#x3D; &#39;server&#39;</span><br><span class="line"> </span><br><span class="line">    id &#x3D; Column(Integer, primary_key&#x3D;True, autoincrement&#x3D;True)</span><br><span class="line">    hostname &#x3D; Column(String(64), unique&#x3D;True, nullable&#x3D;False)</span><br><span class="line">    port &#x3D; Column(Integer, default&#x3D;22)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">def init_db():</span><br><span class="line">    Base.metadata.create_all(engine)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">def drop_db():</span><br><span class="line">    Base.metadata.drop_all(engine)</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h3><blockquote>
+<p>要想操作表，需要经过如下2个步骤</p>
+</blockquote>
+<ul>
+<li>步骤1：创建session</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Session &#x3D; sessionmaker(bind&#x3D;engine)</span><br><span class="line">session &#x3D; Session()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>步骤2：执行SQL。这里需要注意，如果是新增的话，需要新建对象，如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 新增单条数据</span><br><span class="line">obj &#x3D; Users(name&#x3D;&quot;guanyu&quot;, extra&#x3D;&#39;hanjiang&#39;)</span><br><span class="line">session.add(obj)</span><br><span class="line"># 新增多条数据</span><br><span class="line">session.add_all([</span><br><span class="line">    Users(name&#x3D;&quot;liubei&quot;, extra&#x3D;&#39;leader&#39;),</span><br><span class="line">    Users(name&#x3D;&quot;zhangfei&quot;, extra&#x3D;&#39;xiaodi&#39;),</span><br><span class="line">])</span><br><span class="line">session.commit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>其他的SQL，仅需要执行session.query方法，进行相关操作即可</li>
+</ul>
+<blockquote>
+<p>1）删除表数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 删除user表中id大于2的条目</span><br><span class="line">session.query(Users).filter(Users.id &gt; 2).delete()</span><br><span class="line">session.commit()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2）修改表数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 更新user表中id大于2的name列为099</span><br><span class="line">session.query(Users).filter(Users.id &gt; 2).update(&#123;&quot;name&quot; : &quot;099&quot;&#125;)</span><br><span class="line"># 更新user表中id大于2的name列，在原字符串后边增加099</span><br><span class="line">session.query(Users).filter(Users.id &gt; 2).update(&#123;Users.name: </span><br><span class="line">Users.name + &quot;099&quot;&#125;, synchronize_session&#x3D;False)</span><br><span class="line"># 更新user表中id大于2的num列，使最终值在原来数值基础上加1</span><br><span class="line">session.query(Users).filter(Users.id &gt; 2).update(</span><br><span class="line">		&#123;&quot;num&quot;: Users.num + 1&#125;, synchronize_session&#x3D;&quot;evaluate&quot;) </span><br><span class="line">		# 数字相加，必须设置synchronize_session&#x3D;&quot;evaluate&quot;</span><br><span class="line">session.commit()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3）查询数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ret &#x3D; session.query(Users).all() # 查询所有</span><br><span class="line">sql &#x3D; session.query(Users) # 查询生成的sql</span><br><span class="line">print(sql)</span><br><span class="line">ret &#x3D; session.query(Users.name, Users.extra).all() </span><br><span class="line">#查询User表的name和extra列的所有数据</span><br><span class="line">ret &#x3D; session.query(Users).filter_by(name&#x3D;&#39;alex&#39;).all()  </span><br><span class="line"># 取全部name列为alex的数据</span><br><span class="line">ret &#x3D; session.query(Users).filter_by(name&#x3D;&#39;alex&#39;).first() </span><br><span class="line"># 第一个匹配name列为alex的数据</span><br><span class="line"> </span><br><span class="line">Ps: ret是一个对象列表。这个对象可以通过 “对象[索引].字段”来获取对应的值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>4）其他</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">#　条件</span><br><span class="line">ret &#x3D; session.query(Users).filter_by(name&#x3D;&#39;alex&#39;).all() #</span><br><span class="line">ret &#x3D; session.query(Users).filter(Users.id &gt; 1, Users.name &#x3D;&#x3D; &#39;eric&#39;).all() </span><br><span class="line"># 且的关系</span><br><span class="line">ret &#x3D; session.query(Users).filter(Users.id.between(1, 3), </span><br><span class="line">Users.name &#x3D;&#x3D; &#39;eric&#39;).all()</span><br><span class="line">ret &#x3D; session.query(Users).filter(Users.id.in_([1,3,4])).all()</span><br><span class="line">ret &#x3D; session.query(Users).filter(~Users.id.in_([1,3,4])).all() </span><br><span class="line"># ~表示非。就是not in的意思</span><br><span class="line">ret &#x3D;session.query(Users).filter(Users.id.in_(session.query</span><br><span class="line">(Users.id).filter_by(name&#x3D;&#39;eric&#39;))).all() </span><br><span class="line"># 联表查询</span><br><span class="line">from sqlalchemy import and_, or_   </span><br><span class="line"># 且和or的关系</span><br><span class="line">ret &#x3D; session.query(Users).filter(and_(Users.id &gt; 3, Users.name &#x3D;&#x3D; &#39;eric&#39;)).all() </span><br><span class="line"># 条件以and方式排列</span><br><span class="line">ret &#x3D; session.query(Users).filter(or_(Users.id &lt; 2, Users.name &#x3D;&#x3D; &#39;eric&#39;)).all() </span><br><span class="line"># 条件以or方式排列</span><br><span class="line">ret &#x3D; session.query(Users).filter(</span><br><span class="line">    or_( #这部分表示括号中的条件都以or的形式匹配</span><br><span class="line">        Users.id &lt; 2, # 或者 or User.id &lt; 2</span><br><span class="line">        and_(Users.name &#x3D;&#x3D; &#39;eric&#39;, Users.id &gt; 3),</span><br><span class="line">        # 表示括号中这部分进行and匹配</span><br><span class="line">        Users.extra !&#x3D; &quot;&quot;</span><br><span class="line">    )).all()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># 通配符</span><br><span class="line">ret &#x3D; session.query(Users).filter(Users.name.like(&#39;e%&#39;)).all()</span><br><span class="line">ret &#x3D; session.query(Users).filter(~Users.name.like(&#39;e%&#39;)).all() </span><br><span class="line"># 表示not like</span><br><span class="line"> </span><br><span class="line"># 限制 limit用法</span><br><span class="line">ret &#x3D; session.query(Users)[1:2] </span><br><span class="line"># 等于limit ，具体功能需要自己测试</span><br><span class="line"> </span><br><span class="line"># 排序</span><br><span class="line">ret &#x3D; session.query(Users).order_by(Users.name.desc()).all()</span><br><span class="line">ret &#x3D; session.query(Users).order_by(Users.name.desc(), Users.id.asc()).all() </span><br><span class="line"># 按照name从大到小排列，如果name相同，按照id从小到大排列</span><br><span class="line"> </span><br><span class="line"># 分组</span><br><span class="line">from sqlalchemy.sql import func</span><br><span class="line"> </span><br><span class="line">ret &#x3D; session.query(Users).group_by(Users.extra).all()</span><br><span class="line">ret &#x3D; session.query(</span><br><span class="line">    func.max(Users.id),</span><br><span class="line">    func.sum(Users.id),</span><br><span class="line">    func.min(Users.id)).group_by(Users.name).all()</span><br><span class="line"> </span><br><span class="line">ret &#x3D; session.query(</span><br><span class="line">    func.max(Users.id),</span><br><span class="line">    func.sum(Users.id),</span><br><span class="line">    func.min(Users.id)).group_by(Users.name).having(func.min(Users.id) &gt;2).all() </span><br><span class="line">    # having对聚合的内容再次进行过滤</span><br><span class="line"> </span><br><span class="line"># 连表</span><br><span class="line"> </span><br><span class="line">ret &#x3D; session.query(Users, Favor).filter(Users.id &#x3D;&#x3D; Favor.nid).all()</span><br><span class="line"> </span><br><span class="line">ret &#x3D; session.query(Person).join(Favor).all()</span><br><span class="line"># 默认是inner join</span><br><span class="line">ret &#x3D; session.query(Person).join(Favor, isouter&#x3D;True).all() </span><br><span class="line"># isouter表示是left join</span><br><span class="line"> </span><br><span class="line"># 组合</span><br><span class="line">q1 &#x3D; session.query(Users.name).filter(Users.id &gt; 2)</span><br><span class="line">q2 &#x3D; session.query(Favor.caption).filter(Favor.nid &lt; 2)</span><br><span class="line">ret &#x3D; q1.union(q2).all() #union默认会去重</span><br><span class="line"> </span><br><span class="line">q1 &#x3D; session.query(Users.name).filter(Users.id &gt; 2)</span><br><span class="line">q2 &#x3D; session.query(Favor.caption).filter(Favor.nid &lt; 2)</span><br><span class="line">ret &#x3D; q1.union_all(q2).all() # union_all不去重</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -627,12 +581,12 @@ Linux           Mint Linux   knopix  --&gt; 最新版本
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/01/03/Linux/">Linux</a></p>
+  <p><span>本文标题:</span><a href="/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/">小知识：python操作Mysql-pymysql or SQLAIchemy</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
-  <p><span>发布时间:</span>2019年01月03日 - 16:01</p>
-  <p><span>最后更新:</span>2020年03月03日 - 16:03</p>
-  <p><span>原始链接:</span><a href="/2019/01/03/Linux/" title="Linux">https://github.com/learn666-gif/2019/01/03/Linux/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2019/01/03/Linux/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月26日 - 18:04</p>
+  <p><span>最后更新:</span>2020年04月26日 - 19:04</p>
+  <p><span>原始链接:</span><a href="/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/" title="小知识：python操作Mysql-pymysql or SQLAIchemy">https://github.com/learn666-gif/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -664,11 +618,9 @@ Linux           Mint Linux   knopix  --&gt; 最新版本
       
         <div class="post-tags">
           
-            <a href="/tags/Linux%E5%85%A5%E9%97%A8/" rel="tag"><i class="fa fa-tag"></i> Linux入门</a>
+            <a href="/tags/pymysql/" rel="tag"><i class="fa fa-tag"></i> pymysql</a>
           
-            <a href="/tags/ssh/" rel="tag"><i class="fa fa-tag"></i> ssh</a>
-          
-            <a href="/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
+            <a href="/tags/SQLAIchemy/" rel="tag"><i class="fa fa-tag"></i> SQLAIchemy</a>
           
         </div>
       
@@ -681,8 +633,8 @@ Linux           Mint Linux   knopix  --&gt; 最新版本
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/03/Git%E8%BF%90%E7%94%A8/" rel="next" title="Git运用">
-                <i class="fa fa-chevron-left"></i> Git运用
+              <a href="/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/" rel="next" title="自定义实现列表类">
+                <i class="fa fa-chevron-left"></i> 自定义实现列表类
               </a>
             
           </div>
@@ -691,8 +643,8 @@ Linux           Mint Linux   knopix  --&gt; 最新版本
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/02/python%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/" rel="prev" title="python入门知识">
-                python入门知识 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/03/mysql%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" rel="prev" title="mysql由浅入深">
+                mysql由浅入深 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -919,7 +871,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux基本"><span class="nav-number">2.</span> <span class="nav-text">Linux基本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux版本之间的区别"><span class="nav-number">2.1.</span> <span class="nav-text">Linux版本之间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件夹操作"><span class="nav-number">2.3.</span> <span class="nav-text">文件夹操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">2.4.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制计算"><span class="nav-number">2.5.</span> <span class="nav-text">进制计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux权限设置"><span class="nav-number">2.6.</span> <span class="nav-text">Linux权限设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码表"><span class="nav-number">2.7.</span> <span class="nav-text">编码表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vpn搭建"><span class="nav-number">3.</span> <span class="nav-text">vpn搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-number">3.1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现步骤（简易版单人）"><span class="nav-number">3.2.</span> <span class="nav-text">实现步骤（简易版单人）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux文档编辑器（vim）"><span class="nav-number">4.</span> <span class="nav-text">Linux文档编辑器（vim）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-运用"><span class="nav-number">4.1.</span> <span class="nav-text">vim 运用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim常用命令"><span class="nav-number">4.2.</span> <span class="nav-text">vim常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级步骤（多人端口版）"><span class="nav-number">4.3.</span> <span class="nav-text">高级步骤（多人端口版）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pymysql-等同于MySQLdb"><span class="nav-number">1.</span> <span class="nav-text">pymysql(等同于MySQLdb)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装API模块"><span class="nav-number">1.1.</span> <span class="nav-text">安装API模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行"><span class="nav-number">1.2.</span> <span class="nav-text">执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-MySQL-ORM框架–-gt-SQLAlchemy"><span class="nav-number">2.</span> <span class="nav-text">Python MySQL ORM框架–&gt; SQLAlchemy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SQLAlchemy，使用不同API"><span class="nav-number">2.1.</span> <span class="nav-text">配置SQLAlchemy，使用不同API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通使用"><span class="nav-number">2.2.</span> <span class="nav-text">普通使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORM功能使用"><span class="nav-number">2.3.</span> <span class="nav-text">ORM功能使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表和删除表"><span class="nav-number">2.4.</span> <span class="nav-text">创建表和删除表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作表"><span class="nav-number">2.5.</span> <span class="nav-text">操作表</span></a></li></ol></li></ol></div>
             
 
           </div>
