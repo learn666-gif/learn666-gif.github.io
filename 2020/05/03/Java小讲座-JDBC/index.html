@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="算法,python编程,列表," />
+  <meta name="keywords" content="JAVA编程,mysql数据库," />
 
 
 
@@ -108,18 +108,17 @@
 
 
 
-<meta name="description" content="简介本篇文章主要是通过自己的方法去实现列表以及存在的一些基础方法，比如添加、删除等 使用语言：python">
+<meta name="description" content="主要内容1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC：1. 概念： Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义实现列表类">
-<meta property="og:url" content="https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/index.html">
+<meta property="og:title" content="Java小讲座--JDBC">
+<meta property="og:url" content="https://github.com/learn666-gif/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/index.html">
 <meta property="og:site_name" content="jwangcloud">
-<meta property="og:description" content="简介本篇文章主要是通过自己的方法去实现列表以及存在的一些基础方法，比如添加、删除等 使用语言：python">
-<meta property="article:published_time" content="2019-04-13T01:36:28.000Z">
-<meta property="article:modified_time" content="2020-03-03T11:25:29.770Z">
+<meta property="og:description" content="主要内容1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC：1. 概念： Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码">
+<meta property="article:published_time" content="2020-05-03T09:07:26.000Z">
+<meta property="article:modified_time" content="2020-05-03T14:06:12.288Z">
 <meta property="article:author" content="Jwang">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="python编程">
-<meta property="article:tag" content="列表">
+<meta property="article:tag" content="JAVA编程">
+<meta property="article:tag" content="mysql数据库">
 <meta name="twitter:card" content="summary">
 
 
@@ -150,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/learn666-gif/2019/04/13/自定义实现列表类/"/>
+  <link rel="canonical" href="https://github.com/learn666-gif/2020/05/03/Java小讲座-JDBC/"/>
 
 
 
 
 
-  <title>自定义实现列表类 | jwangcloud</title>
+  <title>Java小讲座--JDBC | jwangcloud</title>
   
 
 
@@ -319,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jwang">
@@ -336,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自定义实现列表类</h1>
+          <h1 class="post-title" itemprop="name headline">Java小讲座--JDBC</h1>
         
 
         <div class="post-meta">
@@ -348,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T09:36:28+08:00">
-                2019-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-03T17:07:26+08:00">
+                2020-05-03
               </time>
             
 
@@ -371,8 +370,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/JAVA%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA编程</span>
                   </a>
                 </span>
 
@@ -407,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  824
+                  2.5k
                 </span>
               
 
@@ -423,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  11
                 </span>
               
             </div>
@@ -444,43 +443,458 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本篇文章主要是通过自己的方法去实现列表以及存在的一些基础方法，比如添加、删除等</p>
-<p>使用语言：python</p>
-<a id="more"></a>
-
-<h2 id="列表生成"><a href="#列表生成" class="headerlink" title="列表生成"></a>列表生成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span> </span><br><span class="line">    <span class="comment">#采用指针</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, v, n)</span>:</span></span><br><span class="line">        self.value = v</span><br><span class="line">        self.next = n</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">        <span class="comment">#头指针定义为None</span></span><br><span class="line">        self.first_node = Node(<span class="literal">None</span>, <span class="literal">None</span>)</span><br><span class="line">        self.length = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> args:</span><br><span class="line">            self.append(i)</span><br><span class="line">        self.listxx = args</span><br></pre></td></tr></table></figure>
-
-<h2 id="实现基础方法"><a href="#实现基础方法" class="headerlink" title="实现基础方法"></a>实现基础方法</h2><ul>
-<li><p>列表添加新元素–append</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">append</span><span class="params">(self, v)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        给列表添加一个新的元素</span></span><br><span class="line"><span class="string">        :param v:</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment">#找到最后一个元素</span></span><br><span class="line">        node = self.find_last_node()</span><br><span class="line">        node.next = Node(v, <span class="literal">None</span>)</span><br><span class="line">        self.length += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_last_node</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        找到最后一个元素</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        node = self.first_node</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> node.next <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            node = node.next</span><br><span class="line">        <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>获取一个元素下标和值–get</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, index)</span>:</span></span><br><span class="line">    index += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> index &gt;= self.length:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    node = self.first_node</span><br><span class="line">    <span class="keyword">if</span> counter == index:</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="keyword">while</span> counter != index:</span><br><span class="line">        counter += <span class="number">1</span></span><br><span class="line">        <span class="comment"># 找到下一个元素</span></span><br><span class="line">        node = node.next</span><br><span class="line">    <span class="keyword">return</span> node.value</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除最后一个元素–pop</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self, index=<span class="number">-1</span>)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    把列表最后一个元素删除</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> self.length &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> index == <span class="number">-1</span>:</span><br><span class="line">        index = self.length - <span class="number">2</span></span><br><span class="line">    n = self.get(index)</span><br><span class="line">    next = n.next  <span class="comment"># 要删除元素的最后一个元素</span></span><br><span class="line">    pre = self.get(index - <span class="number">1</span>)  <span class="comment"># 要删除元素前面一个元素</span></span><br><span class="line">    pre.next = next</span><br><span class="line">    self.length -= <span class="number">1</span></span><br></pre></td></tr></table></figure></li>
-<li><p>实现clear、count、remove</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.first_node.next = <span class="literal">None</span></span><br><span class="line">    self.length = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self, value)</span>:</span></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    node = self.first_node.next</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> node.value == value:</span><br><span class="line">                counter += <span class="number">1</span></span><br><span class="line">            node = node.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> counter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self,value)</span>:</span></span><br><span class="line">    pre_node = self.first_node</span><br><span class="line">    current_node = pre_node.next</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> current_node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"&#123;&#125; not in &#123;&#125;"</span>.</span><br><span class="line">            format(value,self.__class__.__name__))</span><br><span class="line">        <span class="keyword">if</span> current_node.value == value:</span><br><span class="line">            pre_node.next = current_node.next</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        pre_node = pre_node.next</span><br><span class="line">        current_node = current_node.next</span><br></pre></td></tr></table></figure></li>
-<li><p>索引查找 index</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(self, value)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    找出value所在的第一个节点</span></span><br><span class="line"><span class="string">    :param value:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    node = self.first_node.next</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> node.value == value:</span><br><span class="line">                <span class="keyword">return</span> counter</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                counter += <span class="number">1</span></span><br><span class="line">                node = node.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"&#123;&#125; is not in list"</span>.format(value))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>按照下标插入一个值 insert</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, index, value)</span>:</span></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    pre_node = self.first_node</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> pre_node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.append(value)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> counter == index:</span><br><span class="line">            next_node = pre_node.next</span><br><span class="line">            new_node = Node(value, <span class="literal">None</span>)</span><br><span class="line">            pre_node.next = new_node</span><br><span class="line">            new_node.next = next_node</span><br><span class="line">            self.length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line">            pre_node = pre_node.next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>转换为字符串–<code>__str__</code></p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    string = <span class="string">"["</span></span><br><span class="line">    node = self.first_node.next</span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        v = node.value</span><br><span class="line">        string += str(v)</span><br><span class="line">        node = node.next</span><br><span class="line">        <span class="keyword">while</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            string += <span class="string">", "</span> + str(node.value)</span><br><span class="line">            node = node.next</span><br><span class="line">    string += <span class="string">"]"</span></span><br><span class="line">    <span class="keyword">return</span> string</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>反转列表–reverse</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self)</span>:</span></span><br><span class="line">       counter = <span class="number">0</span></span><br><span class="line">       <span class="keyword">while</span> self.length<span class="number">-2</span> &gt; counter:</span><br><span class="line">           node = self.first_node.next</span><br><span class="line">           <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">               <span class="keyword">return</span></span><br><span class="line">           self.insert(self.length<span class="number">-1</span>-counter,node.value)</span><br><span class="line">           counter += <span class="number">1</span></span><br><span class="line">           self.pop(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>内置函数功能 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># timsort</span></span><br><span class="line"> <span class="comment"># &lt;__main__.MyListV2 object at 0x103aa1bd0&gt;</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">      <span class="keyword">global</span> __name__</span><br><span class="line">      string = <span class="string">"&lt;"</span></span><br><span class="line">      string += __name__</span><br><span class="line">      string += <span class="string">".MyList"</span></span><br><span class="line">      string += <span class="string">'  object at &#123;0:x&#125;'</span>.format(id(self))</span><br><span class="line">      string += <span class="string">"&gt;"</span></span><br><span class="line">      <span class="keyword">return</span> string</span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, item)</span>:</span></span><br><span class="line">     <span class="keyword">if</span> item == <span class="number">-1</span>:</span><br><span class="line">         item = self.length - <span class="number">2</span></span><br><span class="line">     node = self.get(item)</span><br><span class="line">     <span class="keyword">return</span> node.value</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">__delitem__</span><span class="params">(self, *args, **kwargs)</span>:</span>  </span><br><span class="line"> <span class="comment"># real signature unknown</span></span><br><span class="line">     <span class="string">""" Delete self[key]. """</span></span><br><span class="line">     self.pop(args[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">__gt__</span><span class="params">(self, other)</span>:</span>  </span><br><span class="line"> <span class="comment">#other表示另一个对象，self表示本次的对象   __gt__(&gt;)  __at__(&lt;)</span></span><br><span class="line">     <span class="keyword">if</span> self.length &gt; other.length:</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line"></span><br><span class="line">     len1 = len(self)</span><br><span class="line">     len2 = len(other)</span><br><span class="line">     l3 = MyList()</span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> range(len1):</span><br><span class="line">         l3.append(self.get(i))</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span> j <span class="keyword">in</span> range(len2):</span><br><span class="line">         l3.append(other.get(j))</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> l3</span><br></pre></td></tr></table></figure>
-
-</li>
+        <h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. JDBC基本概念
+2. 快速入门
+3. 对JDBC中各个接口和类详解</code></pre><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><h3 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h3><ul>
+<li>Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库</li>
+<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
 </ul>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">l1 = MyList(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line">print(l1.get(<span class="number">2</span>))</span><br><span class="line">l2 = MyList(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">print(l1+l2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># l.reverse()</span></span><br><span class="line"><span class="comment"># #l1.remove(77)</span></span><br><span class="line"><span class="comment"># # l.insert(10,77)</span></span><br><span class="line"><span class="comment"># # l.clear()</span></span><br><span class="line"><span class="comment"># #</span></span><br><span class="line"><span class="comment"># # l = [9,2,9,4,9,2,7,8,9]</span></span><br><span class="line"><span class="comment"># # print(l.index(9))</span></span><br><span class="line"><span class="comment"># # print(l1.index(9))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # print(l1)</span></span><br><span class="line"><span class="comment"># print(l)</span></span><br><span class="line"><span class="comment"># print(len(l))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class MyListV2(MyList):</span></span><br><span class="line"><span class="comment">#     def sort(self):</span></span><br><span class="line"><span class="comment">#         pass</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class MyListV3(MyListV2):</span></span><br><span class="line"><span class="comment">#     def reverse(self):</span></span><br><span class="line"><span class="comment">#         pass</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># l = MyListV2(6, 7, 8, 9, 10)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># l.append(9)</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-快速入门："><a href="#2-快速入门：" class="headerlink" title="2. 快速入门："></a>2. 快速入门：</h3><ul>
+<li>步骤：</li>
+</ul>
+<ol>
+<li><p>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</p>
+<ul>
+<li>1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下</li>
+<li>2.右键–&gt;Add As Library</li>
+</ul>
+</li>
+<li><p>注册驱动</p>
+</li>
+<li><p>获取数据库连接对象 Connection</p>
+</li>
+<li><p>定义sql</p>
+</li>
+<li><p>获取执行sql语句的对象 Statement</p>
+</li>
+<li><p>执行sql，接受返回结果</p>
+</li>
+<li><p>处理结果</p>
+</li>
+<li><p>释放资源</p>
+</li>
+</ol>
+<ul>
+<li>代码实现：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 导入驱动jar包</span></span><br><span class="line"><span class="comment">//2.注册驱动</span></span><br><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line"><span class="comment">//3.获取数据库连接对象</span></span><br><span class="line">Connection conn = DriverManager.getConnection(<span class="string">"jdbc:mysql:</span></span><br><span class="line"><span class="string">//localhost:3306/db3"</span>, <span class="string">"root"</span>, <span class="string">"root"</span>);</span><br><span class="line"><span class="comment">//4.定义sql语句</span></span><br><span class="line">String sql = <span class="string">"update account set balance = 500 where id = 1"</span>;</span><br><span class="line"><span class="comment">//5.获取执行sql的对象 Statement</span></span><br><span class="line">Statement stmt = conn.createStatement();</span><br><span class="line"><span class="comment">//6.执行sql</span></span><br><span class="line"><span class="keyword">int</span> count = stmt.executeUpdate(sql);</span><br><span class="line"><span class="comment">//7.处理结果</span></span><br><span class="line">System.out.println(count);</span><br><span class="line"><span class="comment">//8.释放资源</span></span><br><span class="line">stmt.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
+
+<pre><code>3. 详解各个对象：
+    1. DriverManager：驱动管理对象
+        * 功能：
+            1. 注册驱动：告诉程序该使用哪一个数据库驱动jar
+                static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 
+                写代码使用：  Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+                通过查看源码发现：在com.mysql.jdbc.Driver类中存在静态代码块
+                 static {
+                        try {
+                            java.sql.DriverManager.registerDriver(new Driver());
+                        } catch (SQLException E) {
+                            throw new RuntimeException(&quot;Can&apos;t register driver!&quot;);
+                        }
+                    }
+
+                注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。
+            2. 获取数据库连接：
+                * 方法：static Connection getConnection(String url, String user, String password) 
+                * 参数：
+                    * url：指定连接的路径
+                        * 语法：jdbc:mysql://ip地址(域名):端口号/数据库名称
+                        * 例子：jdbc:mysql://localhost:3306/db3
+                        * 细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称
+                    * user：用户名
+                    * password：密码 
+    2. Connection：数据库连接对象
+        1. 功能：
+            1. 获取执行sql 的对象
+                * Statement createStatement()
+                * PreparedStatement prepareStatement(String sql)  
+            2. 管理事务：
+                * 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
+                * 提交事务：commit() 
+                * 回滚事务：rollback() 
+    3. Statement：执行sql的对象
+        1. 执行sql
+            1. boolean execute(String sql) ：可以执行任意的sql 了解 
+            2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
+                * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。
+            3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句
+        2. 练习：
+            1. account表 添加一条记录
+            2. account表 修改记录
+            3. account表 删除一条记录
+
+            代码：
+                Statement stmt = null;
+                Connection conn = null;
+                try {
+                    //1. 注册驱动
+                    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+                    //2. 定义sql
+                    String sql = &quot;insert into account values(null,&apos;王五&apos;,3000)&quot;;
+                    //3.获取Connection对象
+                    conn = DriverManager.getConnection(&quot;jdbc:mysql:///db3&quot;, &quot;root&quot;, &quot;root&quot;);
+                    //4.获取执行sql的对象 Statement
+                    stmt = conn.createStatement();
+                    //5.执行sql
+                    int count = stmt.executeUpdate(sql);//影响的行数 
+                    //6.处理结果
+                    System.out.println(count);
+                    if(count &gt; 0){
+                        System.out.println(&quot;添加成功！&quot;);
+                    }else{
+                        System.out.println(&quot;添加失败！&quot;);
+                    }
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }finally {
+                    //stmt.close();
+                    //7. 释放资源
+                    //避免空指针异常
+                    if(stmt != null){
+                        try {
+                            stmt.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    if(conn != null){
+                        try {
+                            conn.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+    4. ResultSet：结果集对象,封装查询结果
+        * boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
+        * getXxx(参数):获取数据
+            * Xxx：代表数据类型   如： int getInt() ,    String getString()
+            * 参数：
+                1. int：代表列的编号,从1开始   如： getString(1)
+                2. String：代表列名称。 如： getDouble(&quot;balance&quot;)
+
+        * 注意：
+            * 使用步骤：
+                1. 游标向下移动一行
+                2. 判断是否有数据
+                3. 获取数据
+
+               //循环判断游标是否是最后一行末尾。
+                while(rs.next()){
+                    //获取数据
+                    //6.2 获取数据
+                    int id = rs.getInt(1);
+                    String name = rs.getString(&quot;name&quot;);
+                    double balance = rs.getDouble(3);
+
+                    System.out.println(id + &quot;---&quot; + name + &quot;---&quot; + balance);
+                }
+
+        * 练习：
+            * 定义一个方法，查询emp表的数据将其封装为对象，然后装载集合，返回。
+                1. 定义Emp类
+                2. 定义方法 public List&lt;Emp&gt; findAll(){}
+                3. 实现方法 select * from emp;
+
+    5. PreparedStatement：执行sql的对象
+        1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
+            1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a
+            2. sql：select * from user where username = &apos;fhdsjkf&apos; and password = &apos;a&apos; or &apos;a&apos; = &apos;a&apos; 
+
+        2. 解决sql注入问题：使用PreparedStatement对象来解决
+        3. 预编译的SQL：参数使用?作为占位符
+        4. 步骤：
+            1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
+            2. 注册驱动
+            3. 获取数据库连接对象 Connection
+            4. 定义sql
+                * 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;
+            5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) 
+            6. 给？赋值：
+                * 方法： setXxx(参数1,参数2)
+                    * 参数1：？的位置编号 从1 开始
+                    * 参数2：？的值
+            7. 执行sql，接受返回结果，不需要传递sql语句
+            8. 处理结果
+            9. 释放资源
+
+        5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作
+            1. 可以防止SQL注入
+            2. 效率更高</code></pre><h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><pre><code>* 目的：简化书写
+* 分析：
+    1. 注册驱动也抽取
+    2. 抽取一个方法获取连接对象
+        * 需求：不想传递参数（麻烦），还得保证工具类的通用性。
+        * 解决：配置文件
+            jdbc.properties
+                url=
+                user=
+                password=
+
+
+    3. 抽取一个方法释放资源
+
+* 代码实现：
+    public class JDBCUtils {
+    private static String url;
+    private static String user;
+    private static String password;
+    private static String driver;
+    /**
+     * 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块
+     */
+    static{
+        //读取资源文件，获取值。
+
+        try {
+            //1. 创建Properties集合类。
+            Properties pro = new Properties();
+
+            //获取src路径下的文件的方式---&gt;ClassLoader 类加载器
+            ClassLoader classLoader = JDBCUtils.class.getClassLoader();
+            URL res  = classLoader.getResource(&quot;jdbc.properties&quot;);
+            String path = res.getPath();
+            System.out.println(path);///D:/IdeaProjects/itcast/out/production/day04_jdbc/jdbc.properties
+            //2. 加载文件
+           // pro.load(new FileReader(&quot;D:\\IdeaProjects\\itcast\\day04_jdbc\\src\\jdbc.properties&quot;));
+            pro.load(new FileReader(path));
+
+            //3. 获取数据，赋值
+            url = pro.getProperty(&quot;url&quot;);
+            user = pro.getProperty(&quot;user&quot;);
+            password = pro.getProperty(&quot;password&quot;);
+            driver = pro.getProperty(&quot;driver&quot;);
+            //4. 注册驱动
+            Class.forName(driver);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 获取连接
+     * @return 连接对象
+     */
+    public static Connection getConnection() throws SQLException {
+
+        return DriverManager.getConnection(url, user, password);
+    }
+
+    /**
+     * 释放资源
+     * @param stmt
+     * @param conn
+     */
+    public static void close(Statement stmt,Connection conn){
+        if( stmt != null){
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if( conn != null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    /**
+     * 释放资源
+     * @param stmt
+     * @param conn
+     */
+    public static void close(ResultSet rs,Statement stmt, Connection conn){
+        if( rs != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if( stmt != null){
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if( conn != null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
+
+* 练习：
+    * 需求：
+        1. 通过键盘录入用户名和密码
+        2. 判断用户是否登录成功
+            * select * from user where username = &quot;&quot; and password = &quot;&quot;;
+            * 如果这个sql有查询结果，则成功，反之，则失败
+
+    * 步骤：
+        1. 创建数据库表 user
+            CREATE TABLE USER(
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                username VARCHAR(32),
+                PASSWORD VARCHAR(32)
+
+            );
+
+            INSERT INTO USER VALUES(NULL,&apos;zhangsan&apos;,&apos;123&apos;);
+            INSERT INTO USER VALUES(NULL,&apos;lisi&apos;,&apos;234&apos;);
+
+        2. 代码实现：
+            public class JDBCDemo9 {
+
+                public static void main(String[] args) {
+                    //1.键盘录入，接受用户名和密码
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println(&quot;请输入用户名：&quot;);
+                    String username = sc.nextLine();
+                    System.out.println(&quot;请输入密码：&quot;);
+                    String password = sc.nextLine();
+                    //2.调用方法
+                    boolean flag = new JDBCDemo9().login(username, password);
+                    //3.判断结果，输出不同语句
+                    if(flag){
+                        //登录成功
+                        System.out.println(&quot;登录成功！&quot;);
+                    }else{
+                        System.out.println(&quot;用户名或密码错误！&quot;);
+                    }
+
+
+                }
+
+
+
+                /**
+                 * 登录方法
+                 */
+                public boolean login(String username ,String password){
+                    if(username == null || password == null){
+                        return false;
+                    }
+                    //连接数据库判断是否登录成功
+                    Connection conn = null;
+                    Statement stmt =  null;
+                    ResultSet rs = null;
+                    //1.获取连接
+                    try {
+                        conn =  JDBCUtils.getConnection();
+                        //2.定义sql
+                        String sql = &quot;select * from user where username = &apos;&quot;+username+&quot;&apos; and password = &apos;&quot;+password+&quot;&apos; &quot;;
+                        //3.获取执行sql的对象
+                        stmt = conn.createStatement();
+                        //4.执行查询
+                        rs = stmt.executeQuery(sql);
+                        //5.判断
+                       /* if(rs.next()){//如果有下一行，则返回true
+                            return true;
+                        }else{
+                            return false;
+                        }*/
+                       return rs.next();//如果有下一行，则返回true
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }finally {
+                        JDBCUtils.close(rs,stmt,conn);
+                    }
+
+
+                    return false;
+                }
+            }</code></pre><h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><pre><code>1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。
+2. 操作：
+    1. 开启事务
+    2. 提交事务
+    3. 回滚事务
+3. 使用Connection对象来管理事务
+    * 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
+        * 在执行sql之前开启事务
+    * 提交事务：commit() 
+        * 当所有sql都执行完提交事务
+    * 回滚事务：rollback() 
+        * 在catch中回滚事务
+
+4. 代码：
+    public class JDBCDemo10 {
+
+        public static void main(String[] args) {
+            Connection conn = null;
+            PreparedStatement pstmt1 = null;
+            PreparedStatement pstmt2 = null;
+
+            try {
+                //1.获取连接
+                conn = JDBCUtils.getConnection();
+                //开启事务
+                conn.setAutoCommit(false);
+
+                //2.定义sql
+                //2.1 张三 - 500
+                String sql1 = &quot;update account set balance = balance - ? where id = ?&quot;;
+                //2.2 李四 + 500
+                String sql2 = &quot;update account set balance = balance + ? where id = ?&quot;;
+                //3.获取执行sql对象
+                pstmt1 = conn.prepareStatement(sql1);
+                pstmt2 = conn.prepareStatement(sql2);
+                //4. 设置参数
+                pstmt1.setDouble(1,500);
+                pstmt1.setInt(2,1);
+
+                pstmt2.setDouble(1,500);
+                pstmt2.setInt(2,2);
+                //5.执行sql
+                pstmt1.executeUpdate();
+                // 手动制造异常
+                int i = 3/0;
+
+                pstmt2.executeUpdate();
+                //提交事务
+                conn.commit();
+            } catch (Exception e) {
+                //事务回滚
+                try {
+                    if(conn != null) {
+                        conn.rollback();
+                    }
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+                e.printStackTrace();
+            }finally {
+                JDBCUtils.close(pstmt1,conn);
+                JDBCUtils.close(pstmt2,null);
+            }
+
+
+        }
+
+    }</code></pre>
       
     </div>
     
@@ -507,12 +921,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/">自定义实现列表类</a></p>
+  <p><span>本文标题:</span><a href="/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/">Java小讲座--JDBC</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
-  <p><span>发布时间:</span>2019年04月13日 - 09:04</p>
-  <p><span>最后更新:</span>2020年03月03日 - 19:03</p>
-  <p><span>原始链接:</span><a href="/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/" title="自定义实现列表类">https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2019/04/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E7%B1%BB/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年05月03日 - 17:05</p>
+  <p><span>最后更新:</span>2020年05月03日 - 22:05</p>
+  <p><span>原始链接:</span><a href="/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/" title="Java小讲座--JDBC">https://github.com/learn666-gif/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2020/05/03/Java%E5%B0%8F%E8%AE%B2%E5%BA%A7-JDBC/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -544,11 +958,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/JAVA%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> JAVA编程</a>
           
-            <a href="/tags/python%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> python编程</a>
-          
-            <a href="/tags/%E5%88%97%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 列表</a>
+            <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> mysql数据库</a>
           
         </div>
       
@@ -561,8 +973,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/03/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="next" title="十大排序算法">
-                <i class="fa fa-chevron-left"></i> 十大排序算法
+              <a href="/2020/05/02/JAVA%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E6%9D%82%E8%B0%88/" rel="next" title="JAVA实现网络编程--网络通信杂谈">
+                <i class="fa fa-chevron-left"></i> JAVA实现网络编程--网络通信杂谈
               </a>
             
           </div>
@@ -570,10 +982,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/26/%E5%B0%8F%E7%9F%A5%E8%AF%86%EF%BC%9Apython%E6%93%8D%E4%BD%9CMysql-pymysql-or-SQLAIchemy/" rel="prev" title="小知识：python操作Mysql-pymysql or SQLAIchemy">
-                小知识：python操作Mysql-pymysql or SQLAIchemy <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -799,7 +1207,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表生成"><span class="nav-number">2.</span> <span class="nav-text">列表生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现基础方法"><span class="nav-number">3.</span> <span class="nav-text">实现基础方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">3.1.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">1.1.</span> <span class="nav-text">JDBC：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念："><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 概念：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-快速入门："><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 快速入门：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="nav-number">1.2.</span> <span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC控制事务："><span class="nav-number">1.3.</span> <span class="nav-text">JDBC控制事务：</span></a></li></ol></li></ol></div>
             
 
           </div>
