@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1da5edcb"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,bootstrap," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="jwangcloud" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Bootstrap：bootstrap官方 概念 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。 框架:一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。 好处： 定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bootstrap">
+<meta property="og:url" content="https://github.com/learn666-gif/2020/05/05/bootstrap/index.html">
+<meta property="og:site_name" content="jwangcloud">
+<meta property="og:description" content="Bootstrap：bootstrap官方 概念 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。 框架:一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。 好处： 定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和">
+<meta property="article:published_time" content="2020-05-05T04:47:22.000Z">
+<meta property="article:modified_time" content="2020-05-05T04:48:24.270Z">
+<meta property="article:author" content="Jwang">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="bootstrap">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/learn666-gif/2020/05/05/bootstrap/"/>
+
+
+
+
+
+  <title>bootstrap | jwangcloud</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   
+    <a href="https://github.com/learn666-gif" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+ 
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jwangcloud</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2020/05/05/bootstrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jwangcloud">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bootstrap</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-05T12:47:22+08:00">
+                2020-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">前端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Bootstrap："><a href="#Bootstrap：" class="headerlink" title="Bootstrap："></a>Bootstrap：</h2><p><a href="https://v3.bootcss.com/" target="_blank" rel="noopener">bootstrap官方</a></p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</li>
+<li>框架:一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。</li>
+<li>好处：<ol>
+<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果。</li>
+<li>响应式布局。<ul>
+<li>同一套页面可以兼容不同分辨率的设备。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li>下载Bootstrap</li>
+<li>在项目中将这三个文件夹复制</li>
+<li>创建html页面，引入必要的资源文件</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">	&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, </span></span><br><span class="line"><span class="string">	initial-scale=1"</span>&gt;</span><br><span class="line">&lt;!-- 上述<span class="number">3</span>个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">	&lt;title&gt;Bootstrap HelloWorld&lt;/title&gt;</span><br><span class="line">&lt;!-- Bootstrap --&gt;</span><br><span class="line">	&lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">&lt;!-- jQuery (Bootstrap 的所有 JavaScript </span><br><span class="line">插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br><span class="line">	&lt;script src="js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。</span><br><span class="line">你也可以根据需要只加载单个插件。 --&gt;</span><br><span class="line">	&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;你好，世界！&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>同一套页面可以兼容不同分辨率的设备。</li>
+<li>实现：依赖于栅格系统：将一行平均分成12个格子，可以指定元素占几个格子</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>定义容器。相当于之前的table、</p>
+<ul>
+<li>容器分类：<ol>
+<li>container：两边留白</li>
+<li>container-fluid：每一种设备都是100%宽度</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>定义行。相当于之前的tr   样式：row</p>
+</li>
+<li><p>定义元素。指定该元素在不同的设备上，所占的格子数目。样式：col-设备代号-格子数目</p>
+<ul>
+<li><p>设备代号：</p>
+<ol>
+<li>xs：超小屏幕 手机 (&lt;768px)：col-xs-12</li>
+<li>sm：小屏幕 平板 (≥768px)</li>
+<li>md：中等屏幕 桌面显示器 (≥992px)</li>
+<li>lg：大屏幕 大桌面显示器 (≥1200px)</li>
+</ol>
+</li>
+<li><p>注意：</p>
+<ol>
+<li>一行中如果格子数目超过12，则超出部分自动换行。</li>
+<li>栅格类属性可以向上兼容。栅格类适用于与屏幕宽度大于或等于分界点大小的设备。</li>
+<li>如果真实设备宽度小于了设置栅格类属性的设备代码的最小值，会一个元素沾满一整行。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="col-lg-1 col-sm-2 inner"&gt;1&lt;/div&gt;. </span><br><span class="line">大屏幕该标签占用<span class="number">1</span>个和小屏幕占用<span class="number">2</span>个</span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS样式和JS插件"><a href="#CSS样式和JS插件" class="headerlink" title="CSS样式和JS插件"></a>CSS样式和JS插件</h2><h3 id="全局CSS样式："><a href="#全局CSS样式：" class="headerlink" title="全局CSS样式："></a>全局CSS样式：</h3><ul>
+<li>按钮：<code>class=&quot;btn btn-default&quot;</code></li>
+<li>图片：<ul>
+<li><code>class=&quot;img-responsive&quot;</code>：图片在任意尺寸都占100%</li>
+<li>图片形状</li>
+<li><code>&lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-rounded&quot;&gt;</code>：方形</li>
+<li><code>&lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt;</code>： 圆形</li>
+<li><code>&lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt;</code> ：相框</li>
+</ul>
+</li>
+<li>表格<ul>
+<li>table</li>
+<li>table-bordered</li>
+<li>table-hover</li>
+</ul>
+</li>
+<li>表单<ul>
+<li>给表单项添加：class=”form-control” </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>组件：<pre><code>* 导航条
+* 分页条</code></pre><ol start="3">
+<li>插件：<ul>
+<li>轮播图</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">    &lt;!-- 上述<span class="number">3</span>个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap HelloWorld&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br><span class="line">    &lt;script src="js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .paddtop&#123;</span><br><span class="line">            padding-top: <span class="number">10</span>px;</span><br><span class="line">        &#125;</span><br><span class="line">        .search-btn&#123;</span><br><span class="line">            <span class="keyword">float</span>: left;</span><br><span class="line">            border:1px solid #ffc900;</span><br><span class="line">            width: <span class="number">90</span>px;</span><br><span class="line">            height: <span class="number">35</span>px;</span><br><span class="line">            background-color:#ffc900 ;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: <span class="number">35</span>px;</span><br><span class="line">            margin-top: <span class="number">15</span>px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .search-input&#123;</span><br><span class="line">            <span class="keyword">float</span>: left;</span><br><span class="line">            border:2px solid #ffc900;</span><br><span class="line">            width: <span class="number">400</span>px;</span><br><span class="line">            height: <span class="number">35</span>px;</span><br><span class="line">            padding-left: <span class="number">5</span>px;</span><br><span class="line">            margin-top: <span class="number">15</span>px;</span><br><span class="line">        &#125;</span><br><span class="line">        .jx&#123;</span><br><span class="line">            border-bottom: 2px solid #ffc900;</span><br><span class="line">            padding: <span class="number">5</span>px;</span><br><span class="line">        &#125;</span><br><span class="line">        .company&#123;</span><br><span class="line">            height: <span class="number">40</span>px;</span><br><span class="line">            background-color: #ffc900;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height:<span class="number">40</span>px ;</span><br><span class="line">            font-size: <span class="number">8</span>px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- <span class="number">1</span>.页眉部分--&gt;</span><br><span class="line">   &lt;header <span class="class"><span class="keyword">class</span></span>=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">           &lt;img src=<span class="string">"img/top_banner.jpg"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-responsive"</span>&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row paddtop"</span>&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line">               &lt;img src=<span class="string">"img/logo.jpg"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-responsive"</span>&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-5"</span>&gt;</span><br><span class="line">               &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"search-input"</span> placeholder=<span class="string">"请输入线路名称"</span>&gt;</span><br><span class="line">               &lt;a class="search-btn" href="#"&gt;搜索&lt;/a&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">               &lt;img src=<span class="string">"img/hotel_tel.png"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-responsive"</span>&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;!--导航栏--&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">           &lt;nav <span class="class"><span class="keyword">class</span></span>=<span class="string">"navbar navbar-default"</span>&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">                   &lt;!-- Brand and toggle get grouped <span class="keyword">for</span> better mobile display --&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"navbar-header"</span>&gt;</span><br><span class="line">                       &lt;!-- 定义汉堡按钮 --&gt;</span><br><span class="line">                       &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"navbar-toggle collapsed"</span> data-toggle=<span class="string">"collapse"</span> data-target=<span class="string">"#bs-example-navbar-collapse-1"</span> aria-expanded=<span class="string">"false"</span>&gt;</span><br><span class="line">                           &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;</span><br><span class="line">                           &lt;span class="icon-bar"&gt;&lt;/span&gt;</span><br><span class="line">                           &lt;span class="icon-bar"&gt;&lt;/span&gt;</span><br><span class="line">                           &lt;span class="icon-bar"&gt;&lt;/span&gt;</span><br><span class="line">                       &lt;/button&gt;</span><br><span class="line">                       &lt;a class="navbar-brand" href="#"&gt;首页&lt;/a&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                   &lt;!-- Collect the nav links, forms, and other content <span class="keyword">for</span> toggling --&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"collapse navbar-collapse"</span> id=<span class="string">"bs-example-navbar-collapse-1"</span>&gt;</span><br><span class="line">                       &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav navbar-nav"</span>&gt;</span><br><span class="line">                           &lt;li class="active"&gt;&lt;a href="#"&gt;Link &lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                           &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                           &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                           &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                           &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                           &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">                       &lt;/ul&gt;</span><br><span class="line">                   &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;</span><br><span class="line">               &lt;/div&gt;&lt;!-- /.container-fluid --&gt;</span><br><span class="line">           &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">       &lt;!--轮播图--&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">           &lt;div id=<span class="string">"carousel-example-generic"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"carousel slide"</span> data-ride=<span class="string">"carousel"</span>&gt;</span><br><span class="line">               &lt;!-- Indicators --&gt;</span><br><span class="line">               &lt;ol <span class="class"><span class="keyword">class</span></span>=<span class="string">"carousel-indicators"</span>&gt;</span><br><span class="line">                   &lt;li data-target="#carousel-example-generic" data-slide-to="0" class="active"&gt;&lt;/li&gt;</span><br><span class="line">                   &lt;li data-target="#carousel-example-generic" data-slide-to="1"&gt;&lt;/li&gt;</span><br><span class="line">                   &lt;li data-target="#carousel-example-generic" data-slide-to="2"&gt;&lt;/li&gt;</span><br><span class="line">               &lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">               &lt;!-- Wrapper <span class="keyword">for</span> slides --&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"carousel-inner"</span> role=<span class="string">"listbox"</span>&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"item active"</span>&gt;</span><br><span class="line">                       &lt;img src=<span class="string">"img/banner_1.jpg"</span> alt=<span class="string">"..."</span>&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"item"</span>&gt;</span><br><span class="line">                       &lt;img src=<span class="string">"img/banner_2.jpg"</span> alt=<span class="string">"..."</span>&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"item"</span>&gt;</span><br><span class="line">                       &lt;img src=<span class="string">"img/banner_3.jpg"</span> alt=<span class="string">"..."</span>&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">               &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">               &lt;!-- Controls --&gt;</span><br><span class="line">               &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">"left carousel-control"</span> href=<span class="string">"#carousel-example-generic"</span> role=<span class="string">"button"</span> data-slide=<span class="string">"prev"</span>&gt;</span><br><span class="line">                   &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;</span><br><span class="line">                   &lt;span class="sr-only"&gt;Previous&lt;/span&gt;</span><br><span class="line">               &lt;/a&gt;</span><br><span class="line">               &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">"right carousel-control"</span> href=<span class="string">"#carousel-example-generic"</span> role=<span class="string">"button"</span> data-slide=<span class="string">"next"</span>&gt;</span><br><span class="line">                   &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;</span><br><span class="line">                   &lt;span class="sr-only"&gt;Next&lt;/span&gt;</span><br><span class="line">               &lt;/a&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;/header&gt;</span><br><span class="line">   &lt;!-- <span class="number">2</span>.主体部分--&gt;</span><br><span class="line">   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row jx"</span>&gt;</span><br><span class="line">            &lt;img src=<span class="string">"img/icon_5.jpg"</span>&gt;</span><br><span class="line">            &lt;span&gt;黑马精选&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row paddtop"</span>&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                    &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                    &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                    &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                   &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                   &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">               &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line"></span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                   &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                   &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">               &lt;/div&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line"></span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                   &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                   &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">               &lt;/div&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row jx"</span>&gt;</span><br><span class="line">           &lt;img src=<span class="string">"img/icon_6.jpg"</span>&gt;</span><br><span class="line">           &lt;span&gt;国内游&lt;/span&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row paddtop"</span>&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">               &lt;img src=<span class="string">"img/guonei_1.jpg"</span>&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-8"</span>&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line"></span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">               &lt;/div&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;</span><br><span class="line"></span><br><span class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumbnail"</span>&gt;</span><br><span class="line">                           &lt;img src=<span class="string">"img/jiangxuan_3.jpg"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;</span><br><span class="line">                           &lt;font color="red"&gt;&amp;yen; 699&lt;/font&gt;</span><br><span class="line">                       &lt;/div&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">               &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">           &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">   &lt;!-- <span class="number">3</span>.页脚部分--&gt;</span><br><span class="line">   &lt;footer <span class="class"><span class="keyword">class</span></span>=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">           &lt;img src=<span class="string">"img/footer_service.png"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-responsive"</span>&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row company"</span>&gt;</span><br><span class="line">           版权所有Copyright <span class="number">2006</span>-<span class="number">2018</span>, All Rights Reserved 苏ICP备<span class="number">16007882</span></span><br><span class="line">       &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;/footer&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+ 	 
+   	 <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+ 	 
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2020/05/05/bootstrap/">bootstrap</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
+  <p><span>发布时间:</span>2020年05月05日 - 12:05</p>
+  <p><span>最后更新:</span>2020年05月05日 - 12:05</p>
+  <p><span>原始链接:</span><a href="/2020/05/05/bootstrap/" title="bootstrap">https://github.com/learn666-gif/2020/05/05/bootstrap/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2020/05/05/bootstrap/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+	  $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+
+      
+    </div>    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+            <a href="/tags/bootstrap/" rel="tag"><i class="fa fa-tag"></i> bootstrap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/05/%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80-XML/" rel="next" title="可扩展标记语言 -- XML">
+                <i class="fa fa-chevron-left"></i> 可扩展标记语言 -- XML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5NC8yNTM4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Jwang" />
+            
+              <p class="site-author-name" itemprop="name">Jwang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/learn666-gif" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/684433bc744b" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_34536604" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5e5c685e6fb9a07cd443bedai" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://app.gitbook.com/@79896867/spaces" target="_blank" title="gitbook">
+                      
+                        <i class="fa fa-fw fa-git"></i>gitbook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap："><span class="nav-number">1.</span> <span class="nav-text">Bootstrap：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门"><span class="nav-number">1.2.</span> <span class="nav-text">快速入门</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式布局"><span class="nav-number">2.</span> <span class="nav-text">响应式布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS样式和JS插件"><span class="nav-number">3.</span> <span class="nav-text">CSS样式和JS插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局CSS样式："><span class="nav-number">3.1.</span> <span class="nav-text">全局CSS样式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">4.</span> <span class="nav-text">案例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jwang</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共139.3k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+   i </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
