@@ -110,14 +110,14 @@
 
 <meta name="description" content="web相关概念软件架构 C&#x2F;S：客户端&#x2F;服务器端 B&#x2F;S：浏览器&#x2F;服务器端  资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析 如： html,css,JavaScript   动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器 如：servlet&#x2F;jsp,php,asp…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javaWeb开发--Tomcat">
+<meta property="og:title" content="javaWeb核心技术01--Tomcat">
 <meta property="og:url" content="https://github.com/learn666-gif/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/index.html">
 <meta property="og:site_name" content="jwangcloud">
 <meta property="og:description" content="web相关概念软件架构 C&#x2F;S：客户端&#x2F;服务器端 B&#x2F;S：浏览器&#x2F;服务器端  资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析 如： html,css,JavaScript   动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器 如：servlet&#x2F;jsp,php,asp…">
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/JAVA%E7%BC%96%E7%A8%8B/tomcat/%E8%B5%84%E6%BA%90%E5%88%86%E7%B1%BB.bmp">
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/JAVA%E7%BC%96%E7%A8%8B/tomcat/tomcat%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
 <meta property="article:published_time" content="2020-05-05T13:45:53.000Z">
-<meta property="article:modified_time" content="2020-05-06T03:49:40.713Z">
+<meta property="article:modified_time" content="2020-05-11T01:21:10.044Z">
 <meta property="article:author" content="Jwang">
 <meta property="article:tag" content="JAVA编程">
 <meta property="article:tag" content="JavaWeb">
@@ -159,7 +159,7 @@
 
 
 
-  <title>javaWeb开发--Tomcat | jwangcloud</title>
+  <title>javaWeb核心技术01--Tomcat | jwangcloud</title>
   
 
 
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javaWeb开发--Tomcat</h1>
+          <h1 class="post-title" itemprop="name headline">javaWeb核心技术01--Tomcat</h1>
         
 
         <div class="post-meta">
@@ -647,11 +647,11 @@ redirectPort=&quot;8445&quot; /&gt;`</code></pre></li>
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/">javaWeb开发--Tomcat</a></p>
+  <p><span>本文标题:</span><a href="/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/">javaWeb核心技术01--Tomcat</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
   <p><span>发布时间:</span>2020年05月05日 - 21:05</p>
-  <p><span>最后更新:</span>2020年05月06日 - 11:05</p>
-  <p><span>原始链接:</span><a href="/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/" title="javaWeb开发--Tomcat">https://github.com/learn666-gif/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/</a>
+  <p><span>最后更新:</span>2020年05月11日 - 09:05</p>
+  <p><span>原始链接:</span><a href="/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/" title="javaWeb核心技术01--Tomcat">https://github.com/learn666-gif/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2020/05/05/javaWeb%E5%BC%80%E5%8F%91%20Tomcat/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -711,8 +711,8 @@ redirectPort=&quot;8445&quot; /&gt;`</code></pre></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/06/JAVA--%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Servlet/" rel="prev" title="JAVA--学会使用Servlet(Servlet-HTTP)">
-                JAVA--学会使用Servlet(Servlet-HTTP) <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/06/JAVA--%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Servlet/" rel="prev" title="javaWeb核心技术02--学会使用Servlet(Servlet-HTTP)">
+                javaWeb核心技术02--学会使用Servlet(Servlet-HTTP) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
