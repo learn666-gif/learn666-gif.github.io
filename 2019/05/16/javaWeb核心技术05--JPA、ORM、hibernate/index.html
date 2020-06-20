@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1da5edcb"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA编程,ORM,hibernate,jpa," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="jwangcloud" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="ORM思想 ORM（Object-Relational Mapping） 表示对象关系映射。在面向对象的软件开发中，通过ORM，就可以把对象映射到关系型数据库中。只要有一套程序能够做到建立对象与数据库的关联，操作对象就可以直接操作数据库数据，就可以说这套程序实现了ORM对象关系映射  简单的说：ORM就是建立实体类和数据库表之间的关系，从而达到操作实体类就相当于操作数据库表的目的。    主要目的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaWeb核心技术05--JPA、ORM、hibernate">
+<meta property="og:url" content="https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/index.html">
+<meta property="og:site_name" content="jwangcloud">
+<meta property="og:description" content="ORM思想 ORM（Object-Relational Mapping） 表示对象关系映射。在面向对象的软件开发中，通过ORM，就可以把对象映射到关系型数据库中。只要有一套程序能够做到建立对象与数据库的关联，操作对象就可以直接操作数据库数据，就可以说这套程序实现了ORM对象关系映射  简单的说：ORM就是建立实体类和数据库表之间的关系，从而达到操作实体类就相当于操作数据库表的目的。    主要目的">
+<meta property="article:published_time" content="2019-05-16T07:05:08.000Z">
+<meta property="article:modified_time" content="2020-06-20T10:20:00.592Z">
+<meta property="article:author" content="Jwang">
+<meta property="article:tag" content="JAVA编程">
+<meta property="article:tag" content="ORM">
+<meta property="article:tag" content="hibernate">
+<meta property="article:tag" content="jpa">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/learn666-gif/2019/05/16/javaWeb核心技术05--JPA、ORM、hibernate/"/>
+
+
+
+
+
+  <title>javaWeb核心技术05--JPA、ORM、hibernate | jwangcloud</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   
+    <a href="https://github.com/learn666-gif" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+ 
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jwangcloud</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jwangcloud">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javaWeb核心技术05--JPA、ORM、hibernate</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-16T15:05:08+08:00">
+                2019-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  23
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ORM思想"><a href="#ORM思想" class="headerlink" title="ORM思想"></a>ORM思想</h1><ul>
+<li><p>ORM（Object-Relational Mapping） 表示对象关系映射。在面向对象的软件开发中，通过ORM，就可以把对象映射到关系型数据库中。只要有一套程序能够做到建立对象与数据库的关联，操作对象就可以直接操作数据库数据，就可以说这套程序实现了ORM对象关系映射</p>
+</li>
+<li><p>简单的说：ORM就是建立实体类和数据库表之间的关系，从而达到操作实体类就相当于操作数据库表的目的。</p>
+</li>
+</ul>
+<ul>
+<li><p>主要目的：操作实体类就相当于操作数据库表</p>
+</li>
+<li><p>建立两个映射关系：</p>
+<ul>
+<li>实体类和表的映射关系</li>
+<li>实体类中属性和表中字段的映射关系</li>
+</ul>
+</li>
+<li><p>不再重点关注：sql语句</p>
+</li>
+<li><p>实现了ORM思想的框架：Mybatis（ibatis）、Hibernate、Jpa</p>
+</li>
+</ul>
+<h1 id="hibernate与JPA的概述"><a href="#hibernate与JPA的概述" class="headerlink" title="hibernate与JPA的概述"></a>hibernate与JPA的概述</h1><h2 id="hibernate概述"><a href="#hibernate概述" class="headerlink" title="hibernate概述"></a>hibernate概述</h2><ul>
+<li>Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO(java实体类对象)与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。</li>
+</ul>
+<h2 id="JPA概述"><a href="#JPA概述" class="headerlink" title="JPA概述"></a>JPA概述</h2><ul>
+<li>JPA的全称是Java Persistence API， 即Java 持久化API，是SUN公司推出的一套基于ORM的规范，内部是由一系列的接口和抽象类构成。</li>
+<li>JPA通过JDK 5.0注解描述对象－关系表的映射关系，并将运行期的实体对象持久化到数据库中。</li>
+</ul>
+<h2 id="JPA的优势"><a href="#JPA的优势" class="headerlink" title="JPA的优势"></a>JPA的优势</h2><h3 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h3><ul>
+<li>JPA 是 JCP 组织发布的 Java EE 标准之一，因此任何声称符合 JPA 标准的框架都遵循同样的架构，提供相同的访问API，这保证了基于JPA开发的企业应用能够经过少量的修改就能够在不同的JPA框架下运行。</li>
+</ul>
+<h3 id="容器级特性的支持"><a href="#容器级特性的支持" class="headerlink" title="容器级特性的支持"></a>容器级特性的支持</h3><ul>
+<li>JPA框架中支持大数据集、事务、并发等容器级事务，这使得 JPA 超越了简单持久化框架的局限，在企业应用发挥更大的作用。</li>
+</ul>
+<h3 id="简单方便"><a href="#简单方便" class="headerlink" title="简单方便"></a>简单方便</h3><ul>
+<li>JPA的主要目标之一就是提供更加简单的编程模型：在JPA框架下创建实体和创建Java 类一样简单，没有任何的约束和限制，只需要使用 javax.persistence.Entity进行注释，JPA的框架和接口也都非常简单，没有太多特别的规则和设计模式的要求，开发者可以很容易的掌握。JPA基于非侵入式原则设计，因此可以很容易的和其它框架或者容器集成</li>
+</ul>
+<h3 id="查询能力"><a href="#查询能力" class="headerlink" title="查询能力"></a>查询能力</h3><ul>
+<li>JPA的查询语言是面向对象而非面向数据库的，它以面向对象的自然语法构造查询语句，可以看成是Hibernate HQL的等价物。JPA定义了独特的JPQL（Java Persistence Query Language），JPQL是EJB QL的一种扩展，它是针对实体的一种查询语言，操作对象是实体，而不是关系数据库的表，而且能够支持批量更新和修改、JOIN、GROUP BY、HAVING 等通常只有 SQL 才能够提供的高级查询特性，甚至还能够支持子查询。</li>
+</ul>
+<h3 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h3><ul>
+<li>JPA 中能够支持面向对象的高级特性，如类之间的继承、多态和类之间的复杂关系，这样的支持能够让开发者最大限度的使用面向对象的模型设计企业应用，而不需要自行处理这些特性在关系数据库的持久化</li>
+</ul>
+<h2 id="JPA与hibernate的关系"><a href="#JPA与hibernate的关系" class="headerlink" title="JPA与hibernate的关系"></a>JPA与hibernate的关系</h2><ul>
+<li><p>JPA规范本质上就是一种ORM规范，注意不是ORM框架——因为JPA并未提供ORM实现，它只是制订了一些规范，提供了一些编程的API接口，但具体实现则由服务厂商来提供实现。  </p>
+</li>
+<li><p>JPA和Hibernate的关系就像JDBC和JDBC驱动的关系，JPA是规范，Hibernate除了作为ORM框架之外，它也是一种JPA实现。JPA怎么取代Hibernate呢？JDBC规范可以驱动底层数据库吗？答案是否定的，也就是说，如果使用JPA规范进行数据库操作，底层需要hibernate作为其实现类完成数据持久化工作。</p>
+</li>
+</ul>
+<h1 id="JPA的入门案例"><a href="#JPA的入门案例" class="headerlink" title="JPA的入门案例"></a>JPA的入门案例</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ul>
+<li>实现的功能是保存一个客户到数据库的客户表中。</li>
+</ul>
+<h2 id="开发包介绍"><a href="#开发包介绍" class="headerlink" title="开发包介绍"></a>开发包介绍</h2><ul>
+<li>由于JPA是sun公司制定的API规范，所以我们不需要导入额外的JPA相关的jar包，只需要导入JPA的提供商的jar包。我们选择Hibernate作为JPA的提供商，所以需要导入Hibernate的相关jar包</li>
+<li><a href="http://sourceforge.net/projects/hibernate/files/hibernate-orm/" target="_blank" rel="noopener">下载网址</a></li>
+</ul>
+<h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><h3 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h3><ul>
+<li>对于JPA操作，只需要从hibernate提供的资料中找到我们需要的jar导入到工程中即可。</li>
+<li>maven工程导入坐标</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">	&lt;project.hibernate.version&gt;5.0.7.Final&lt;/project.hibernate.version&gt;</span><br><span class="line">&lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">	&lt;!-- junit --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">		&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- hibernate对jpa的支持包 --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.hibernate&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;hibernate-entitymanager&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;$&#123;project.hibernate.version&#125;&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- c3p0 --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.hibernate&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;hibernate-c3p0&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;$&#123;project.hibernate.version&#125;&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- log日志 --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- Mysql and MariaDB --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;5.1.6&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置JPA的核心配置文件"><a href="#配置JPA的核心配置文件" class="headerlink" title="配置JPA的核心配置文件"></a>配置JPA的核心配置文件</h3><ul>
+<li>在java工程的src路径下resources下创建一个名为META-INF的文件夹，在此文件夹下创建一个名为persistence.xml的配置文件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;persistence xmlns=<span class="string">"http://java.sun.com/xml/ns/persistence"</span> version=<span class="string">"2.0"</span>&gt;</span><br><span class="line">    &lt;!--需要配置persistence-unit节点</span><br><span class="line">        持久化单元：</span><br><span class="line">            name：持久化单元名称</span><br><span class="line">            transaction-type：事务管理的方式</span><br><span class="line">                    JTA：分布式事务管理</span><br><span class="line">                    RESOURCE_LOCAL：本地事务管理</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;persistence-unit name=<span class="string">"myJpa"</span> transaction-type=<span class="string">"RESOURCE_LOCAL"</span>&gt;</span><br><span class="line">        &lt;!--jpa的实现方式 --&gt;</span><br><span class="line">        &lt;provider&gt;org.hibernate.jpa.HibernatePersistenceProvider&lt;/provider&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--可选配置：配置jpa实现方的配置信息--&gt;</span><br><span class="line">        &lt;properties&gt;</span><br><span class="line">            &lt;!-- 数据库信息</span><br><span class="line">                用户名，javax.persistence.jdbc.user</span><br><span class="line">                密码，  javax.persistence.jdbc.password</span><br><span class="line">                驱动，  javax.persistence.jdbc.driver</span><br><span class="line">                数据库地址   javax.persistence.jdbc.url</span><br><span class="line">            --&gt;</span><br><span class="line">            &lt;property name=<span class="string">"javax.persistence.jdbc.user"</span> value=<span class="string">"root"</span>/&gt;</span><br><span class="line">            &lt;property name=<span class="string">"javax.persistence.jdbc.password"</span> value=<span class="string">"111111"</span>/&gt;</span><br><span class="line">            &lt;property name=<span class="string">"javax.persistence.jdbc.driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;</span><br><span class="line">            &lt;property name=<span class="string">"javax.persistence.jdbc.url"</span> value=<span class="string">"jdbc:mysql:///jpa"</span>/&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!--配置jpa实现方(hibernate)的配置信息</span><br><span class="line">                显示sql           ：   <span class="keyword">false</span>|<span class="keyword">true</span></span><br><span class="line">                自动创建数据库表    ：  hibernate.hbm2ddl.auto</span><br><span class="line">                        create      : 程序运行时创建数据库表（如果有表，先删除表再创建）</span><br><span class="line">                        update      ：程序运行时创建表（如果有表，不会创建表）</span><br><span class="line">                        none        ：不会创建表</span><br><span class="line"></span><br><span class="line">            --&gt;</span><br><span class="line">            &lt;property name=<span class="string">"hibernate.show_sql"</span> value=<span class="string">"true"</span> /&gt;</span><br><span class="line">            &lt;property name=<span class="string">"hibernate.hbm2ddl.auto"</span> value=<span class="string">"update"</span> /&gt;</span><br><span class="line">        &lt;/properties&gt;</span><br><span class="line">    &lt;/persistence-unit&gt;</span><br><span class="line">&lt;/persistence&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建客户的数据库表和客户的实体类"><a href="#创建客户的数据库表和客户的实体类" class="headerlink" title="创建客户的数据库表和客户的实体类"></a>创建客户的数据库表和客户的实体类</h2><h3 id="创建客户的数据库表"><a href="#创建客户的数据库表" class="headerlink" title="创建客户的数据库表"></a>创建客户的数据库表</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*创建客户表*/</span></span><br><span class="line"><span class="function">CREATE TABLE <span class="title">cst_customer</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  cust_id bigint(<span class="number">32</span>)</span> NOT NULL AUTO_INCREMENT COMMENT '客户编号<span class="params">(主键)</span>',</span></span><br><span class="line"><span class="function">  cust_name <span class="title">varchar</span><span class="params">(<span class="number">32</span>)</span> NOT NULL COMMENT '客户名称<span class="params">(公司名称)</span>',</span></span><br><span class="line"><span class="function">  cust_source <span class="title">varchar</span><span class="params">(<span class="number">32</span>)</span> DEFAULT NULL COMMENT '客户信息来源',</span></span><br><span class="line"><span class="function">  cust_industry <span class="title">varchar</span><span class="params">(<span class="number">32</span>)</span> DEFAULT NULL COMMENT '客户所属行业',</span></span><br><span class="line"><span class="function">  cust_level <span class="title">varchar</span><span class="params">(<span class="number">32</span>)</span> DEFAULT NULL COMMENT '客户级别',</span></span><br><span class="line"><span class="function">  cust_address <span class="title">varchar</span><span class="params">(<span class="number">128</span>)</span> DEFAULT NULL COMMENT '客户联系地址',</span></span><br><span class="line"><span class="function">  cust_phone <span class="title">varchar</span><span class="params">(<span class="number">64</span>)</span> DEFAULT NULL COMMENT '客户联系电话',</span></span><br><span class="line"><span class="function">  PRIMARY <span class="title">KEY</span> <span class="params">(`cust_id`)</span></span></span><br><span class="line"><span class="function">) ENGINE</span>=InnoDB AUTO_INCREMENT=<span class="number">1</span> DEFAULT CHARSET=utf8;<span class="string">"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建客户的实体类"><a href="#创建客户的实体类" class="headerlink" title="创建客户的实体类"></a>创建客户的实体类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">private</span> Long custId;</span><br><span class="line">	<span class="keyword">private</span> String custName;</span><br><span class="line">	<span class="keyword">private</span> String custSource;</span><br><span class="line">	<span class="keyword">private</span> String custIndustry;</span><br><span class="line">	<span class="keyword">private</span> String custLevel;</span><br><span class="line">	<span class="keyword">private</span> String custAddress;</span><br><span class="line">	<span class="keyword">private</span> String custPhone;</span><br><span class="line">	<span class="comment">//getter和setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="编写实体类和数据库表的映射配置"><a href="#编写实体类和数据库表的映射配置" class="headerlink" title="编写实体类和数据库表的映射配置"></a>编写实体类和数据库表的映射配置</h2><h3 id="在实体类上使用JPA注解的形式配置映射关系"><a href="#在实体类上使用JPA注解的形式配置映射关系" class="headerlink" title="在实体类上使用JPA注解的形式配置映射关系"></a>在实体类上使用JPA注解的形式配置映射关系</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 客户的实体类</span></span><br><span class="line"><span class="comment"> *      配置映射关系</span></span><br><span class="line"><span class="comment"> *   1.实体类和表的映射关系</span></span><br><span class="line"><span class="comment"> *      <span class="doctag">@Entity</span>:声明实体类</span></span><br><span class="line"><span class="comment"> *      <span class="doctag">@Table</span> : 配置实体类和表的映射关系</span></span><br><span class="line"><span class="comment"> *          name : 配置数据库表的名称</span></span><br><span class="line"><span class="comment"> *   2.实体类中属性和表中字段的映射关系</span></span><br><span class="line"><span class="comment"> * 所有的注解都是使用JPA的规范提供的注解，</span></span><br><span class="line"><span class="comment"> * 所以在导入注解包的时候，一定要导入javax.persistence下的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"cst_customer"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Customer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Id</span>：声明主键的配置</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@GeneratedValue</span>:配置主键的生成策略</span></span><br><span class="line"><span class="comment">     *      strategy</span></span><br><span class="line"><span class="comment">     *          GenerationType.IDENTITY ：自增，mysql</span></span><br><span class="line"><span class="comment">     *                 * 底层数据库必须支持自动增长（底层数据库支持的自动增长方式，对id自增）</span></span><br><span class="line"><span class="comment">     *          GenerationType.SEQUENCE : 序列，oracle</span></span><br><span class="line"><span class="comment">     *                  * 底层数据库必须支持序列</span></span><br><span class="line"><span class="comment">     *          GenerationType.TABLE : jpa提供的一种机制，通过一张数据库表的形式帮助我们完成主键自增</span></span><br><span class="line"><span class="comment">     *          GenerationType.AUTO ： 由程序自动的帮助我们选择主键生成策略</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Column</span>:配置属性和字段的映射关系</span></span><br><span class="line"><span class="comment">     *      name：数据库表中字段的名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"cust_id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Long custId; <span class="comment">//客户的主键</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"cust_name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custName;<span class="comment">//客户名称</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"cust_source"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custSource;<span class="comment">//客户来源</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"cust_level"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custLevel;<span class="comment">//客户级别</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"cust_industry"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custIndustry;<span class="comment">//客户所属行业</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"cust_phone"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custPhone;<span class="comment">//客户的联系方式</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"cust_address"</span>)</span><br><span class="line">    <span class="keyword">private</span> String custAddress;<span class="comment">//客户地址</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//getter setter...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用注解的说明"><a href="#常用注解的说明" class="headerlink" title="常用注解的说明"></a>常用注解的说明</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line">	作用：指定当前类是实体类。</span><br><span class="line"><span class="meta">@Table</span></span><br><span class="line">	作用：指定实体类和表之间的对应关系。</span><br><span class="line">	属性：</span><br><span class="line">		name：指定数据库表的名称</span><br><span class="line"><span class="meta">@Id</span></span><br><span class="line">	作用：指定当前字段是主键。</span><br><span class="line"><span class="meta">@GeneratedValue</span></span><br><span class="line">	作用：指定主键的生成方式。。</span><br><span class="line">	属性：</span><br><span class="line">		strategy ：指定主键生成策略。</span><br><span class="line"><span class="meta">@Column</span></span><br><span class="line">	作用：指定实体类属性和数据库表之间的对应关系</span><br><span class="line">	属性：</span><br><span class="line">		name：指定数据库表的列名称。</span><br><span class="line">		unique：是否唯一  </span><br><span class="line">		nullable：是否可以为空  </span><br><span class="line">		inserttable：是否可以插入  </span><br><span class="line">		updateable：是否可以更新  </span><br><span class="line">		columnDefinition: 定义建表时创建此列的DDL  </span><br><span class="line">		secondaryTable: 从表名。如果此列不建在主表上（默认建在主表），该属性定义该列所在从表的名字搭建开发环境[重点]</span><br></pre></td></tr></table></figure>
+
+<h1 id="CRUD操作以及JPA的API介绍"><a href="#CRUD操作以及JPA的API介绍" class="headerlink" title="CRUD操作以及JPA的API介绍"></a>CRUD操作以及JPA的API介绍</h1><h2 id="JPA的API介绍"><a href="#JPA的API介绍" class="headerlink" title="JPA的API介绍"></a>JPA的API介绍</h2><h3 id="Persistence对象"><a href="#Persistence对象" class="headerlink" title="Persistence对象"></a>Persistence对象</h3><ul>
+<li>Persistence对象主要作用是用于获取EntityManagerFactory对象的 。通过调用该类的createEntityManagerFactory静态方法，根据配置文件中持久化单元名称创建EntityManagerFactory。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"//1. 创建 EntitymanagerFactory</span></span><br><span class="line"><span class="string">@Test</span></span><br><span class="line"><span class="string">String unitName = "</span>myJpa<span class="string">";</span></span><br><span class="line"><span class="string">EntityManagerFactory factory= Persistence.createEntityManagerFactory(unitName);"</span></span><br></pre></td></tr></table></figure>
+<h3 id="EntityManagerFactory"><a href="#EntityManagerFactory" class="headerlink" title="EntityManagerFactory"></a>EntityManagerFactory</h3><ul>
+<li>EntityManagerFactory 接口主要用来创建 EntityManager 实例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"//创建实体管理类</span></span><br><span class="line"><span class="string">EntityManager em = factory.createEntityManager();"</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>抽取jpaUtils工具类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解决实体管理器工厂的浪费资源和耗时问题</span></span><br><span class="line"><span class="comment"> *      通过静态代码块的形式，当程序第一次访问此工具类时，创建一个公共的实体管理器工厂对象</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 第一次访问getEntityManager方法：经过静态代码块创建一个factory对象，再调用方法创建一个EntityManager对象</span></span><br><span class="line"><span class="comment"> * 第二次方法getEntityManager方法：直接通过一个已经创建好的factory对象，创建EntityManager对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JpaUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> EntityManagerFactory factory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>  &#123;</span><br><span class="line">        <span class="comment">//1.加载配置文件，创建entityManagerFactory</span></span><br><span class="line">        factory = Persistence.createEntityManagerFactory(<span class="string">"myJpa"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取EntityManager对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> EntityManager <span class="title">getEntityManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> factory.createEntityManager();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="EntityManager"><a href="#EntityManager" class="headerlink" title="EntityManager"></a>EntityManager</h3><ul>
+<li><p>在 JPA 规范中, EntityManager是完成持久化操作的核心对象。实体类作为普通 java对象，只有在调用 EntityManager将其持久化后才会变成持久化对象。EntityManager对象在一组实体类与底层数据源之间进行 O/R 映射的管理。它可以用来管理和更新 Entity Bean, 根椐主键查找 Entity Bean, 还可以通过JPQL语句查询实体。</p>
+<ul>
+<li>getTransaction : 获取事务对象</li>
+<li>persist ： 保存操作</li>
+<li>merge ： 更新操作</li>
+<li>remove ： 删除操作</li>
+<li>find/getReference ： 根据id查询</li>
+</ul>
+</li>
+</ul>
+<h3 id="EntityTransaction"><a href="#EntityTransaction" class="headerlink" title="EntityTransaction"></a>EntityTransaction</h3><ul>
+<li><p>在 JPA 规范中, EntityTransaction是完成事务操作的核心对象，对于EntityTransaction在我们的java代码中承接的功能比较简单</p>
+<ul>
+<li>begin：开启事务</li>
+<li>commit：提交事务</li>
+<li>rollback：回滚事务</li>
+</ul>
+</li>
+</ul>
+<h2 id="CRUD操作"><a href="#CRUD操作" class="headerlink" title="CRUD操作"></a>CRUD操作</h2><h3 id="实现保存操作-persist"><a href="#实现保存操作-persist" class="headerlink" title="实现保存操作 persist"></a>实现保存操作 persist</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JpaTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试jpa的保存</span></span><br><span class="line"><span class="comment">     *      案例：保存一个客户到数据库中</span></span><br><span class="line"><span class="comment">     *  Jpa的操作步骤</span></span><br><span class="line"><span class="comment">     *     1.加载配置文件创建工厂（实体管理器工厂）对象</span></span><br><span class="line"><span class="comment">     *     2.通过实体管理器工厂获取实体管理器</span></span><br><span class="line"><span class="comment">     *     3.获取事务对象，开启事务</span></span><br><span class="line"><span class="comment">     *     4.完成增删改查操作</span></span><br><span class="line"><span class="comment">     *     5.提交事务（回滚事务）</span></span><br><span class="line"><span class="comment">     *     6.释放资源</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSave</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//        //1.加载配置文件创建工厂（实体管理器工厂）对象</span></span><br><span class="line"><span class="comment">//        EntityManagerFactory factory = Persistence.createEntityManagerFactory("myJpa");</span></span><br><span class="line"><span class="comment">//        //2.通过实体管理器工厂获取实体管理器</span></span><br><span class="line"><span class="comment">//        EntityManager em = factory.createEntityManager();</span></span><br><span class="line">        EntityManager em = JpaUtils.getEntityManager();</span><br><span class="line">        <span class="comment">//3.获取事务对象，开启事务</span></span><br><span class="line">        EntityTransaction tx = em.getTransaction(); <span class="comment">//获取事务对象</span></span><br><span class="line">        tx.begin();<span class="comment">//开启事务</span></span><br><span class="line">        <span class="comment">//4.完成增删改查操作：保存一个客户到数据库中</span></span><br><span class="line">        Customer customer = <span class="keyword">new</span> Customer();</span><br><span class="line">        customer.setCustName(<span class="string">"aaa"</span>);</span><br><span class="line">        customer.setCustIndustry(<span class="string">"教育"</span>);</span><br><span class="line">        <span class="comment">//保存，</span></span><br><span class="line">        em.persist(customer); <span class="comment">//保存操作</span></span><br><span class="line">        <span class="comment">//5.提交事务</span></span><br><span class="line">        tx.commit();</span><br><span class="line">        <span class="comment">//6.释放资源</span></span><br><span class="line">        em.close();</span><br><span class="line"> <span class="comment">//       factory.close();</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据id查询用户"><a href="#根据id查询用户" class="headerlink" title="根据id查询用户"></a>根据id查询用户</h3><ul>
+<li>立即加载 find</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据id查询客户</span></span><br><span class="line"><span class="comment"> *  使用find方法查询：</span></span><br><span class="line"><span class="comment"> *      1.查询的对象就是当前客户对象本身</span></span><br><span class="line"><span class="comment"> *      2.在调用find方法的时候，就会发送sql语句查询数据库</span></span><br><span class="line"><span class="comment"> *  立即加载</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">testFind</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.通过工具类获取entityManager</span></span><br><span class="line">    EntityManager entityManager = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = entityManager.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.增删改查 -- 根据id查询客户</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * find : 根据id查询数据</span></span><br><span class="line"><span class="comment">     *      class：查询数据的结果需要包装的实体类类型的字节码</span></span><br><span class="line"><span class="comment">     *      id：查询的主键的取值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Customer customer = entityManager.find(Customer<span class="class">.<span class="keyword">class</span>, 1<span class="title">l</span>)</span>;</span><br><span class="line">   <span class="comment">// System.out.print(customer);</span></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    entityManager.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>延迟加载 getRefrence</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据id查询客户</span></span><br><span class="line"><span class="comment"> *      getReference方法</span></span><br><span class="line"><span class="comment"> *          1.获取的对象是一个动态代理对象</span></span><br><span class="line"><span class="comment"> *          2.调用getReference方法不会立即发送sql语句查询数据库</span></span><br><span class="line"><span class="comment"> *              * 当调用查询结果对象的时候，才会发送查询的sql语句：什么时候用，什么时候发送sql语句查询数据库</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 延迟加载（懒加载）</span></span><br><span class="line"><span class="comment"> *      * 得到的是一个动态代理对象</span></span><br><span class="line"><span class="comment"> *      * 什么时候用，什么使用才会查询</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">testReference</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.通过工具类获取entityManager</span></span><br><span class="line">    EntityManager entityManager = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = entityManager.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.增删改查 -- 根据id查询客户</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * getReference : 根据id查询数据</span></span><br><span class="line"><span class="comment">     *      class：查询数据的结果需要包装的实体类类型的字节码</span></span><br><span class="line"><span class="comment">     *      id：查询的主键的取值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Customer customer = entityManager.getReference(Customer<span class="class">.<span class="keyword">class</span>, 1<span class="title">l</span>)</span>;</span><br><span class="line">    System.out.print(customer);</span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    entityManager.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除-remove"><a href="#删除-remove" class="headerlink" title="删除 remove"></a>删除 remove</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 删除</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testRemove</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 定义对象</span></span><br><span class="line">	EntityManager em = <span class="keyword">null</span>;</span><br><span class="line">	EntityTransaction tx = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">// 获取实体管理对象</span></span><br><span class="line">		em = JPAUtil.getEntityManager();</span><br><span class="line">		<span class="comment">// 获取事务对象</span></span><br><span class="line">		tx = em.getTransaction();</span><br><span class="line">		<span class="comment">// 开启事务</span></span><br><span class="line">		tx.begin();</span><br><span class="line">		<span class="comment">// 执行操作</span></span><br><span class="line">		Customer c1 = em.find(Customer<span class="class">.<span class="keyword">class</span>, 6<span class="title">L</span>)</span>;</span><br><span class="line">		em.remove(c1);</span><br><span class="line">		<span class="comment">// 提交事务</span></span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="comment">// 回滚事务</span></span><br><span class="line">		tx.rollback();</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">		<span class="comment">// 释放资源</span></span><br><span class="line">		em.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="跟新-merge"><a href="#跟新-merge" class="headerlink" title="跟新 merge"></a>跟新 merge</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 更新客户的操作</span></span><br><span class="line"><span class="comment"> *      merge(Object)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">testUpdate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.通过工具类获取entityManager</span></span><br><span class="line">    EntityManager entityManager = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = entityManager.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.增删改查 -- 更新操作</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//i 查询客户</span></span><br><span class="line">    Customer customer = entityManager.find(Customer<span class="class">.<span class="keyword">class</span>,1<span class="title">l</span>)</span>;</span><br><span class="line">    <span class="comment">//ii 更新客户</span></span><br><span class="line">    customer.setCustIndustry(<span class="string">"教育01"</span>);</span><br><span class="line">    entityManager.merge(customer);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    entityManager.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="操作步骤总结"><a href="#操作步骤总结" class="headerlink" title="操作步骤总结"></a>操作步骤总结</h2><h3 id="加载配置文件创建实体管理器工厂"><a href="#加载配置文件创建实体管理器工厂" class="headerlink" title="加载配置文件创建实体管理器工厂"></a>加载配置文件创建实体管理器工厂</h3><ul>
+<li>Persisitence：静态方法（根据持久化单元名称创建实体管理器工厂）<ul>
+<li>createEntityMnagerFactory（持久化单元名称）</li>
+<li>用：创建实体管理器工厂</li>
+</ul>
+</li>
+</ul>
+<h3 id="根据实体管理器工厂，创建实体管理器"><a href="#根据实体管理器工厂，创建实体管理器" class="headerlink" title="根据实体管理器工厂，创建实体管理器"></a>根据实体管理器工厂，创建实体管理器</h3><ul>
+<li>EntityManagerFactory ：获取EntityManager对象</li>
+<li>方法：createEntityManager</li>
+<li>内部维护的很多的内容<ul>
+<li>内部维护了数据库信息，</li>
+<li>维护了缓存信息</li>
+<li>维护了所有的实体管理器对象</li>
+<li>再创建EntityManagerFactory的过程中会根据配置创建数据库表</li>
+</ul>
+</li>
+</ul>
+<h3 id="EntityManagerFactory的创建过程比较浪费资源"><a href="#EntityManagerFactory的创建过程比较浪费资源" class="headerlink" title="EntityManagerFactory的创建过程比较浪费资源"></a>EntityManagerFactory的创建过程比较浪费资源</h3><ul>
+<li>特点：线程安全的对象</li>
+<li>多个线程访问同一个EntityManagerFactory不会有线程安全问题</li>
+<li>如何解决EntityManagerFactory的创建过程浪费资源（耗时）的问题？<ul>
+<li>思路：创建一个公共的EntityManagerFactory的对象</li>
+<li>静态代码块的形式创建EntityManagerFactory</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建事务对象，开启事务"><a href="#创建事务对象，开启事务" class="headerlink" title="创建事务对象，开启事务"></a>创建事务对象，开启事务</h3><ul>
+<li><p>EntityManager对象：实体类管理器</p>
+<ul>
+<li>beginTransaction : 创建事务对象</li>
+<li>presist ： 保存</li>
+<li>merge  ： 更新</li>
+<li>remove ： 删除</li>
+<li>find/getRefrence ： 根据id查询</li>
+</ul>
+</li>
+<li><p>Transaction 对象 ： 事务</p>
+<ul>
+<li>begin：开启事务</li>
+<li>commit：提交事务</li>
+<li>rollback：回滚</li>
+</ul>
+</li>
+</ul>
+<h3 id="增删改查操作-提交事务-释放资源"><a href="#增删改查操作-提交事务-释放资源" class="headerlink" title="增删改查操作 提交事务 释放资源"></a>增删改查操作 提交事务 释放资源</h3><h1 id="JPA中的主键生成策略"><a href="#JPA中的主键生成策略" class="headerlink" title="JPA中的主键生成策略"></a>JPA中的主键生成策略</h1><ul>
+<li>通过annotation（注解）来映射hibernate实体的,基于annotation的hibernate主键标识为@Id, 其生成规则由@GeneratedValue设定的.这里的@id和@GeneratedValue都是JPA的标准用法。</li>
+</ul>
+<h2 id="JPA提供的四种标准用法"><a href="#JPA提供的四种标准用法" class="headerlink" title="JPA提供的四种标准用法"></a>JPA提供的四种标准用法</h2><h3 id="IDENTITY-主键由数据库自动生成（主要是自动增长型）–mysql"><a href="#IDENTITY-主键由数据库自动生成（主要是自动增长型）–mysql" class="headerlink" title="IDENTITY: 主键由数据库自动生成（主要是自动增长型）–mysql"></a>IDENTITY: 主键由数据库自动生成（主要是自动增长型）–mysql</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span>  </span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY) </span><br><span class="line"><span class="keyword">private</span> Long custId;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列-–oracle"><a href="#SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列-–oracle" class="headerlink" title="SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列 –oracle"></a>SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列 –oracle</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span>  </span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.SEQUENCE,generator=<span class="string">"payablemoney_seq"</span>)  </span><br><span class="line"><span class="meta">@SequenceGenerator</span>(name=<span class="string">"payablemoney_seq"</span>, sequenceName=<span class="string">"seq_payment"</span>)  </span><br><span class="line"><span class="keyword">private</span> Long custId;</span><br><span class="line"><span class="comment">//@SequenceGenerator源码中的定义</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;TYPE, METHOD, FIELD&#125;)   </span><br><span class="line"><span class="meta">@Retention</span>(RUNTIME)  </span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SequenceGenerator &#123;  </span><br><span class="line">   <span class="comment">//表示该表主键生成策略的名称，它被引用在@GeneratedValue中设置的“generator”值中</span></span><br><span class="line">   <span class="function">String <span class="title">name</span><span class="params">()</span></span>;  </span><br><span class="line">   <span class="comment">//属性表示生成策略用到的数据库序列名称。</span></span><br><span class="line">   <span class="function">String <span class="title">sequenceName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">   <span class="comment">//表示主键初识值，默认为0</span></span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">initialValue</span><span class="params">()</span> <span class="keyword">default</span> 0</span>;  </span><br><span class="line">   <span class="comment">//表示每次主键值增加的大小，例如设置1，则表示每次插入新记录后自动加1，默认为50</span></span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">allocationSize</span><span class="params">()</span> <span class="keyword">default</span> 50</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AUTO：主键由程序控制"><a href="#AUTO：主键由程序控制" class="headerlink" title="AUTO：主键由程序控制"></a>AUTO：主键由程序控制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span>  </span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)  </span><br><span class="line"><span class="keyword">private</span> Long custId;</span><br></pre></td></tr></table></figure>
+
+<h3 id="TABLE：使用一个特定的数据库表格来保存主键"><a href="#TABLE：使用一个特定的数据库表格来保存主键" class="headerlink" title="TABLE：使用一个特定的数据库表格来保存主键"></a>TABLE：使用一个特定的数据库表格来保存主键</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span>  </span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.TABLE, generator=<span class="string">"payablemoney_gen"</span>)  </span><br><span class="line"><span class="meta">@TableGenerator</span>(name = <span class="string">"pk_gen"</span>,  </span><br><span class="line">    table=<span class="string">"tb_generator"</span>,  </span><br><span class="line">    pkColumnName=<span class="string">"gen_name"</span>,  </span><br><span class="line">    valueColumnName=<span class="string">"gen_value"</span>,  </span><br><span class="line">    pkColumnValue=<span class="string">"PAYABLEMOENY_PK"</span>,  </span><br><span class="line">    allocationSize=<span class="number">1</span>  </span><br><span class="line">) </span><br><span class="line"><span class="keyword">private</span> Long custId;</span><br><span class="line"></span><br><span class="line"><span class="comment">//@TableGenerator源码的定义：</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;TYPE, METHOD, FIELD&#125;)   </span><br><span class="line"><span class="meta">@Retention</span>(RUNTIME)  </span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TableGenerator &#123;  </span><br><span class="line">  <span class="comment">//表示该表主键生成策略的名称，它被引用在@GeneratedValue中设置的“generator”值中</span></span><br><span class="line">  <span class="function">String <span class="title">name</span><span class="params">()</span></span>;  </span><br><span class="line">  <span class="comment">//表示表生成策略所持久化的表名，例如，这里表使用的是数据库中的“tb_generator”。</span></span><br><span class="line">  <span class="function">String <span class="title">table</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="comment">//catalog和schema具体指定表所在的目录名或是数据库名</span></span><br><span class="line">  <span class="function">String <span class="title">catalog</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="function">String <span class="title">schema</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="comment">//属性的值表示在持久化表中，该主键生成策略所对应键值的名称。例如在“tb_generator”中将“gen_name”作为主键的键值</span></span><br><span class="line">  <span class="function">String <span class="title">pkColumnName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="comment">//属性的值表示在持久化表中，该主键当前所生成的值，它的值将会随着每次创建累加。例如，在“tb_generator”中将“gen_value”作为主键的值 </span></span><br><span class="line">  <span class="function">String <span class="title">valueColumnName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="comment">//属性的值表示在持久化表中，该生成策略所对应的主键。例如在“tb_generator”表中，将“gen_name”的值为“CUSTOMER_PK”。 </span></span><br><span class="line">  <span class="function">String <span class="title">pkColumnValue</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;  </span><br><span class="line">  <span class="comment">//表示主键初识值，默认为0。 </span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">initialValue</span><span class="params">()</span> <span class="keyword">default</span> 0</span>;  </span><br><span class="line">  <span class="comment">//表示每次主键值增加的大小，例如设置成1，则表示每次创建新记录后自动加1，默认为50。</span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">allocationSize</span><span class="params">()</span> <span class="keyword">default</span> 50</span>;  </span><br><span class="line">  UniqueConstraint[] uniqueConstraints() <span class="keyword">default</span> &#123;&#125;;  </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">//这里应用表tb_generator，定义为 ：</span></span><br><span class="line"><span class="function">CREATE TABLE  <span class="title">tb_generator</span> <span class="params">(  </span></span></span><br><span class="line"><span class="function"><span class="params">  id NUMBER NOT NULL,  </span></span></span><br><span class="line"><span class="function"><span class="params">  gen_name VARCHAR2(<span class="number">255</span>)</span> NOT NULL,  </span></span><br><span class="line"><span class="function">  gen_value NUMBER NOT NULL,  </span></span><br><span class="line"><span class="function">  PRIMARY <span class="title">KEY</span><span class="params">(id)</span>  </span></span><br><span class="line"><span class="function">)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="JPA中的复杂查询"><a href="#JPA中的复杂查询" class="headerlink" title="JPA中的复杂查询"></a>JPA中的复杂查询</h1><h2 id="JPQL"><a href="#JPQL" class="headerlink" title="JPQL"></a>JPQL</h2><ul>
+<li>全称Java Persistence Query Language</li>
+<li>基于首次在EJB2.0中引入的EJB查询语言(EJB QL),Java持久化查询语言(JPQL)是一种可移植的查询语言，旨在以面向对象表达式语言的表达式，将SQL语法和简单查询语义绑定在一起·使用这种语言编写的查询是可移植的，可以被编译成所有主流数据库服务器上的SQL。</li>
+<li>其特征与原生SQL语句类似，并且完全面向对象，通过类名和属性访问，而不是表名和表的属性。</li>
+</ul>
+<h3 id="查询全部"><a href="#查询全部" class="headerlink" title="查询全部"></a>查询全部</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查询所有客户</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	EntityManager em = <span class="keyword">null</span>;</span><br><span class="line">	EntityTransaction tx = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">//获取实体管理对象</span></span><br><span class="line">		em = JPAUtil.getEntityManager();</span><br><span class="line">		<span class="comment">//获取事务对象</span></span><br><span class="line">		tx = em.getTransaction();</span><br><span class="line">		tx.begin();</span><br><span class="line">		<span class="comment">// 创建query对象</span></span><br><span class="line">		String jpql = <span class="string">"from Customer"</span>;</span><br><span class="line">		Query query = em.createQuery(jpql);</span><br><span class="line">		<span class="comment">// 查询并得到返回结果</span></span><br><span class="line">		List list = query.getResultList(); <span class="comment">// 得到集合返回类型</span></span><br><span class="line">		<span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">			System.out.println(object);</span><br><span class="line">		&#125;</span><br><span class="line">		tx.commit();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		<span class="comment">// 回滚事务</span></span><br><span class="line">		tx.rollback();</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">		<span class="comment">// 释放资源</span></span><br><span class="line">		em.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 排序查询： 倒序查询全部客户（根据id倒序）</span></span><br><span class="line"><span class="comment"> *      sql：SELECT * FROM cst_customer ORDER BY cust_id DESC</span></span><br><span class="line"><span class="comment"> *      jpql：from Customer order by custId desc </span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 进行jpql查询</span></span><br><span class="line"><span class="comment"> *      1.创建query查询对象</span></span><br><span class="line"><span class="comment"> *      2.对参数进行赋值</span></span><br><span class="line"><span class="comment"> *      3.查询，并得到返回结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOrders</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.获取entityManager对象</span></span><br><span class="line">    EntityManager em = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = em.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.查询全部</span></span><br><span class="line">    String jpql = <span class="string">"from Customer order by custId desc"</span>;</span><br><span class="line">    Query query = em.createQuery(jpql);<span class="comment">//创建Query查询对象，query对象才是执行jqpl的对象</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//发送查询，并封装结果集</span></span><br><span class="line">    List list = query.getResultList();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Object obj : list) &#123;</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    em.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="统计总数"><a href="#统计总数" class="headerlink" title="统计总数"></a>统计总数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用jpql查询，统计客户的总数</span></span><br><span class="line"><span class="comment"> *      sql：SELECT COUNT(cust_id) FROM cst_customer</span></span><br><span class="line"><span class="comment"> *      jpql：select count(custId) from Customer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.获取entityManager对象</span></span><br><span class="line">    EntityManager em = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = em.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.查询全部</span></span><br><span class="line">    <span class="comment">//i.根据jpql语句创建Query查询对象</span></span><br><span class="line">    String jpql = <span class="string">"select count(custId) from Customer"</span>;</span><br><span class="line">    Query query = em.createQuery(jpql);</span><br><span class="line">    <span class="comment">//ii.对参数赋值</span></span><br><span class="line">    <span class="comment">//iii.发送查询，并封装结果</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * getResultList ： 直接将查询结果封装为list集合</span></span><br><span class="line"><span class="comment">     * getSingleResult : 得到唯一的结果集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Object result = query.getSingleResult();</span><br><span class="line"></span><br><span class="line">    System.out.println(result);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    em.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分页查询</span></span><br><span class="line"><span class="comment"> *      sql：select * from cst_customer limit 0,2</span></span><br><span class="line"><span class="comment"> *      jqpl : from Customer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPaged</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.获取entityManager对象</span></span><br><span class="line">    EntityManager em = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = em.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.查询全部</span></span><br><span class="line">    <span class="comment">//i.根据jpql语句创建Query查询对象</span></span><br><span class="line">    String jpql = <span class="string">"from Customer"</span>;</span><br><span class="line">    Query query = em.createQuery(jpql);</span><br><span class="line">    <span class="comment">//ii.对参数赋值 -- 分页参数</span></span><br><span class="line">    <span class="comment">//起始索引</span></span><br><span class="line">    query.setFirstResult(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//每页查询的条数</span></span><br><span class="line">    query.setMaxResults(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//iii.发送查询，并封装结果</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * getResultList ： 直接将查询结果封装为list集合</span></span><br><span class="line"><span class="comment">     * getSingleResult : 得到唯一的结果集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    List list = query.getResultList();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(Object obj : list) &#123;</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    em.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 条件查询</span></span><br><span class="line"><span class="comment"> *     案例：查询客户名称以‘播客’开头的客户</span></span><br><span class="line"><span class="comment"> *          sql：SELECT * FROM cst_customer WHERE cust_name LIKE  ?</span></span><br><span class="line"><span class="comment"> *          jpql : from Customer where custName like ?</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCondition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.获取entityManager对象</span></span><br><span class="line">    EntityManager em = JpaUtils.getEntityManager();</span><br><span class="line">    <span class="comment">//2.开启事务</span></span><br><span class="line">    EntityTransaction tx = em.getTransaction();</span><br><span class="line">    tx.begin();</span><br><span class="line">    <span class="comment">//3.查询全部</span></span><br><span class="line">    <span class="comment">//i.根据jpql语句创建Query查询对象</span></span><br><span class="line">    String jpql = <span class="string">"from Customer where custName like ? "</span>;</span><br><span class="line">    Query query = em.createQuery(jpql);</span><br><span class="line">    <span class="comment">//ii.对参数赋值 -- 占位符参数</span></span><br><span class="line">    <span class="comment">//第一个参数：占位符的索引位置（从1开始），第二个参数：取值</span></span><br><span class="line">    query.setParameter(<span class="number">1</span>,<span class="string">"播客%"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//iii.发送查询，并封装结果</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * getResultList ： 直接将查询结果封装为list集合</span></span><br><span class="line"><span class="comment">     * getSingleResult : 得到唯一的结果集</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    List list = query.getResultList();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(Object obj : list) &#123;</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.提交事务</span></span><br><span class="line">    tx.commit();</span><br><span class="line">    <span class="comment">//5.释放资源</span></span><br><span class="line">    em.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+ 	 
+   	 <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+ 	 
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/">javaWeb核心技术05--JPA、ORM、hibernate</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
+  <p><span>发布时间:</span>2019年05月16日 - 15:05</p>
+  <p><span>最后更新:</span>2020年06月20日 - 18:06</p>
+  <p><span>原始链接:</span><a href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/" title="javaWeb核心技术05--JPA、ORM、hibernate">https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+	  $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+
+      
+    </div>    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> JAVA编程</a>
+          
+            <a href="/tags/ORM/" rel="tag"><i class="fa fa-tag"></i> ORM</a>
+          
+            <a href="/tags/hibernate/" rel="tag"><i class="fa fa-tag"></i> hibernate</a>
+          
+            <a href="/tags/jpa/" rel="tag"><i class="fa fa-tag"></i> jpa</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B601%20--%20log4j%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" rel="next" title="JAVA框架01 -- log4j日志配置详解">
+                <i class="fa fa-chevron-left"></i> JAVA框架01 -- log4j日志配置详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B603%20--%20Spring/" rel="prev" title="JAVA框架03 -- Spring">
+                JAVA框架03 -- Spring <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5NC8yNTM4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Jwang" />
+            
+              <p class="site-author-name" itemprop="name">Jwang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/learn666-gif" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/684433bc744b" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_34536604" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5e5c685e6fb9a07cd443bedai" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://app.gitbook.com/@79896867/spaces" target="_blank" title="gitbook">
+                      
+                        <i class="fa fa-fw fa-git"></i>gitbook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ORM思想"><span class="nav-number">1.</span> <span class="nav-text">ORM思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hibernate与JPA的概述"><span class="nav-number">2.</span> <span class="nav-text">hibernate与JPA的概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate概述"><span class="nav-number">2.1.</span> <span class="nav-text">hibernate概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA概述"><span class="nav-number">2.2.</span> <span class="nav-text">JPA概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA的优势"><span class="nav-number">2.3.</span> <span class="nav-text">JPA的优势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准化"><span class="nav-number">2.3.1.</span> <span class="nav-text">标准化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器级特性的支持"><span class="nav-number">2.3.2.</span> <span class="nav-text">容器级特性的支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单方便"><span class="nav-number">2.3.3.</span> <span class="nav-text">简单方便</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询能力"><span class="nav-number">2.3.4.</span> <span class="nav-text">查询能力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级特性"><span class="nav-number">2.3.5.</span> <span class="nav-text">高级特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA与hibernate的关系"><span class="nav-number">2.4.</span> <span class="nav-text">JPA与hibernate的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JPA的入门案例"><span class="nav-number">3.</span> <span class="nav-text">JPA的入门案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">3.1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发包介绍"><span class="nav-number">3.2.</span> <span class="nav-text">开发包介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建开发环境"><span class="nav-number">3.3.</span> <span class="nav-text">搭建开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入jar包"><span class="nav-number">3.3.1.</span> <span class="nav-text">导入jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置JPA的核心配置文件"><span class="nav-number">3.3.2.</span> <span class="nav-text">配置JPA的核心配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建客户的数据库表和客户的实体类"><span class="nav-number">3.4.</span> <span class="nav-text">创建客户的数据库表和客户的实体类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建客户的数据库表"><span class="nav-number">3.4.1.</span> <span class="nav-text">创建客户的数据库表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建客户的实体类"><span class="nav-number">3.4.2.</span> <span class="nav-text">创建客户的实体类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写实体类和数据库表的映射配置"><span class="nav-number">3.5.</span> <span class="nav-text">编写实体类和数据库表的映射配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在实体类上使用JPA注解的形式配置映射关系"><span class="nav-number">3.5.1.</span> <span class="nav-text">在实体类上使用JPA注解的形式配置映射关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用注解的说明"><span class="nav-number">3.5.2.</span> <span class="nav-text">常用注解的说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CRUD操作以及JPA的API介绍"><span class="nav-number">4.</span> <span class="nav-text">CRUD操作以及JPA的API介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA的API介绍"><span class="nav-number">4.1.</span> <span class="nav-text">JPA的API介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Persistence对象"><span class="nav-number">4.1.1.</span> <span class="nav-text">Persistence对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EntityManagerFactory"><span class="nav-number">4.1.2.</span> <span class="nav-text">EntityManagerFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EntityManager"><span class="nav-number">4.1.3.</span> <span class="nav-text">EntityManager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EntityTransaction"><span class="nav-number">4.1.4.</span> <span class="nav-text">EntityTransaction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CRUD操作"><span class="nav-number">4.2.</span> <span class="nav-text">CRUD操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现保存操作-persist"><span class="nav-number">4.2.1.</span> <span class="nav-text">实现保存操作 persist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据id查询用户"><span class="nav-number">4.2.2.</span> <span class="nav-text">根据id查询用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-remove"><span class="nav-number">4.2.3.</span> <span class="nav-text">删除 remove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跟新-merge"><span class="nav-number">4.2.4.</span> <span class="nav-text">跟新 merge</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤总结"><span class="nav-number">4.3.</span> <span class="nav-text">操作步骤总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载配置文件创建实体管理器工厂"><span class="nav-number">4.3.1.</span> <span class="nav-text">加载配置文件创建实体管理器工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据实体管理器工厂，创建实体管理器"><span class="nav-number">4.3.2.</span> <span class="nav-text">根据实体管理器工厂，创建实体管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EntityManagerFactory的创建过程比较浪费资源"><span class="nav-number">4.3.3.</span> <span class="nav-text">EntityManagerFactory的创建过程比较浪费资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建事务对象，开启事务"><span class="nav-number">4.3.4.</span> <span class="nav-text">创建事务对象，开启事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增删改查操作-提交事务-释放资源"><span class="nav-number">4.3.5.</span> <span class="nav-text">增删改查操作 提交事务 释放资源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JPA中的主键生成策略"><span class="nav-number">5.</span> <span class="nav-text">JPA中的主键生成策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA提供的四种标准用法"><span class="nav-number">5.1.</span> <span class="nav-text">JPA提供的四种标准用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IDENTITY-主键由数据库自动生成（主要是自动增长型）–mysql"><span class="nav-number">5.1.1.</span> <span class="nav-text">IDENTITY: 主键由数据库自动生成（主要是自动增长型）–mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列-–oracle"><span class="nav-number">5.1.2.</span> <span class="nav-text">SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列 –oracle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AUTO：主键由程序控制"><span class="nav-number">5.1.3.</span> <span class="nav-text">AUTO：主键由程序控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TABLE：使用一个特定的数据库表格来保存主键"><span class="nav-number">5.1.4.</span> <span class="nav-text">TABLE：使用一个特定的数据库表格来保存主键</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JPA中的复杂查询"><span class="nav-number">6.</span> <span class="nav-text">JPA中的复杂查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JPQL"><span class="nav-number">6.1.</span> <span class="nav-text">JPQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询全部"><span class="nav-number">6.1.1.</span> <span class="nav-text">查询全部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序查询"><span class="nav-number">6.1.2.</span> <span class="nav-text">排序查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计总数"><span class="nav-number">6.1.3.</span> <span class="nav-text">统计总数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页查询"><span class="nav-number">6.1.4.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件查询"><span class="nav-number">6.1.5.</span> <span class="nav-text">条件查询</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jwang</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共199.9k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+   i </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
