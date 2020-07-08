@@ -155,7 +155,7 @@
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/blog/java/web/es/assets/1526571200130.png">
 <meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/blog/java/web/es/assets/1526572198447.png">
 <meta property="article:published_time" content="2019-06-17T07:05:08.000Z">
-<meta property="article:modified_time" content="2020-06-30T05:52:01.445Z">
+<meta property="article:modified_time" content="2020-07-08T07:17:32.685Z">
 <meta property="article:author" content="Jwang">
 <meta property="article:tag" content="JAVA编程">
 <meta property="article:tag" content="Elasticsearch">
@@ -893,6 +893,10 @@
 </li>
 <li><p>Date：日期类型</p>
 <p>elasticsearch可以对日期格式化为字符串存储，但是建议我们存储为毫秒值，存储为long，节省空间。</p>
+<ul>
+<li>存储为对象：{girl:{name: “rose”, age:19}}</li>
+</ul>
+<p>会处理成两个字段：girl.name和girl.age。</p>
 </li>
 </ul>
 <h4 id="index"><a href="#index" class="headerlink" title="index"></a>index</h4><p>index影响字段的索引情况。</p>
@@ -927,8 +931,7 @@
 
 
 <p>通过kibana查看数据：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span> _search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span>:&#123;</span><br><span class="line">        <span class="string">"match_all"</span>:&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span> /h/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"query"</span>:&#123;</span><br><span class="line">        <span class="string">"match_all"</span>:&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"_index"</span>: <span class="string">"h"</span>,</span><br><span class="line">  <span class="attr">"_type"</span>: <span class="string">"goods"</span>,</span><br><span class="line">  <span class="attr">"_id"</span>: <span class="string">"r9c1KGMBIhaxtY5rlRKv"</span>,</span><br><span class="line">  <span class="attr">"_version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"_score"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"_source"</span>: &#123;</span><br><span class="line">    <span class="attr">"title"</span>: <span class="string">"小米手机"</span>,</span><br><span class="line">    <span class="attr">"images"</span>: <span class="string">"http://image.leyou.com/12479122.jpg"</span>,</span><br><span class="line">    <span class="attr">"price"</span>: <span class="number">2699</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1673,7 +1676,7 @@
   <p><span>本文标题:</span><a href="/2019/06/17/JAVA%E6%A1%86%E6%9E%B609%20--%20Elasticsearch/">JAVA框架09 -- Elasticsearch</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
   <p><span>发布时间:</span>2019年06月17日 - 15:06</p>
-  <p><span>最后更新:</span>2020年06月30日 - 13:06</p>
+  <p><span>最后更新:</span>2020年07月08日 - 15:07</p>
   <p><span>原始链接:</span><a href="/2019/06/17/JAVA%E6%A1%86%E6%9E%B609%20--%20Elasticsearch/" title="JAVA框架09 -- Elasticsearch">https://github.com/learn666-gif/2019/06/17/JAVA%E6%A1%86%E6%9E%B609%20--%20Elasticsearch/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/2019/06/17/JAVA%E6%A1%86%E6%9E%B609%20--%20Elasticsearch/"  aria-label="复制成功！"></i></span>
   </p>
@@ -1722,8 +1725,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/03/python%E7%BC%96%E7%A8%8B02%20--%20IO%E7%BC%96%E7%A8%8B/" rel="next" title="python编程02 -- IO编程">
-                <i class="fa fa-chevron-left"></i> python编程02 -- IO编程
+              <a href="/2019/06/17/JAVA%E6%A1%86%E6%9E%B611%20--%20Shiro%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F/" rel="next" title="JAVA框架11 -- Shiro权限系统">
+                <i class="fa fa-chevron-left"></i> JAVA框架11 -- Shiro权限系统
               </a>
             
           </div>
@@ -1732,8 +1735,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/17/JAVA%E6%A1%86%E6%9E%B611%20--%20Shiro%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F/" rel="prev" title="JAVA框架11 -- Shiro权限系统">
-                JAVA框架11 -- Shiro权限系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/18/%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF03--hadoop%E8%BF%90%E7%94%A8/" rel="prev" title="通用技术03--hadoop运用">
+                通用技术03--hadoop运用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -2013,7 +2016,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共273.7k字</span>
+  <span class="post-count">博客全站共279.7k字</span>
 </div>
 
         
