@@ -313,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/JAVA%E6%A1%86%E6%9E%B603%20--%20Spring/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/JAVA%E6%A1%86%E6%9E%B601%20--%20log4j%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jwang">
@@ -332,7 +332,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B603%20--%20Spring/" itemprop="url">JAVA框架03 -- Spring</a></h1>
+                <a class="post-title-link" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B601%20--%20log4j%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/" itemprop="url">JAVA框架01 -- log4j日志配置详解</a></h1>
         
 
         <div class="post-meta">
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10.5k
+                  3.6k
                 </span>
               
 
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  45
+                  15
                 </span>
               
             </div>
@@ -437,12 +437,12 @@
       
         
           
-          概念相关spring 是什么
-Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC(Inverse Of Control: 反转控制)和 AOP(Aspect Oriented Programming:面向切面编程)为内核，提供了展现层 Spring 
+          Log4j简介Log4j有三个主要的组件：Loggers(记录器)，Appenders (输出源)和Layouts(布局)。这里可简单理解为日志类别，日志要输出的地方和日志以何种形式输出。综合使用这三个组件可以轻松地记录信息的类型和级别，并可以在运行时控制日志输出的样式和位置。
+LoggersLog
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B603%20--%20Spring/#more" rel="contents">
+            <a class="btn" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B601%20--%20log4j%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -501,7 +501,7 @@ Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/JAVA%E6%A1%86%E6%9E%B606%20--%20Springboot/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/JAVA%E6%A1%86%E6%9E%B602%20--%20MyBatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jwang">
@@ -520,7 +520,7 @@ Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B606%20--%20Springboot/" itemprop="url">JAVA框架06 -- Springboot</a></h1>
+                <a class="post-title-link" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B602%20--%20MyBatis/" itemprop="url">JAVA框架02 -- MyBatis</a></h1>
         
 
         <div class="post-meta">
@@ -586,7 +586,7 @@ Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.5k
+                  6.7k
                 </span>
               
 
@@ -602,7 +602,7 @@ Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  30
+                  32
                 </span>
               
             </div>
@@ -625,17 +625,21 @@ Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC
       
         
           
-          了解SpringBoot在这一部分，我们主要了解以下3个问题：
+          框架什么是框架？
+它是我们软件开发中的一套解决方案，不同的框架解决的是不同的问题。
+使用框架的好处：框架封装了很多的细节，使开发者可以使用极简的方式实现功能。大大提高开发效率。
 
-什么是SpringBoot
-为什么要使用SpringBoot
-SpringBoot的特点
+三层架构
+表现层：是用于展示数据的
+业务层：是处理业务需求
+持久层：是和数据库交互的
 
-什么是SpringBootSpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spri
+
+持久层技术解决方案JDBC技术
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B606%20--%20Springboot/#more" rel="contents">
+            <a class="btn" href="/2019/05/16/JAVA%E6%A1%86%E6%9E%B602%20--%20MyBatis/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1079,7 +1083,7 @@ B/S：浏览器/服务器端
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF06--FastDFS/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jwang">
@@ -1098,7 +1102,7 @@ B/S：浏览器/服务器端
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF06--FastDFS/" itemprop="url">javaWeb核心技术06--FastDFS</a></h1>
+                <a class="post-title-link" href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/" itemprop="url">javaWeb核心技术05--JPA、ORM、hibernate</a></h1>
         
 
         <div class="post-meta">
@@ -1164,7 +1168,7 @@ B/S：浏览器/服务器端
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.4k
+                  5.7k
                 </span>
               
 
@@ -1203,14 +1207,14 @@ B/S：浏览器/服务器端
       
         
           
-          前置安装Centos下安装FastDFS上传将下面所需文件上传到linux下的/home/leyou/fdfs目录:
+          ORM思想
+ORM（Object-Relational Mapping） 表示对象关系映射。在面向对象的软件开发中，通过ORM，就可以把对象映射到关系型数据库中。只要有一套程序能够做到建立对象与数据库的关联，操作对象就可以直接操作数据库数据，就可以说这套程序实现了ORM对象关系映射
 
-安装依赖FastDFS运行需要一些依赖，在课前资料提供的虚拟中已经安装好了这些依赖，如果大家想要从头学习，可以按下面方式安装：
-安装GCC依赖GCC用来对C语言代码进行编译运行，使
+简单的说：OR
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF06--FastDFS/#more" rel="contents">
+            <a class="btn" href="/2019/05/16/javaWeb%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF05--JPA%E3%80%81ORM%E3%80%81hibernate/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
