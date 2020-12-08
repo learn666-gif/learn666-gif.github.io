@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1da5edcb"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Django,微信小程序," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="jwangcloud" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Django微信小程序后台开发浅析1.申请小程序，创建hello world小程序 2.添加交互框和按钮 3.服务器配置 4.配置服务器将后端与微信小程序连接   申请小程序，创建hello world小程序 在微信开发平台http:&#x2F;&#x2F;mp.weixin.qq.com申请小程序并获取APP id 在微信公众平台注册选择小程序，按照提示进行注册    注册成功后，填写小程序基本信息    查看小程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python框架05 -- 浅谈Django微信小程序后台开发">
+<meta property="og:url" content="https://github.com/learn666-gif/Jwang/242aa3eb.html">
+<meta property="og:site_name" content="jwangcloud">
+<meta property="og:description" content="Django微信小程序后台开发浅析1.申请小程序，创建hello world小程序 2.添加交互框和按钮 3.服务器配置 4.配置服务器将后端与微信小程序连接   申请小程序，创建hello world小程序 在微信开发平台http:&#x2F;&#x2F;mp.weixin.qq.com申请小程序并获取APP id 在微信公众平台注册选择小程序，按照提示进行注册    注册成功后，填写小程序基本信息    查看小程">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat01.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat02.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat03.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat04.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat05.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat06.jpg">
+<meta property="og:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat08.jpg">
+<meta property="article:published_time" content="2019-04-17T03:55:25.000Z">
+<meta property="article:modified_time" content="2020-12-08T12:38:36.387Z">
+<meta property="article:author" content="Jwang">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="微信小程序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/learn666-gif/Jwang/242aa3eb.html"/>
+
+
+
+
+
+  <title>python框架05 -- 浅谈Django微信小程序后台开发 | jwangcloud</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   
+    <a href="https://github.com/learn666-gif" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+ 
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jwangcloud</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/learn666-gif/Jwang/242aa3eb.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jwangcloud">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python框架05 -- 浅谈Django微信小程序后台开发</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T11:55:25+08:00">
+                2019-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">python框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Django微信小程序后台开发浅析"><a href="#Django微信小程序后台开发浅析" class="headerlink" title="Django微信小程序后台开发浅析"></a>Django微信小程序后台开发浅析</h2><p><a href="#1">1.申请小程序，创建hello world小程序</a></p>
+<p><a href="#2">2.添加交互框和按钮</a></p>
+<p><a href="#3">3.服务器配置</a></p>
+<p><a href="#4">4.配置服务器将后端与微信小程序连接</a></p>
+<more-->
+
+<h2 id="申请小程序，创建hello-world小程序"><a href="#申请小程序，创建hello-world小程序" class="headerlink" title="申请小程序，创建hello world小程序"></a>申请小程序，创建hello world小程序</h2><p><a name="1"></a></p>
+<h3 id="在微信开发平台http-mp-weixin-qq-com申请小程序并获取APP-id"><a href="#在微信开发平台http-mp-weixin-qq-com申请小程序并获取APP-id" class="headerlink" title="在微信开发平台http://mp.weixin.qq.com申请小程序并获取APP id"></a>在微信开发平台<a href="http://mp.weixin.qq.com" target="_blank" rel="noopener">http://mp.weixin.qq.com</a>申请小程序并获取APP id</h3><ul>
+<li>在微信公众平台注册选择小程序，按照提示进行注册</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat01.jpg" alt=""></p>
+<ul>
+<li>注册成功后，填写小程序基本信息</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat02.jpg" alt=""></p>
+<ul>
+<li>查看小程序详细信息下拉到底部找到AppID</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat03.jpg" alt=""></p>
+<h3 id="下载微信开发者工具"><a href="#下载微信开发者工具" class="headerlink" title="下载微信开发者工具"></a>下载微信开发者工具</h3><ul>
+<li><p>小程序主页选择<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/" target="_blank" rel="noopener">文档</a>–下载–稳定版Stable build</p>
+</li>
+<li><p>新建小程序项目,将AppID填写进去,不使用云服务（只是测试，如果需要再详细解决）</p>
+</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat04.jpg" alt=""></p>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat05.jpg" alt=""></p>
+<h2 id="添加交互框和按钮"><a href="#添加交互框和按钮" class="headerlink" title="添加交互框和按钮"></a>添加交互框和按钮</h2><p><a name="2"></a></p>
+<ul>
+<li>index.wxml</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--index.wxml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">bindinput</span>=<span class="string">'input'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"calculate"</span>&gt;</span>cal<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; result &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>index.wxss</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**index.wxss**/</span><br><span class="line">.input &#123;</span><br><span class="line">  border: 1px solid black;</span><br><span class="line">  margin-bottom: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>index.js</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//<span class="built_in">index</span>.js</span><br><span class="line">//获取应用实例</span><br><span class="line">const app = getApp()</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  dat<span class="variable">a:</span> &#123;</span><br><span class="line">    resul<span class="variable">t:</span> <span class="string">"暂无结果"</span>,</span><br><span class="line">    formul<span class="variable">a:</span> <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  //事件处理函数</span><br><span class="line">  calculate: <span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      ur<span class="variable">l:</span> <span class="string">'https://192.168.0.100/calculate'</span>,</span><br><span class="line">      dat<span class="variable">a:</span> &#123;</span><br><span class="line">        formul<span class="variable">a:</span> this.data.formula</span><br><span class="line">      &#125;,</span><br><span class="line">      succes<span class="variable">s:</span> <span class="keyword">res</span> =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">res</span>.statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">          this.setData(&#123;</span><br><span class="line">            resul<span class="variable">t:</span> <span class="keyword">res</span>.data</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  inpu<span class="variable">t:</span> <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> &#123;</span></span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      formul<span class="variable">a:</span> <span class="keyword">e</span>.detail.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="服务器配置（这里采用本地ip-后期部署再修改）"><a href="#服务器配置（这里采用本地ip-后期部署再修改）" class="headerlink" title="服务器配置（这里采用本地ip,后期部署再修改）"></a>服务器配置（这里采用本地ip,后期部署再修改）</h2><p><a name="3"></a></p>
+<ul>
+<li>安装python虚拟环境</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ pip install virtualenv</span><br><span class="line">$ pip install virtualenvwrapper</span><br><span class="line">	</span><br><span class="line">$ pip install virtualenvwrapper-win (windows系列)</span><br><span class="line">	</span><br><span class="line">$ export WORKON_HOME=~/Envs</span><br><span class="line">$ mkdir -p $WORKON_HOME</span><br><span class="line">$ source /usr/local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意点 virtualenv是初级的工具 只能用在你当前文件夹的目录下面去新建</p>
+</blockquote>
+<blockquote>
+<p>wrapper所带的 mkvirtualenv 和 workon命令可以让你在任何地方管理虚拟环境 不用考虑文件夹位置</p>
+</blockquote>
+<ul>
+<li>创建空文件夹，进入其中新建虚拟环境并激活和安装Django</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">virtualenv ruimi_django -p python3<span class="number">.6</span></span><br><span class="line">source ruimi_django/bin/activate</span><br><span class="line">pip install django==<span class="number">1.11</span></span><br><span class="line">python -m django --version</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>pycharm安装Django环境,并选择虚拟环境，详情看<a href="https://learn666-gif.github.io/2019/05/03/Django%E7%BB%BC%E8%BF%B0/" target="_blank" rel="noopener">Django浅析</a></p>
+</li>
+<li><p>创建Django项目并试运行,查看是否成功</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject calculator</span><br><span class="line">cd calculator</span><br><span class="line"></span><br><span class="line"><span class="comment">##修改calculator/settings.py中的ALLOWED_HOSTS = []为ALLOWED_HOSTS = ['*']</span></span><br><span class="line"></span><br><span class="line">cd calculator</span><br><span class="line">python3 manage.py runserver <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实现计算机接口"><a href="#实现计算机接口" class="headerlink" title="实现计算机接口"></a>实现计算机接口</h3><ul>
+<li>创建app，并注册该app到setting.py中</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py startapp CalculateApi</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进行URL转发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## calculator&#x2F;urls.py</span><br><span class="line"></span><br><span class="line">from django.contrib import admin</span><br><span class="line">from django.urls import path</span><br><span class="line">from django.conf.urls import url, include</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    path(&#39;admin&#x2F;&#39;, admin.site.urls),</span><br><span class="line">    url(&#39;^&#39;, include(&#39;CalculateApi.urls&#39;)),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">## CalculateApi&#x2F;新建urls.py</span><br><span class="line"></span><br><span class="line">from django.conf.urls import url</span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    url(&#39;calculate&#39;, views.calculate)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在views中添加calulate函数进行计算并返回（报文头）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate</span><span class="params">(request)</span>:</span></span><br><span class="line">    formula = request.GET[<span class="string">'formula'</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        result = eval(formula, &#123;&#125;)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        result = <span class="string">'Error formula'</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 运行服务器，访问http://服务器ip:8000/calculate?formula=2*2-3即可得到结果1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置服务器将后端与微信小程序连接"><a href="#配置服务器将后端与微信小程序连接" class="headerlink" title="配置服务器将后端与微信小程序连接"></a>配置服务器将后端与微信小程序连接</h2><p><a name="4"></a></p>
+<p>由于微信要求使用https协议进行通讯，我们使用nginx + uwsgi + django来配置https服务器</p>
+<h3 id="uwsgi配置"><a href="#uwsgi配置" class="headerlink" title="uwsgi配置"></a>uwsgi配置</h3><ul>
+<li>安装uwsgi并配置Django项目的uwsgi.ini，在主项目文件夹中新建uwsgi.ini文件添加配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">## pip3 install uwsgi</span><br><span class="line">## touch uwsgi.ini</span><br><span class="line"></span><br><span class="line">[uwsgi]</span><br><span class="line"># django项目监听的socket文件（可以使用端口代替）</span><br><span class="line">socket &#x3D; .&#x2F;calculator.sock</span><br><span class="line"># django项目所在目录</span><br><span class="line">chdir &#x3D; .</span><br><span class="line"># django项目wsgi文件</span><br><span class="line">wsgi-file &#x3D; .&#x2F;calculator&#x2F;wsgi.py</span><br><span class="line"></span><br><span class="line">master &#x3D; true</span><br><span class="line">processes &#x3D; 2</span><br><span class="line">threads &#x3D; 4</span><br><span class="line">vacuum &#x3D; true</span><br><span class="line"></span><br><span class="line"># 通过touch reload可以重启uwsgi服务器</span><br><span class="line">touch-reload &#x3D; .&#x2F;reload</span><br><span class="line"># 日志输出</span><br><span class="line">daemonize &#x3D; calculator.log</span><br></pre></td></tr></table></figure>
+
+<h3 id="http协议（80端口）"><a href="#http协议（80端口）" class="headerlink" title="http协议（80端口）"></a>http协议（80端口）</h3><ul>
+<li>安装nginx并配置</li>
+</ul>
+<p>Mac下</p>
+<blockquote>
+<p>/usr/local/etc/nginx/nginx.conf （配置文件路径）</p>
+</blockquote>
+<blockquote>
+<p>/usr/local/var/www （服务器默认路径）</p>
+</blockquote>
+<blockquote>
+<p>/usr/local/Cellar/nginx/1.6.2  （貌似是安装路径）</p>
+</blockquote>
+<p>Linux下：</p>
+<blockquote>
+<p>/etc/nginx</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 安装nginx</span><br><span class="line">#sudo apt-get install nginx</span><br><span class="line">#cd &#x2F;etc&#x2F;nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 修改nginx用户</span><br><span class="line">#vim nginx.conf 第一行修改为: user 用户名;</span><br><span class="line"></span><br><span class="line">## 添加80端口的配置文件或者直接在nginx.conf中添加</span><br><span class="line"># sudo touch calculator.conf</span><br><span class="line"># sudo vi calculator.conf</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">    listen         80;</span><br><span class="line">    server_name    服务器ip;</span><br><span class="line">    charset UTF-8;</span><br><span class="line"></span><br><span class="line">    client_max_body_size 75M;</span><br><span class="line"></span><br><span class="line">    location ~ ^&#x2F;calculate &#123;</span><br><span class="line">   		&#x2F;&#x2F; replace &quot;path&quot; to the path of your project</span><br><span class="line">        uwsgi_pass unix:&#x2F;&#x2F;&#x2F;&quot;path&quot;&#x2F;calculator&#x2F;calculator.sock;</span><br><span class="line">        include &#x2F;etc&#x2F;nginx&#x2F;uwsgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启nginx服务器. </li>
+</ul>
+<blockquote>
+<p>mac <code>nginx</code></p>
+<p>linux <code>sudo service nginx restart</code></p>
+</blockquote>
+<blockquote>
+<p>重启：nginx -s reload</p>
+</blockquote>
+<blockquote>
+<p>访问服务器的80端口即可访问calculate接口，如http://服务器ip/calculate?formula=2*2-3</p>
+</blockquote>
+<h3 id="https协议（443端口）下nginx配置"><a href="#https协议（443端口）下nginx配置" class="headerlink" title="https协议（443端口）下nginx配置"></a>https协议（443端口）下nginx配置</h3><ul>
+<li>前提：有自己的域名和ssl证书，将calculator.conf配置文件修改如下</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    listen         <span class="number">443</span>;</span><br><span class="line">    server_name    your.domain;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate path/to/your/ssl.pem;</span><br><span class="line">    ssl_certificate_key path/to/your/ssl.key;</span><br><span class="line">    ssl_session_timeout <span class="number">5</span>m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1<span class="number">.1</span> TLSv1<span class="number">.2</span>;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    charset UTF<span class="number">-8</span>;</span><br><span class="line"></span><br><span class="line">    client_max_body_size <span class="number">75</span>M;</span><br><span class="line"></span><br><span class="line">    location ~ ^/calculate &#123;</span><br><span class="line">        uwsgi_pass unix:///path/to/calculator/calculator.sock;</span><br><span class="line">        include /etc/nginx/uwsgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启nginx服务器，访问服务器443端口即可访问其接口</li>
+</ul>
+<h3 id="配置微信小程序的服务器信息"><a href="#配置微信小程序的服务器信息" class="headerlink" title="配置微信小程序的服务器信息"></a>配置微信小程序的服务器信息</h3><ul>
+<li>小程序只可以跟指定的域名进行网络通信（需要填写到开发后台管理里面）</li>
+<li>小程序必须使用HTTPS发起网络请求</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat06.jpg" alt="服务器配置"></p>
+<ul>
+<li>若没有，可以在微信开发者工具中选择设置-项目设置-勾选-不校验合法域名，建立本地开发对接Django后台进行操作</li>
+</ul>
+<p><img src="https://jwangblog.oss-cn-chengdu.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%93/Django-wechat/WeChat08.jpg" alt=""></p>
+<h3 id="远端部署测试"><a href="#远端部署测试" class="headerlink" title="远端部署测试"></a>远端部署测试</h3><ul>
+<li><p>使用git远端同步代码</p>
+</li>
+<li><p>管理依赖环境</p>
+</li>
+</ul>
+<blockquote>
+<p>requirements.txt</p>
+<p>pip install -r requirements.txt</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+ 	 
+   	 <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+ 	 
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Jwang/242aa3eb.html">python框架05 -- 浅谈Django微信小程序后台开发</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Jwang 的个人博客">Jwang</a></p>
+  <p><span>发布时间:</span>2019年04月17日 - 11:04</p>
+  <p><span>最后更新:</span>2020年12月08日 - 20:12</p>
+  <p><span>原始链接:</span><a href="/Jwang/242aa3eb.html" title="python框架05 -- 浅谈Django微信小程序后台开发">https://github.com/learn666-gif/Jwang/242aa3eb.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://github.com/learn666-gif/Jwang/242aa3eb.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+	  $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+
+      
+    </div>    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
+          
+            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag"><i class="fa fa-tag"></i> 微信小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Jwang/afe3a1e0.html" rel="next" title="python编程08 -- 自定义实现列表类">
+                <i class="fa fa-chevron-left"></i> python编程08 -- 自定义实现列表类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Jwang/1b24a23b.html" rel="prev" title="python编程06 -- 连接MysqlAPI">
+                python编程06 -- 连接MysqlAPI <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5NC8yNTM4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Jwang" />
+            
+              <p class="site-author-name" itemprop="name">Jwang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/learn666-gif" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/684433bc744b" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_34536604" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5e5c685e6fb9a07cd443bedai" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://app.gitbook.com/@79896867/spaces" target="_blank" title="gitbook">
+                      
+                        <i class="fa fa-fw fa-git"></i>gitbook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://learn666-gif.github.io/2019/01/21/JAVA%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA--%E7%9B%AE%E5%BD%95/#more" title="JAVA体系构建" target="_blank">JAVA体系构建</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django微信小程序后台开发浅析"><span class="nav-number">1.</span> <span class="nav-text">Django微信小程序后台开发浅析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请小程序，创建hello-world小程序"><span class="nav-number">2.</span> <span class="nav-text">申请小程序，创建hello world小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在微信开发平台http-mp-weixin-qq-com申请小程序并获取APP-id"><span class="nav-number">2.1.</span> <span class="nav-text">在微信开发平台http:&#x2F;&#x2F;mp.weixin.qq.com申请小程序并获取APP id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载微信开发者工具"><span class="nav-number">2.2.</span> <span class="nav-text">下载微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加交互框和按钮"><span class="nav-number">3.</span> <span class="nav-text">添加交互框和按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置（这里采用本地ip-后期部署再修改）"><span class="nav-number">4.</span> <span class="nav-text">服务器配置（这里采用本地ip,后期部署再修改）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现计算机接口"><span class="nav-number">4.1.</span> <span class="nav-text">实现计算机接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置服务器将后端与微信小程序连接"><span class="nav-number">5.</span> <span class="nav-text">配置服务器将后端与微信小程序连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#uwsgi配置"><span class="nav-number">5.1.</span> <span class="nav-text">uwsgi配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http协议（80端口）"><span class="nav-number">5.2.</span> <span class="nav-text">http协议（80端口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https协议（443端口）下nginx配置"><span class="nav-number">5.3.</span> <span class="nav-text">https协议（443端口）下nginx配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置微信小程序的服务器信息"><span class="nav-number">5.4.</span> <span class="nav-text">配置微信小程序的服务器信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远端部署测试"><span class="nav-number">5.5.</span> <span class="nav-text">远端部署测试</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jwang</span>
+
+  
+</div>
+
+<!-- <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+-->
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+-->
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共 297.8k 字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+   i </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
